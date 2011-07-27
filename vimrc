@@ -1,18 +1,16 @@
+set nocompatible
+
 " Call Pathogen
 filetype off 
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-set nocompatible
+filetype plugin indent on
+
 set runtimepath+=~/.vim/UltiSnips-1.4
 
 " Install the latest updates
-let g:GetLatestVimScripts_allowautoinstall=1
-
-filetype plugin indent on
-"filetype off 
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
+"let g:GetLatestVimScripts_allowautoinstall=1
 
 let mapleader=","
 
