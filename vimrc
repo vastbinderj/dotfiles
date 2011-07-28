@@ -7,16 +7,12 @@ call pathogen#helptags()
 
 filetype plugin indent on
 
-set runtimepath+=~/.vim/UltiSnips-1.4
+"set runtimepath+=~/.vim/UltiSnips-1.4
 
-" Install the latest updates
-"let g:GetLatestVimScripts_allowautoinstall=1
-
+" Set the Map Leader
 let mapleader=","
 
 syntax on
-"colorscheme lucius
-"colorscheme mustang
 set background=dark
 set gfn=Monaco:h10
 set nowrap
