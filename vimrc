@@ -15,7 +15,7 @@ set runtimepath+=~/.vim/UltiSnips-1.4
 let mapleader=","
 
 syntax on
-colorscheme lucius
+"colorscheme lucius
 "colorscheme mustang
 set background=dark
 set gfn=Monaco:h10
@@ -57,9 +57,13 @@ endif
 " Bind F6 to CTAGS
 nnoremap <F6> :!/opt/local/bin/ctags -R --python-kinds=-i *.py<CR>
 
+" Mapping for Tasklist
+map <leader>td <Plug>TaskList
+
 " Bind F4 to :TlistToggle
 nnoremap <F4> :TlistToggle<CR>
 let Tlist_Use_Right_Window = 1
+
 
 " Enable Omni complete
 " autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -71,6 +75,9 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
+
+" jQuery Syntax
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " Rope Mappings
 nnoremap <,g> :RopeGotoDefinition<CR>
