@@ -70,3 +70,9 @@
 [submodule "bundle/vim-jquery"]
 	path = bundle/vim-jquery
 	url = git://github.com/nono/jquery.vim.git
+[submodule "bundle/colorsamplerpack"]
+	path = bundle/colorsamplerpack
+	url = git://github.com/Slashbunny/vim-colorsamplerpack.git
+[submodule "bundle/xoria256"]
+	path = bundle/xoria256
+	url = git://github.com/vim-scripts/xoria256.vim.git
