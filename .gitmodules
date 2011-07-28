@@ -1,48 +1,48 @@
 [submodule "bundle/pathogen"]
 	path = bundle/pathogen
-	url = http://github.com/tpope/vim-pathogen.git
+	url = git://github.com/tpope/vim-pathogen.git
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
-	url = http://github.com/tpope/vim-fugitive.git
+	url = git://github.com/tpope/vim-fugitive.git
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
-	url = https://github.com/msanders/snipmate.vim.git
+	url = git://github.com/msanders/snipmate.vim.git
 [submodule "bundle/surround"]
 	path = bundle/surround
-	url = https://github.com/tpope/vim-surround.git
+	url = git://github.com/tpope/vim-surround.git
 [submodule "bundle/git"]
 	path = bundle/git
-	url = https://github.com/tpope/vim-git.git
+	url = git://github.com/tpope/vim-git.git
 [submodule "bundle/supertab"]
 	path = bundle/supertab
-	url = https://github.com/ervandew/supertab.git
+	url = git://github.com/ervandew/supertab.git
 [submodule "bundle/command-t"]
 	path = bundle/command-t
-	url = https://github.com/wincent/Command-T.git
+	url = git://github.com/wincent/Command-T.git
 [submodule "pyflakes-pathogen"]
 	path = pyflakes-pathogen
-	url = https://github.com/mitechie/pyflakes-pathogen.git
+	url = git://github.com/mitechie/pyflakes-pathogen.git
 [submodule "bundle/ack"]
 	path = bundle/ack
-	url = https://github.com/mileszs/ack.vim.git
+	url = git://github.com/mileszs/ack.vim.git
 [submodule "bundle/gundo"]
 	path = bundle/gundo
-	url = https://github.com/sjl/gundo.vim.git
+	url = git://github.com/sjl/gundo.vim.git
 [submodule "bundle/pydoc"]
 	path = bundle/pydoc
-	url = https://github.com/fs111/pydoc.vim.git
+	url = git://github.com/fs111/pydoc.vim.git
 [submodule "bundle/pep8"]
 	path = bundle/pep8
-	url = https://github.com/vim-scripts/pep8.git
+	url = git://github.com/vim-scripts/pep8.git
 [submodule "bundle/tasklist"]
 	path = bundle/tasklist
-	url = https://github.com/vim-scripts/TaskList.vim.git
+	url = git://github.com/vim-scripts/TaskList.vim.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
-	url = https://github.com/vim-scripts/The-NERD-tree.git
+	url = git://github.com/vim-scripts/The-NERD-tree.git
 [submodule "bundle/ropevim"]
 	path = bundle/ropevim
-	url = https://github.com/sontek/rope-vim.git
+	url = git://github.com/sontek/rope-vim.git
 [submodule "bundle/ruby-debugger"]
 	path = bundle/ruby-debugger
 	url = git://github.com/astashov/vim-ruby-debugger.git

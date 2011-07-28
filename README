@@ -10,7 +10,6 @@ Create symlinks:
 Switch to the `~/.vim` directory, and fetch submodules:
 
     cd ~/.vim
-    git submodule foreach git checkout master
-    git submodule foreach git pull
+    git submodule update --init
     mkdir autoload
     ln -s ~/.vim/bundle/pathogen/autoload/pathogen.vim ~/.vim/autoload/pathogen.vim
