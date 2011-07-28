@@ -11,5 +11,4 @@ Switch to the `~/.vim` directory, and fetch submodules:
 
     cd ~/.vim
     git submodule update --init
-    mkdir autoload
-    ln -s ~/.vim/bundles/pathgen/autoload/pathgen.vim ~/.vim/autoload/pathogen.vim
+    ln -s ~/.vim/bundle/pathogen/autoload/pathogen.vim ~/.vim/autoload/pathogen.vim
