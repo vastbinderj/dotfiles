@@ -42,6 +42,12 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set foldmethod=indent
 set foldlevel=99
 
+" Window Movement with split windows
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
 " Set the Window Size
 if has("gui_running")
     set lines=50 columns=100
