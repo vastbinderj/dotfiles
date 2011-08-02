@@ -13,3 +13,24 @@ Switch to the `~/.vim` directory, and fetch submodules:
     git submodule update --init
     mkdir autoload
     ln -s ~/.vim/bundle/pathogen/autoload/pathogen.vim ~/.vim/autoload/pathogen.vim
+
+Remember to download and install Ctags, Pep8 and L9 if you want to use those features for your 
+OS and vim configuration.
+
+On mac:
+    
+    brew install ctags
+    brew install L9
+    brew install pep8
+
+On Ubuntu: 
+
+    sudo apt-get install ctags
+    sudo apt-get install L9
+    sudo apt-get install pep8 
+
+On Cent OS:
+
+    yum install ctags
+    yum install L9
+    yum install pep8
