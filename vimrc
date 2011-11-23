@@ -59,6 +59,10 @@ endif
 " Bind F6 to CTAGS
 nnoremap <F6> :!/opt/local/bin/ctags -R --python-kinds=-i *.py<CR>
 
+" CommandT stuff
+nnoremap <silent> <Leader>ct :CommandT<CR>
+nnoremap <silent> <Leader>cb :CommandTBuffer<CR>
+
 " Mapping for Tasklist
 map <leader>td <Plug>TaskList
 

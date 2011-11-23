@@ -19,18 +19,61 @@ OS and vim configuration.
 
 On mac:
     
-    brew install ctags
-    brew install L9
-    brew install pep8
+    Install Ctags
+
+        > brew install ctags
+    
+    For Command-T :
+    (be sure you use the same version of ruby you compiled VIM with)
+    
+        > cd ~/.vim/bundle/command-t
+        > rake make
+    
+    For Ruby Debugging in VIM:
+
+        > gem install ruby-debug-ide
+
+
+    For Python folks:
+        
+        Install VirtualENV, L9 and pep8
 
 On Ubuntu: 
 
     sudo apt-get install ctags
-    sudo apt-get install L9
-    sudo apt-get install pep8 
+
+    For Command-T :
+    (be sure you use the same version of ruby you compiled vim with)
+    
+        > cd ~/.vim/bundle/command-t
+        > rake make
+    
+    For ruby debugging in vim:
+
+        > gem install ruby-debug-ide
+
+
+    For python folks:
+        
+        Install VirtualENV, L9 and pep8
+
 
 On Cent OS:
 
     yum install ctags
-    yum install L9
-    yum install pep8
+
+    For Command-T :
+    (be sure you use the same version of ruby you compiled vim with)
+    
+        > cd ~/.vim/bundle/command-t
+        > rake make
+    
+    For ruby debugging in vim:
+
+        > gem install ruby-debug-ide
+
+
+    For python folks:
+        
+        Install VirtualENV, L9 and pep8
+
