@@ -36,7 +36,7 @@ On mac:
 
     For Python folks:
         
-        Install VirtualENV, L9 and pep8
+        Install virtualenv, L9 and pep8
 
 On Ubuntu: 
 
@@ -55,7 +55,7 @@ On Ubuntu:
 
     For python folks:
         
-        Install VirtualENV, L9 and pep8
+        Install virtualenv, L9 and pep8
 
 
 On Cent OS:
@@ -75,5 +75,5 @@ On Cent OS:
 
     For python folks:
         
-        Install VirtualENV, L9 and pep8
+        Install virtualenv, L9 and pep8
 
