@@ -14,6 +14,10 @@ Switch to the `~/.vim` directory, and fetch submodules:
     mkdir autoload
     ln -s ~/.vim/bundle/pathogen/autoload/pathogen.vim ~/.vim/autoload/pathogen.vim
 
+To upgrade all bundled plugins at any time:
+
+    git submodule foreach git pull origin master
+    
 Remember to download and install Ctags, Pep8 and L9 if you want to use those features for your 
 OS and vim configuration.
 
