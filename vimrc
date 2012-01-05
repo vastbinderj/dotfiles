@@ -55,6 +55,29 @@ else
         set columns=100
     endif
 endif
+
+" Functions to easily mark and swap windows
+function! MarkWindowSwap()
+    let g:markedWinNum = winnr()
+endfunction
+
+function! DoWindowSwap()
+    "Mark destination
+    let curNum = winnr()
+    let curBuf = bufnr( "%" )
+    exe g:markedWinNum . "wincmd w"
+    "Switch to source and shuffle dest->source
+    let markedBuf = bufnr( "%" )
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' curBuf
+    "Switch to dest and shuffle source->dest
+    exe curNum . "wincmd w"
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' markedBuf 
+endfunction
+
+nnoremap <silent> <Leader>mw :call MarkWindowSwap()<CR>
+nnoremap <silent> <Leader>pw :call DoWindowSwap()<CR>
  
 " Bind F6 to CTAGS
 nnoremap <F6> :!/opt/local/bin/ctags -R --python-kinds=-i *.py<CR>
@@ -72,15 +95,22 @@ let Tlist_Use_Right_Window = 1
 
 
 " Enable Omni complete
-" autocmd FileType python set omnifunc=pythoncomplete#Complete
-" inoremap <C-space> <C-x><C-o>
-autocmd FileType ruby set omnifunc=ruby#Complete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+if has("autocmd")
+    autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+    autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+    autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+    autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+
+    autocmd FileType python set omnifunc=pythoncomplete#Complete
+    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+endif
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
+
+"improve autocomplete menu color
+highlight PMenu gui=bold guibg=#CECECE guifg=#444444
 
 " jQuery Syntax
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
