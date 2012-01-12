@@ -53,10 +53,10 @@ Install virtualenv, L9 and pep8
         > cd ~/.vim/bundle/command-t
         > rake make
     
-###    For ruby debugging in vim:
+###    For Ruby Debugging in VIM:
 
         > gem install ruby-debug-ide
 
-###    For python folks:
+###    For Python folks:
 
 Install virtualenv, L9 and pep8
