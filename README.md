@@ -1,6 +1,6 @@
-This is my personal collection of dotvim files for Rails/Python dev.  I use Supertab for code completion.  Be sure to 
-read through the .vimrc file for key mappings, as they are set to ones which suite me best. I do use macvim on my 
-personal hardware, but these work well with vim 7.2 and 7.3 on Cent OS and Ubuntu.
+This is my personal collection of dotvim files for Rails/Python dev.  I use Supertab for code completion 
+and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to 
+ones which suite me best. I do use macvim on my personal hardware, but these work well with vim 7.2 and 7.3 on Cent OS and Ubuntu.
 
 
 ## Installation:
