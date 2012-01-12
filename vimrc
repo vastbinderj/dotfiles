@@ -47,13 +47,13 @@ map <c-h> <c-w>h
 
 " Set the Window Size
 if has("gui_running")
-    set lines=50 columns=124
+    set lines=50 columns=132
 else
     if exists("+lines")
         set lines=50
     endif
     if exists("+columns")
-        set columns=124
+        set columns=132
     endif
 endif
 
