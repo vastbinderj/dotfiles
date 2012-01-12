@@ -2,12 +2,12 @@
 
         > git clone git://github.com/vastbinderj/dotvim.git ~/.vim
 
-## Create symlinks:
+### Create symlinks:
 
         > ln -s ~/.vim/vimrc ~/.vimrc
         > ln -s ~/.vim/gvimrc ~/.gvimrc
 
-## Add Sub-modules for bundles:
+### Add Sub-modules for bundles:
 Switch to the `~/.vim` directory, and fetch submodules:
 
         > cd ~/.vim
@@ -15,7 +15,7 @@ Switch to the `~/.vim` directory, and fetch submodules:
         > mkdir autoload
         > ln -s ~/.vim/bundle/pathogen/autoload/pathogen.vim ~/.vim/autoload/pathogen.vim
 
-## To upgrade all bundled plugins at any time:
+### To upgrade all bundled plugins at any time:
 
         > git submodule foreach git pull origin master
     
@@ -57,7 +57,6 @@ Install virtualenv, L9 and pep8
 
         > gem install ruby-debug-ide
 
-
 ###    For python folks:
-        
+
 Install virtualenv, L9 and pep8
