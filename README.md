@@ -7,6 +7,7 @@
         > ln -s ~/.vim/vimrc ~/.vimrc
         > ln -s ~/.vim/gvimrc ~/.gvimrc
 
+## Add Sub-modules for bundles:
 Switch to the `~/.vim` directory, and fetch submodules:
 
         > cd ~/.vim
