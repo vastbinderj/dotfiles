@@ -15,6 +15,7 @@ let mapleader=","
 syntax on
 set background=dark
 set gfn=Monaco:h10
+colors jellybeans
 set nowrap
 set tabstop=4
 set shiftwidth=4
@@ -46,13 +47,13 @@ map <c-h> <c-w>h
 
 " Set the Window Size
 if has("gui_running")
-    set lines=50 columns=100
+    set lines=50 columns=124
 else
     if exists("+lines")
         set lines=50
     endif
     if exists("+columns")
-        set columns=100
+        set columns=124
     endif
 endif
 
