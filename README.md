@@ -27,6 +27,10 @@ Switch to the `~/.vim` directory, and fetch submodules:
 Remember to download and install Ctags and Pep8 if you want to use those features for your 
 OS and vim configuration.
 
+### For Django code completion on a project by project basis
+
+        > export DJANGO_SETTINGS_MODULE=project.settings
+
 ## On mac:
     
 ###    Install Ctags
