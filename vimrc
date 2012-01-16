@@ -15,7 +15,7 @@ let mapleader=","
 syntax on
 set background=dark
 set gfn=Monaco:h10
-colors jellybeans
+colors xoria256
 set nowrap
 set tabstop=4
 set shiftwidth=4
