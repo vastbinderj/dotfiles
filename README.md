@@ -31,7 +31,7 @@ OS and vim configuration.
 
         > export DJANGO_SETTINGS_MODULE=project.settings
 
-## On mac:
+## On Mac:
     
 ###    Install Ctags
 
@@ -55,6 +55,8 @@ Install virtualenv and pep8
 ## On Linux: 
 
         > sudo apt-get install ctags
+        OR
+        > sudo yum install ctags
 
 ###    For Command-T :
 (be sure you use the same version of ruby you compiled vim with)

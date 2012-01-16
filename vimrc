@@ -35,8 +35,8 @@ set history=1000
 set undolevels=1000
 set wildignore=*.swp,*.bak,*.pyc,*.class
 
-" Add a git status line 
-%{fugitive#statusline()}
+" Add a git statusline 
+set statusline=%<\ %f\ %{fugitive#statusline()}
 
 " Enable Code Folding
 set foldmethod=indent
