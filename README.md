@@ -24,7 +24,7 @@ Switch to the `~/.vim` directory, and fetch submodules:
 
         > git submodule foreach git pull origin master
     
-Remember to download and install Ctags, Pep8 and L9 if you want to use those features for your 
+Remember to download and install Ctags and Pep8 if you want to use those features for your 
 OS and vim configuration.
 
 ## On mac:
@@ -46,7 +46,7 @@ OS and vim configuration.
 
 ###    For Python folks:
         
-Install virtualenv, L9 and pep8
+Install virtualenv and pep8
 
 ## On Linux: 
 
@@ -64,4 +64,4 @@ Install virtualenv, L9 and pep8
 
 ###    For Python folks:
 
-Install virtualenv, L9 and pep8
+Install virtualenv and pep8 for your OS
