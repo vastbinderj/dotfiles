@@ -79,6 +79,3 @@
 [submodule "bundle/L9"]
 	path = bundle/L9
 	url = git://github.com/vim-scripts/L9.git
-[submodule "bundle/ultisnips"]
-	path = bundle/ultisnips
-	url = git://github.com/vim-scripts/UltiSnips.git
