@@ -28,6 +28,7 @@ set hlsearch
 set incsearch
 set showmatch
 set number
+set relativenumber
 set title
 set nobackup
 set noswapfile
