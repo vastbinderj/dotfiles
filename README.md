@@ -42,6 +42,9 @@ OS and vim configuration.
     
         > cd ~/.vim/bundle/command-t
         > rake make
+        
+###     For NerdTree-Ack:
+        > brew install ack
     
 ###    For Ruby Debugging in VIM:
 
