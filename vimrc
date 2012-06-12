@@ -15,7 +15,7 @@ let mapleader=","
 syntax on
 set background=dark
 set gfn=Monaco:h10
-colors xoria256
+colorscheme xoria256
 set nowrap
 set tabstop=4
 set shiftwidth=4
@@ -85,7 +85,7 @@ nnoremap <silent> <Leader>mw :call MarkWindowSwap()<CR>
 nnoremap <silent> <Leader>pw :call DoWindowSwap()<CR>
  
 " Bind F6 to CTAGS
-nnoremap <F6> :!/opt/local/bin/ctags -R --python-kinds=-i *.py<CR>
+nnoremap <F6> :!/usr/local/bin/ctags -R --python-kinds=-i *.py<CR>
 
 " CommandT stuff
 nnoremap <silent> <Leader>ct :CommandT<CR>
