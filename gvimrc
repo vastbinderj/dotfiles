@@ -1,2 +1,2 @@
 set transparency=5
-set guioptions=aAce
+"set guioptions=aAce

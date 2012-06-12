@@ -88,3 +88,9 @@
 [submodule "bundle/nerdtree-ack"]
 	path = bundle/nerdtree-ack
 	url = git://github.com/tyok/nerdtree-ack.git
+[submodule "bundle/vim-django-support"]
+	path = bundle/vim-django-support
+	url = git://github.com/gerardo/vim-django-support.git
+[submodule "bundle/headlights"]
+	path = bundle/headlights
+	url = git://github.com/mbadran/headlights.git
