@@ -111,11 +111,17 @@ if has("autocmd")
     autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 endif
-let g:SuperTabDefaultCompletionType = "context"
-set completeopt=menuone,longest,preview
 
-"improve autocomplete menu color
-highlight PMenu gui=bold guibg=#CECECE guifg=#444444
+" Configure SuperTab
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,menu,longest
+
+"Improve autocomplete menu color
+highlight   clear
+highlight   Pmenu         ctermfg=0 ctermbg=2
+highlight   PmenuSel      ctermfg=0 ctermbg=7
+highlight   PmenuSbar     ctermfg=7 ctermbg=0
+highlight   PmenuThumb    ctermfg=0 ctermbg=7
 
 " jQuery Syntax
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
