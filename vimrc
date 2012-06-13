@@ -12,7 +12,7 @@ filetype plugin indent on
 " Set the Map Leader
 let mapleader=","
 
-syntax on
+syntax enable
 set background=dark
 set gfn=Monaco:h10
 colorscheme xoria256
@@ -84,9 +84,6 @@ endfunction
 nnoremap <silent> <Leader>mw :call MarkWindowSwap()<CR>
 nnoremap <silent> <Leader>pw :call DoWindowSwap()<CR>
  
-" Bind F6 to CTAGS
-nnoremap <F6> :!/usr/local/bin/ctags -R --python-kinds=-i *.py<CR>
-
 " CommandT stuff
 nnoremap <silent> <Leader>ct :CommandT<CR>
 nnoremap <silent> <Leader>cb :CommandTBuffer<CR>
@@ -94,10 +91,28 @@ nnoremap <silent> <Leader>cb :CommandTBuffer<CR>
 " Mapping for Tasklist
 map <leader>td <Plug>TaskList
 
+"NerdTreeToggle
+nnoremap <F3> :NERDTreeToggle<CR>
+
 " Bind F4 to :TlistToggle
 nnoremap <F4> :TlistToggle<CR>
 let Tlist_Use_Right_Window = 1
 
+" Bind F6 to CTAGS
+nnoremap <F6> :!/usr/local/bin/ctags -R --exclude=.git --exclude=log *<CR>
+
+" Rope Mappings
+nnoremap <,g> :RopeGotoDefinition<CR>
+nnoremap <,r> :RopeRename<CR>
+
+"Fuzzy Finder
+nnoremap <C-f><C-f> :FufFile<CR>
+
+" Ack
+nnoremap <,a> <Esc>:Ack!
+
+" Pep8 Mapping
+let g:pep8_map=',p8'
 
 " Enable Omni complete
 if has("autocmd")
@@ -125,20 +140,3 @@ highlight   PmenuThumb    ctermfg=0 ctermbg=7
 
 " jQuery Syntax
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
-
-" Rope Mappings
-nnoremap <,g> :RopeGotoDefinition<CR>
-nnoremap <,r> :RopeRename<CR>
-
-"Fuzzy Finder
-nnoremap <C-f><C-f> :FufFile<CR>
-
-" Ack
-nnoremap <,a> <Esc>:Ack!
-
-"NerdTreeToggle
-nnoremap <F3> :NERDTreeToggle<CR>
-
-" Pep8 Mapping
-let g:pep8_map=',p8'
-
