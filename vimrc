@@ -100,6 +100,9 @@ let Tlist_Use_Right_Window = 1
 " Bind F6 to CTAGS
 nnoremap <F6> :!/usr/local/bin/ctags -R --exclude=.git --exclude=log *<CR>
 
+" Bind F8 to Tagbar
+nnoremap <F8> :TagbarToggle<CR>
+
 " Rope Mappings
 nnoremap <,g> :RopeGotoDefinition<CR>
 nnoremap <,r> :RopeRename<CR>
