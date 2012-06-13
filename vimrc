@@ -15,7 +15,6 @@ let mapleader=","
 syntax enable
 set background=dark
 set gfn=Monaco:h10
-colorscheme xoria256
 set nowrap
 set tabstop=4
 set shiftwidth=4
@@ -140,3 +139,6 @@ highlight   PmenuThumb    ctermfg=0 ctermbg=7
 
 " jQuery Syntax
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
+" set the default color scheme
+colors xoria256
