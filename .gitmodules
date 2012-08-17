@@ -115,3 +115,6 @@
 [submodule "bundle/play2vim"]
 	path = bundle/play2vim
 	url = git://github.com/gre/play2vim.git
+[submodule "bundle/tlib-vim"]
+	path = bundle/tlib-vim
+	url = git://github.com/tomtom/tlib_vim.git
