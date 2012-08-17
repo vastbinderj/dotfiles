@@ -112,3 +112,6 @@
 [submodule "bundle/vim-html5"]
 	path = bundle/vim-html5
 	url = git://github.com/othree/html5.vim.git
+[submodule "bundle/play2vim"]
+	path = bundle/play2vim
+	url = git://github.com/gre/play2vim.git
