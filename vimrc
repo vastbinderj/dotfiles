@@ -161,4 +161,4 @@ highlight   PmenuThumb    ctermfg=0 ctermbg=7
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " set the default color scheme
-colors xoria256
+colors moria
