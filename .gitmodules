@@ -127,3 +127,9 @@
 [submodule "bundle/snipmate-snippets"]
 	path = bundle/snipmate-snippets
 	url = git://github.com/honza/snipmate-snippets.git
+[submodule "bundle/tlib_vim"]
+	path = bundle/tlib_vim
+	url = git://github.com/tomtom/tlib_vim.git
+[submodule "bundle/vim-addon-mw-utils"]
+	path = bundle/vim-addon-mw-utils
+	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
