@@ -133,3 +133,12 @@
 [submodule "bundle/vim-addon-mw-utils"]
 	path = bundle/vim-addon-mw-utils
 	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "bundle/ctrl-p"]
+	path = bundle/ctrl-p
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/DBGPavim"]
+	path = bundle/DBGPavim
+	url = git://github.com/brookhong/DBGPavim.git

@@ -34,6 +34,8 @@ set noswapfile
 set history=1000
 set undolevels=1000
 set wildignore=*.swp,*.bak,*.pyc,*.class
+set cursorline
+set ruler
 
 " Add a git statusline 
 set statusline=%<\ %f\ %{fugitive#statusline()}
@@ -130,6 +132,18 @@ nnoremap <C-f><C-f> :FufFile<CR>
 " Ack
 nnoremap <,a> <Esc>:Ack!
 
+" CTRL-P
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'         " Working Directory
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+let g:ctrlp_user_command = 'find %s -type f'
+let g:ctrlp_custom_ignore = {
+            \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+            \ 'file': '\v\.(exe|so|dll)$',
+            \ 'link': 'some_bad_symbolic_links',
+            \ }
+
 " Pep8 Mapping
 let g:pep8_map=',p8'
 
@@ -161,4 +175,4 @@ highlight   PmenuThumb    ctermfg=0 ctermbg=7
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " set the default color scheme
-colors moria
+colors molokai
