@@ -102,10 +102,6 @@ let g:tagbar_type_scala = {
     \ ]
 \ }
  
-" CommandT stuff
-nnoremap <silent> <Leader>ct :CommandT<CR>
-nnoremap <silent> <Leader>cb :CommandTBuffer<CR>
-
 " Mapping for Tasklist
 map <leader>td <Plug>TaskList
 
@@ -155,9 +151,15 @@ if has("autocmd")
     autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
     autocmd FileType python set omnifunc=pythoncomplete#Complete
-    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+
+    autocmd FileType php let php_sql_query=1
+    autocmd FileType php let php_htmlInStrings=1
+    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
     autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+
+    autocmd FileType c set omnifunc=ccomplete#Complete
 endif
 
 " Configure SuperTab
@@ -170,6 +172,18 @@ highlight   Pmenu         ctermfg=0 ctermbg=2
 highlight   PmenuSel      ctermfg=0 ctermbg=7
 highlight   PmenuSbar     ctermfg=7 ctermbg=0
 highlight   PmenuThumb    ctermfg=0 ctermbg=7
+
+" JavaScript 
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+
+" Node.js dictionary 
+au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
+
+" Recompile a Coffee file when saved
+au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
+
 
 " jQuery Syntax
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery

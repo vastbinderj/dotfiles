@@ -142,3 +142,27 @@
 [submodule "bundle/DBGPavim"]
 	path = bundle/DBGPavim
 	url = git://github.com/brookhong/DBGPavim.git
+[submodule "bundle/Vim-PHP"]
+	path = bundle/Vim-PHP
+	url = git://github.com/paulyg/Vim-PHP-Stuff.git
+[submodule "bundle/jslint"]
+	path = bundle/jslint
+	url = git://github.com/hallettj/jslint.vim.git
+[submodule "bundle/jshint"]
+	path = bundle/jshint
+	url = git://github.com/wookiehangover/jshint.vim.git
+[submodule "bundle/vim-javascript"]
+	path = bundle/vim-javascript
+	url = git://github.com/pangloss/vim-javascript.git
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/vim-jade"]
+	path = bundle/vim-jade
+	url = git://github.com/digitaltoad/vim-jade.git
+[submodule "bundle/vim-stylus"]
+	path = bundle/vim-stylus
+	url = git://github.com/wavded/vim-stylus.git
+[submodule "bundle/vim-node"]
+	path = bundle/vim-node
+	url = git://github.com/guileen/vim-node.git
