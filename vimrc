@@ -35,11 +35,12 @@ set history=1000
 set undolevels=1000
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set cursorline
+set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 set ruler
-
-" Add a git statusline 
-set statusline=%<\ %f\ %{fugitive#statusline()}
-
+set showcmd
+set cmdheight=2
+set encoding=utf8
+set mat=2
 " Enable Code Folding
 set foldmethod=indent
 set foldlevel=99
@@ -179,7 +180,7 @@ let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
 " Node.js dictionary 
-au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
+au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node/dict/node.dict
 
 " Recompile a Coffee file when saved
 au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!

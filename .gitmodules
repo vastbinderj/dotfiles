@@ -174,3 +174,9 @@
 [submodule "bundle/vim-node"]
 	path = bundle/vim-node
 	url = git://github.com/guileen/vim-node.git
+[submodule "bundle/vim-nodejs-complete"]
+	path = bundle/vim-nodejs-complete
+	url = git://github.com/myhere/vim-nodejs-complete.git
+[submodule "bundle/vim-powerline"]
+	path = bundle/vim-powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
