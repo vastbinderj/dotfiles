@@ -14,7 +14,7 @@ let mapleader=","
 
 syntax enable
 set background=dark
-set gfn=Monaco:h10
+set gfn=Menlo\ for\ Powerline:16
 set nowrap
 set tabstop=4
 set shiftwidth=4
@@ -35,7 +35,6 @@ set history=1000
 set undolevels=1000
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set cursorline
-set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 set ruler
 set showcmd
 set cmdheight=2
@@ -44,6 +43,10 @@ set mat=2
 " Enable Code Folding
 set foldmethod=indent
 set foldlevel=99
+
+set laststatus=2
+set t_Co=256
+let g:Powerline_symbols = 'fancy'
 
 " Window Movement with split windows
 map <c-j> <c-w>j
