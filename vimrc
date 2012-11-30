@@ -15,7 +15,7 @@ let mapleader=","
 syntax enable
 set background=dark
 set encoding=utf-8
-set guifont=Menlo\ For\ Powerline
+set guifont=Menlo\ For\ Powerline:14
 set nowrap
 set tabstop=4
 set shiftwidth=4
