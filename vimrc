@@ -14,7 +14,8 @@ let mapleader=","
 
 syntax enable
 set background=dark
-set gfn=Menlo\ for\ Powerline:16
+set encoding=utf-8
+set guifont=Menlo\ For\ Powerline
 set nowrap
 set tabstop=4
 set shiftwidth=4
@@ -147,6 +148,10 @@ let g:ctrlp_custom_ignore = {
 " Pep8 Mapping
 let g:pep8_map=',p8'
 
+" Configure SuperTab
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,menu,longest
+
 " Enable Omni complete
 if has("autocmd")
     autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
@@ -166,9 +171,6 @@ if has("autocmd")
     autocmd FileType c set omnifunc=ccomplete#Complete
 endif
 
-" Configure SuperTab
-let g:SuperTabDefaultCompletionType = "context"
-set completeopt=menuone,menu,longest
 
 "Improve autocomplete menu color
 highlight   clear
