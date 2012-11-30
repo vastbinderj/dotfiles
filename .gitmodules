@@ -156,3 +156,6 @@
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "bundle/UltiSnips"]
+	path = bundle/UltiSnips
+	url = git://github.com/vim-scripts/UltiSnips.git

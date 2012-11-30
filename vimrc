@@ -148,6 +148,9 @@ let g:ctrlp_custom_ignore = {
 " Pep8 Mapping
 let g:pep8_map=',p8'
 
+" Ultisnips
+let g:UltiSnipsUsePythonVersion = 2
+
 " Configure SuperTab
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,menu,longest
