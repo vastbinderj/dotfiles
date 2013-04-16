@@ -159,3 +159,6 @@
 [submodule "bundle/UltiSnips"]
 	path = bundle/UltiSnips
 	url = git://github.com/vim-scripts/UltiSnips.git
+[submodule "bundle/vim-nerdtree-tabs"]
+	path = bundle/vim-nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git

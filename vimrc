@@ -111,7 +111,7 @@ let g:tagbar_type_scala = {
 map <leader>td <Plug>TaskList
 
 "NerdTreeToggle
-nnoremap <F3> :NERDTreeToggle<CR>
+map <leader>nt <plug>NERDTreeTabsToggle<CR>
 
 " Bind F4 to :TlistToggle
 nnoremap <F4> :TlistToggle<CR>
