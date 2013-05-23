@@ -76,10 +76,6 @@
 [submodule "bundle/xoria256"]
 	path = bundle/xoria256
 	url = git://github.com/vim-scripts/xoria256.vim.git
-[submodule "bundle/conque-shell"]
-	path = bundle/conque-shell
-	url = git://github.com/rson/vim-conque.git
-    ignore = dirty
 [submodule "bundle/L9"]
 	path = bundle/L9
 	url = git://github.com/vim-scripts/L9.git
