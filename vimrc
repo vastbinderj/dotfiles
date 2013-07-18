@@ -151,6 +151,12 @@ let g:pep8_map=',p8'
 " Ultisnips
 let g:UltiSnipsUsePythonVersion = 2
 
+" NodeJS Completion Settings
+let g:nodejs_complete_config = {
+            \ 'js_compl_fn': 'jscomplete#CompleteJS',
+            \ 'max_node_compl_len': 15 
+            \ }
+
 " Configure SuperTab
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,menu,longest
