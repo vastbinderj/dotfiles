@@ -60,7 +60,7 @@ if has("gui_running")
     set lines=50 columns=132
 else
     if exists("+lines")
-        set lines=50
+        set lines=30
     endif
     if exists("+columns")
         set columns=132
