@@ -17,10 +17,10 @@ set background=dark
 set encoding=utf-8
 set guifont=Menlo\ For\ Powerline:14
 set nowrap
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
-set softtabstop=4
+set softtabstop=2
 set smarttab
 set smartindent
 set autoindent
@@ -38,7 +38,7 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set cursorline
 set ruler
 set showcmd
-set cmdheight=2
+set cmdheight=4
 set encoding=utf8
 set mat=2
 " Enable Code Folding
@@ -63,7 +63,7 @@ else
         set lines=30
     endif
     if exists("+columns")
-        set columns=132
+        set columns=100
     endif
 endif
 
