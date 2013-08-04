@@ -246,4 +246,4 @@ au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " set the default color scheme
-colors molokai
+colors molokai2
