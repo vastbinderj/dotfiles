@@ -40,6 +40,7 @@ set ruler
 set showcmd
 set cmdheight=2
 set encoding=utf8
+set scrolloff=10
 set mat=2
 " Enable Code Folding
 set foldmethod=indent
@@ -246,4 +247,4 @@ au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " set the default color scheme
-colors molokai
+colors molokai2
