@@ -1,7 +1,7 @@
 set nocompatible
 
 " Call Pathogen
-filetype off 
+filetype off
 call pathogen#incubate()
 call pathogen#helptags()
 
@@ -15,7 +15,7 @@ let mapleader=","
 syntax enable
 set background=dark
 set encoding=utf-8
-set guifont=Menlo\ For\ Powerline:14
+set guifont=Menlo\ Regular\ for\ Powerline:14
 set nowrap
 set tabstop=2
 set shiftwidth=2
@@ -48,7 +48,10 @@ set foldlevel=99
 
 set laststatus=2
 set t_Co=256
-let g:Powerline_symbols = 'fancy'
+"let g:Powerline_fonts = 'fancy'
+"let g:airline_powerline_fonts=1
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline_theme = "bubblegum"
 
 " Window Movement with split windows
 map <c-j> <c-w>j
@@ -241,7 +244,6 @@ au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node/dict/node.dict
 
 " Recompile a Coffee file when saved
 au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
-
 
 " jQuery Syntax
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
