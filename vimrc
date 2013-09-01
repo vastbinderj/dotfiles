@@ -60,16 +60,16 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 
 " Set the Window Size
-if has("gui_running")
-    set lines=50 columns=132
-else
-    if exists("+lines")
-        set lines=30
-    endif
-    if exists("+columns")
-        set columns=100
-    endif
-endif
+""if has("gui_running")
+""    set lines=50 columns=132
+""else
+""    if exists("+lines")
+""        set lines=30
+""    endif
+""    if exists("+columns")
+""        set columns=100
+""  endif
+""endif
 
 " Functions to easily mark and swap windows
 function! MarkWindowSwap()
@@ -93,6 +93,18 @@ endfunction
 
 nnoremap <silent> <Leader>mw :call MarkWindowSwap()<CR>
 nnoremap <silent> <Leader>pw :call DoWindowSwap()<CR>
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set nonumber
+    set norelativenumber
+  else
+    set number
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
 
 " Mappings for auto creating closing brackets
 inoremap ( ()<Esc>i
