@@ -1,4 +1,4 @@
-set nocompatible
+
 
 " Call Pathogen
 filetype off
@@ -15,7 +15,7 @@ let mapleader=","
 syntax enable
 set background=dark
 set encoding=utf-8
-set guifont=Menlo\ Regular\ for\ Powerline:14
+set guifont="Droid Sans Mono"
 set nowrap
 set tabstop=4
 set shiftwidth=4
@@ -60,16 +60,16 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 
 " Set the Window Size
-""if has("gui_running")
-""    set lines=50 columns=132
-""else
-""    if exists("+lines")
-""        set lines=30
-""    endif
-""    if exists("+columns")
-""        set columns=100
-""  endif
-""endif
+if has("gui_running")
+    set lines=50 columns=132
+else
+    if exists("+lines")
+        set lines=30
+    endif
+    if exists("+columns")
+        set columns=100
+    endif
+endif
 
 " Functions to easily mark and swap windows
 function! MarkWindowSwap()
@@ -109,11 +109,13 @@ nnoremap <C-n> :call NumberToggle()<cr>
 " Mappings for auto creating closing brackets
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
-inoremap { {<CR>}<Esc>O
+""inoremap { {<CR>}<Esc>O
+inoremap { {}<Esc>i
 autocmd Syntax html,vim inoremap < <lt>><Esc>i| inoremap > <c-r>=ClosePair('>')<CR>
 inoremap ) <c-r>=ClosePair(')')<CR>
 inoremap ] <c-r>=ClosePair(']')<CR>
-inoremap } <c-r>=CloseBracket()<CR>
+""inoremap } <c-r>=CloseBracket()<CR>
+inoremap } <c-r>=ClosePair('}')<CR>
 inoremap " <c-r>=QuoteDelim('"')<CR>
 inoremap ' <c-r>=QuoteDelim("'")<CR>
 
@@ -261,4 +263,4 @@ au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " set the default color scheme
-colors molokai2
+colors molokai

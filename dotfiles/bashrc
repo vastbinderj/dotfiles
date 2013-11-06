@@ -22,7 +22,21 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Set the prompt
-PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+if [ "$color_prompt" = yes ]; then
+    RED_UL='\e[4;31m'
+    GREEN='\e[0;32m'
+    NC='\e[0m'
+    GIT_BRANCH='$(__git_ps1 "(%s)")'
+    PS1="[${RED_UL}\u@\h:\W \t.\d${GREEN}${GIT_BRANCH}${NC}] \n > "
+else
+    RED_UL='\e[4;31m'
+    GREEN='\e[0;32m'
+    NC='\e[0m'
+    GIT_BRANCH='$(__git_ps1 "(%s)")'
+    PS1="[${GREEN}\u@\h:\W ${RED_UL}${GIT_BRANCH}${NC}] \n > "
+    #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
 
 # enable color support of ls and also add handy aliases
 #alias ls='ls --color=auto'
@@ -61,10 +75,6 @@ fi
 #if [ -f ~/.bash_profile ] && ! shopt -oq posix; then
 #    . ~/.bash_profile
 #fi
-
-export PATH=/usr/local/Sencha/Cmd/3.1.2.342:$PATH
-
-export SENCHA_CMD_3_0_0="/usr/local/Sencha/Cmd/3.1.2.342"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
