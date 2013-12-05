@@ -2,7 +2,7 @@ This is my personal collection of dotfiles for rails/node dev.  I use Supertab f
 and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to 
 ones which suite me best. I do use macvim on my personal hardware, but these work well with vim 7.2 and 7.3 on Cent OS and Ubuntu.
 
-## dotfile included
+## dotfiles included
 
         - bash_profile
         - bashrc
