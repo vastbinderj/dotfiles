@@ -9,6 +9,11 @@ ones which suite me best. I do use macvim on my personal hardware, but these wor
         - vimrc
         - gemrc
         - jshintrc
+        
+All the dotfiles are in the dotfiles folder and must be symlinked into your home directory like:
+        
+        > ln -s ~/.vim/dotfiles/jshintrc ~/.jshintrc
+        > ln -s ~/.vim/dotfiles/bash_profile ~/.bash_profile
 
 ## Installed Vim modules of note
         
@@ -32,8 +37,8 @@ ones which suite me best. I do use macvim on my personal hardware, but these wor
 
 ### Create symlinks:
 
-        > ln -s ~/.vim/vimrc ~/.vimrc
-        > ln -s ~/.vim/gvimrc ~/.gvimrc
+        > ln -s ~/.vim/dotfiles/vimrc ~/.vimrc
+        > ln -s ~/.vim/dotfiles/gvimrc ~/.gvimrc
 
 ### Add Sub-modules for bundles:
 Switch to the `~/.vim` directory, and fetch submodules:
