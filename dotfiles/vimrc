@@ -1,12 +1,9 @@
 
-
 " Call Pathogen
 filetype off
 call pathogen#incubate()
 call pathogen#helptags()
 
-filetype on
-filetype plugin on
 filetype plugin indent on
 
 " Set the Map Leader
@@ -15,15 +12,13 @@ let mapleader=","
 syntax enable
 set background=dark
 set encoding=utf-8
-set guifont="Droid Sans Mono"
+set guifont=Menlo:h14
 set nowrap
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
-set softtabstop=4
+set softtabstop=2
 set smarttab
-set smartindent
-set autoindent
 set hlsearch
 set incsearch
 set showmatch
@@ -48,8 +43,6 @@ set foldlevel=99
 
 set laststatus=2
 set t_Co=256
-"let g:Powerline_fonts = 'fancy'
-"let g:airline_powerline_fonts=1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_theme = "bubblegum"
 
@@ -58,18 +51,6 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-
-" Set the Window Size
-if has("gui_running")
-    set lines=50 columns=132
-else
-    if exists("+lines")
-        set lines=30
-    endif
-    if exists("+columns")
-        set columns=100
-    endif
-endif
 
 " Functions to easily mark and swap windows
 function! MarkWindowSwap()
