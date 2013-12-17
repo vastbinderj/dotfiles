@@ -1,6 +1,34 @@
-This is my personal collection of dotvim files for Rails/Python dev.  I use Supertab for code completion 
+This is my personal collection of dotfiles for rails/node dev.  I use Supertab for code completion 
 and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to 
 ones which suite me best. I do use macvim on my personal hardware, but these work well with vim 7.2 and 7.3 on Cent OS and Ubuntu.
+
+## dotfiles included
+
+        - bash_profile
+        - bashrc
+        - vimrc
+        - gemrc
+        - jshintrc
+        
+All the dotfiles are in the dotfiles folder and must be symlinked into your home directory like:
+        
+        > ln -s ~/.vim/dotfiles/jshintrc ~/.jshintrc
+        > ln -s ~/.vim/dotfiles/bash_profile ~/.bash_profile
+
+## Installed Vim modules of note
+        
+        - Surround
+        - Fugitive
+        - Ctrl-P
+        - NERDTree 
+        - NERDCommenter
+        - SuperTab
+        - Airline
+        - JSHint
+        - SnipMate
+        - headlights
+        - Vim Indent Guides
+        - ZenCoding (Emmet)
 
 
 ## Installation:
@@ -9,8 +37,8 @@ ones which suite me best. I do use macvim on my personal hardware, but these wor
 
 ### Create symlinks:
 
-        > ln -s ~/.vim/vimrc ~/.vimrc
-        > ln -s ~/.vim/gvimrc ~/.gvimrc
+        > ln -s ~/.vim/dotfiles/vimrc ~/.vimrc
+        > ln -s ~/.vim/dotfiles/gvimrc ~/.gvimrc
 
 ### Add Sub-modules for bundles:
 Switch to the `~/.vim` directory, and fetch submodules:
@@ -24,7 +52,7 @@ Switch to the `~/.vim` directory, and fetch submodules:
 
         > git submodule foreach git pull origin master
     
-Remember to download and install Ctags and Pep8 if you want to use those features for your 
+Remember to download and install Ctags, Ack and Pep8 if you want to use those features for your 
 OS and vim configuration.
 
 ### For Django code completion on a project by project basis
@@ -33,17 +61,12 @@ OS and vim configuration.
 
 ## On Mac:
     
-###    Install Ctags
+###    Install Ctags and Ack
 
         > brew install ctags
-    
-###    For Command-T :
-(be sure you use the same version of ruby you compiled VIM with)
-    
-        > cd ~/.vim/bundle/command-t
-        > rake make
         
-###     For NerdTree-Ack:
+###     For NerdTree-Ack
+
         > brew install ack
     
 ###    For Ruby Debugging in VIM:
@@ -60,12 +83,6 @@ Install virtualenv and pep8
         > sudo apt-get install ctags
         OR
         > sudo yum install ctags
-
-###    For Command-T :
-(be sure you use the same version of ruby you compiled vim with)
-    
-        > cd ~/.vim/bundle/command-t
-        > rake make
     
 ###    For Ruby Debugging in VIM:
 
