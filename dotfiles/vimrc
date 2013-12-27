@@ -12,7 +12,7 @@ let mapleader=","
 syntax enable
 set background=dark
 set encoding=utf-8
-set guifont=Menlo:h14
+set gfn=Ubuntu\ Mono\ 12
 set nowrap
 set tabstop=2
 set shiftwidth=2
