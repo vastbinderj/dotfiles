@@ -125,3 +125,5 @@
 [github]
   user = vastbinderj
   token = token
+[push]
+	default = simple
