@@ -33,7 +33,7 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
 
 ## Installation:
 
-        > git clone git://github.com/vastbinderj/dotvim.git ~/.vim
+        > git clone git@github.com:vastbinderj/dotvim.git ~/.vim
 
 ### Create symlinks:
 
