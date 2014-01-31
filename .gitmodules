@@ -170,3 +170,6 @@
 [submodule "bundle/vim-indent-guides"]
 	path = bundle/vim-indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "bundle/vim-tcomment"]
+	path = bundle/vim-tcomment
+	url = https://github.com/tomtom/tcomment_vim.git
