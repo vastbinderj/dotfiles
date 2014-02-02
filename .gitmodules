@@ -17,9 +17,6 @@
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = git://github.com/wincent/Command-T.git
-[submodule "pyflakes-pathogen"]
-	path = pyflakes-pathogen
-	url = git://github.com/mitechie/pyflakes-pathogen.git
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = git://github.com/mileszs/ack.vim.git
@@ -170,3 +167,6 @@
 [submodule "bundle/vim-indent-guides"]
 	path = bundle/vim-indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "bundle/vim-tcomment"]
+	path = bundle/vim-tcomment
+	url = https://github.com/tomtom/tcomment_vim.git
