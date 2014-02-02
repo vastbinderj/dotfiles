@@ -118,13 +118,13 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # path customizations
-export PATH=$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:$PATH
+export PATH=$HOME/.rbenv/bin:$HOME/.node/bin:/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:$PATH
 
 # initialize rbenv
 eval "$(rbenv init -)"
 
 # node path
-export NODE_PATH=/usr/local/lib/node_modules
+export NODE_PATH=$HOME/.node/lib/node_modules
 
 # eval hub
 eval "$(hub alias -s)"
