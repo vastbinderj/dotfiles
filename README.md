@@ -16,7 +16,9 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
         > ln -s ~/.vim/dotfiles/bash_profile ~/.bash_profile
 
 * To get the git prompt to work and to enable bash completion install bash-completion through homebrew on a mac
+
         > brew install bash-completion
+
 * To enable mouse scrolling on a mac in terminal, install [easySIMBL](https://github.com/norio-nomura/EasySIMBL) and [mouseterm](https://bitheap.org/mouseterm/) or use iTerm.
 
 ## Installed Vim modules of note
