@@ -4,8 +4,8 @@ ones which suite me best. I do use macvim on my personal hardware, but these wor
 
 ## dotfiles included
 
-        - bash_profile
-        - bashrc
+        - bash_profile (for mac)
+        - bashrc       (for linux)
         - vimrc
         - gemrc
         - jshintrc
@@ -14,6 +14,10 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
         
         > ln -s ~/.vim/dotfiles/jshintrc ~/.jshintrc
         > ln -s ~/.vim/dotfiles/bash_profile ~/.bash_profile
+
+* To get the git prompt to work and to enable bash completion install bash-completion through homebrew on a mac
+        > brew install bash-completion
+* To enable mouse scrolling on a mac in terminal, install [easySIMBL](https://github.com/norio-nomura/EasySIMBL) and [mouseterm](https://bitheap.org/mouseterm/) or use iTerm.
 
 ## Installed Vim modules of note
         
