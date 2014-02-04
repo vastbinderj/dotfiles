@@ -1,6 +1,6 @@
 This is my personal collection of dotfiles for rails/node dev.  I use Supertab for code completion 
 and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to 
-ones which suite me best. I do use macvim on my personal hardware, but these work well with vim 7.2 and 7.3 on Cent OS and Ubuntu.
+ones which suite me best. I use vim installed with hombrew on my personal hardware, but these work well with vim 7.2+ on Cent OS and Ubuntu.
 
 ## dotfiles included
 
@@ -9,6 +9,7 @@ ones which suite me best. I do use macvim on my personal hardware, but these wor
         - vimrc
         - gemrc
         - jshintrc
+        - npmrc        (modify the path for your home dir)
         
 All the dotfiles are in the dotfiles folder and must be symlinked into your home directory like:
         
@@ -31,6 +32,7 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
         - SuperTab
         - Airline
         - JSHint
+        - Repeat.vim
         - SnipMate
         - headlights
         - Vim Indent Guides
@@ -39,7 +41,7 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
 
 ## Installation:
 
-        > git clone git@github.com:vastbinderj/dotvim.git ~/.vim
+        > git clone https://github.com/vastbinderj/dotfiles.git
 
 ### Create symlinks:
 
@@ -57,8 +59,11 @@ Switch to the `~/.vim` directory, and fetch submodules:
 ### To upgrade all bundled plugins at any time:
 
         > git submodule foreach git pull origin master
+        > git add -A
+        > git commit -m 'random message'
+        > git submodule update --init
     
-Remember to download and install Ctags, Ack and Pep8 if you want to use those features for your 
+Remember to download and install Exuberant Ctags, Ack and Pep8 if you want to use those features for your 
 OS and vim configuration.
 
 ### For Django code completion on a project by project basis
