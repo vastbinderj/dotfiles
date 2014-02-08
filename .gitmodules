@@ -77,9 +77,6 @@
 	path = bundle/L9
 	url = git://github.com/vim-scripts/L9.git
     ignore = dirty
-[submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
-	url = git://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/nerdtree-ack"]
 	path = bundle/nerdtree-ack
 	url = git://github.com/tyok/nerdtree-ack.git
