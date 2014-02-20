@@ -48,10 +48,10 @@ set foldlevel=99
 
 set laststatus=2
 set t_Co=256
+
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_theme = "bubblegum"
 
-" Window Movement with split windows
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
