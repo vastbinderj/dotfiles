@@ -1,6 +1,6 @@
 This is my personal collection of dotfiles for rails/node dev.  I use Supertab for code completion 
 and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to 
-ones which suite me best. I use vim installed with hombrew on my personal hardware, but these work well with vim 7.2+ on Cent OS and Ubuntu.
+ones which suite me best. I use vim installed with hombrew on my macs, but these work well with vim 7.2+ on Cent OS and Ubuntu.
 
 ## dotfiles included
 
@@ -28,9 +28,10 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
         - Fugitive
         - Ctrl-P
         - NERDTree 
-        - NERDCommenter
+        - tComment
         - SuperTab
         - Airline
+        - tmuxline
         - JSHint
         - Repeat.vim
         - SnipMate
