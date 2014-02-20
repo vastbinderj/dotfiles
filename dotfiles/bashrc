@@ -88,13 +88,16 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# alias for tmux
+alias tmux='tmux -2'
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
 # editors
-export VISUAL='gvim -v'
+export VISUAL='vim -v'
 export EDITOR='vim -v'
 
 # Add an "alert" alias for long running commands.  Use like so:
