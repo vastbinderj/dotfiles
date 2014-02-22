@@ -1,3 +1,9 @@
+" set mouse if possible
+set mouse+=a
+if &term =~ '^screen'
+  "tmux knows the extended mouse mode
+  set ttymouse=xterm2
+endif
 
 " Call Pathogen
 filetype off
@@ -8,11 +14,6 @@ filetype plugin indent on
 
 " Set the Map Leader
 let mapleader=","
-
-" set mouse if possible
-if has('mouse')
-  set mouse=a
-endif
 
 syntax enable
 set background=dark
