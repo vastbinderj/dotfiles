@@ -170,3 +170,6 @@
 [submodule "bundle/tmuxline.vim"]
 	path = bundle/tmuxline.vim
 	url = https://github.com/edkolev/tmuxline.vim
+[submodule "bundle/vim-tmux-navigator"]
+	path = bundle/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
