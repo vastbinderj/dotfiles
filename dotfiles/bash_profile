@@ -7,13 +7,13 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 # Update the Path
-export PATH=/usr/local/share/npm/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/.node/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # Initialize rbenv
 eval "$(rbenv init -)"
 
 # Set Node Path for NPM
-export NODE_PATH=/usr/local/lib/node_modules
+export NODE_PATH=$HOME/.node/lib/node_modules
 
 export GREP_OPTIONS='--color=auto'
 export CLICOLOR=1
@@ -112,6 +112,9 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# tmux alias
+alias tmux='tmux -2'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
