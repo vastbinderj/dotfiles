@@ -10,6 +10,7 @@ ones which suite me best. I use vim installed with hombrew on my macs, but these
         - gemrc
         - jshintrc
         - npmrc        (modify the path for your home dir)
+        - tmux.conf    
         
 All the dotfiles are in the dotfiles folder and must be symlinked into your home directory like:
         
@@ -24,20 +25,21 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
 
 ## Installed Vim modules of note
         
-        - Surround
-        - Fugitive
-        - Ctrl-P
-        - NERDTree 
-        - tComment
-        - SuperTab
         - Airline
+        - Ctrl-P
+        - Fugitive
+        - NERDTree 
+        - headlights
         - tmuxline
         - JSHint
         - Repeat.vim
         - SnipMate
-        - headlights
+        - SuperTab
+        - Surround
+        - TComment
         - Vim Indent Guides
         - ZenCoding (Emmet)
+
 
 
 ## Installation:
