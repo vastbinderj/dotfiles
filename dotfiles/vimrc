@@ -251,5 +251,6 @@ au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " Solarized stuff
 let g:solarized_termtrans=1
+let g:solarized_contrast='high'
 set background=dark
 colorscheme solarized
