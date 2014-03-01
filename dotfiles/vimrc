@@ -192,6 +192,9 @@ endif
 " format files upon save in GO
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
+" when in go, move the cursor if in same file 
+g:godef_same_file_in_same_window=1
+
 "Improve autocomplete menu color
 highlight   clear
 highlight   Pmenu         ctermfg=0 ctermbg=2
