@@ -188,3 +188,6 @@
 [submodule "bundle/vim-gocode"]
 	path = bundle/vim-gocode
 	url = https://github.com/Blackrush/vim-gocode.git
+[submodule "bundle/vim-godef"]
+	path = bundle/vim-godef
+	url = https://github.com/dgryski/vim-godef.git
