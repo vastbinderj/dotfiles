@@ -193,7 +193,7 @@ endif
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " when in go, move the cursor if in same file 
-g:godef_same_file_in_same_window=1
+let g:godef_same_file_in_same_window=1
 
 "Improve autocomplete menu color
 highlight   clear
