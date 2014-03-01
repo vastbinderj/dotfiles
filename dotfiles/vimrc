@@ -99,50 +99,6 @@ set backspace=indent,eol,start
 let delimitMate_expand_cr = 2
 let delimitMate_expand_space = 1
 
-" Mappings for auto creating closing brackets
-" inoremap ( ()<Esc>i
-" inoremap [ []<Esc>i
-" inoremap { {<CR>}<Esc>O
-" ""inoremap { {}<Esc>i
-" autocmd Syntax html,vim inoremap < <lt>><Esc>i| inoremap > <c-r>=ClosePair('>')<CR>
-" inoremap ) <c-r>=ClosePair(')')<CR>
-" inoremap ] <c-r>=ClosePair(']')<CR>
-" inoremap } <c-r>=CloseBracket()<CR>
-" ""inoremap } <c-r>=ClosePair('}')<CR>
-" inoremap " <c-r>=QuoteDelim('"')<CR>
-" inoremap ' <c-r>=QuoteDelim("'")<CR>
-"
-" function ClosePair(char)
-"   if getline('.')[col('.') - 1] == a:char
-"     return "\<Right>"
-"   else
-"     return a:char
-"   endif
-" endf
-"
-" function CloseBracket()
-"   if match(getline(line('.') + 1), '\s*}') < 0
-"     return "\<CR>}"
-"   else
-"     return "\<Esc>j0f}a"
-"   endif
-" endf
-"
-" function QuoteDelim(char)
-"   let line = getline('.')
-"   let col = col('.')
-"   if line[col - 2] == "\\"
-"     "Inserting a quoted quotation mark into the string
-"     return a:char
-"   elseif line[col - 1] == a:char
-"     "Escaping out of the string
-"     return "\<Right>"
-"   else
-"     "Starting a string
-"     return a:char.a:char."\<Esc>i"
-"   endif
-" endf
-
 "Scala Tagbar configuration
 let g:tagbar_type_scala = {
     \ 'ctagstype' : 'Scala',
@@ -202,7 +158,7 @@ let g:ctrlp_custom_ignore = {
 let g:pep8_map=',p8'
 
 " Ultisnips
-let g:UltiSnipsUsePythonVersion = 2
+"let g:UltiSnipsUsePythonVersion = 2
 
 " NodeJS Completion Settings
 let g:nodejs_complete_config = {
@@ -233,6 +189,8 @@ if has("autocmd")
     autocmd FileType c set omnifunc=ccomplete#Complete
 endif
 
+" format files upon save in GO
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 "Improve autocomplete menu color
 highlight   clear
