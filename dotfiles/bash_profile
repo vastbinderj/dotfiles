@@ -9,6 +9,9 @@ fi
 # Update the Path
 export PATH=$HOME/.node/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
+# GVM Configuration
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
 # Initialize rbenv
 eval "$(rbenv init -)"
 
