@@ -123,6 +123,9 @@ fi
 # path customizations
 export PATH=$HOME/.rbenv/bin:$HOME/.node/bin:/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:$PATH
 
+# GVM 
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
 # initialize rbenv
 eval "$(rbenv init -)"
 
