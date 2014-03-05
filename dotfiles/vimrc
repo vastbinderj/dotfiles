@@ -115,6 +115,41 @@ let g:tagbar_type_scala = {
         \ 'm:methods'
     \ ]
 \ }
+
+" Go tagbar config
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
+
+" generate go ctags upon save
+au BufWritePost *.go silent! !ctags -R --exclude=*.js,*.html &
+
+" use golint for syntax checking in Go
+let g:syntastic_go_checkers = ['go','golint']
  
 " Mapping for Tasklist
 map <leader>td <Plug>TaskList
@@ -193,7 +228,7 @@ endif
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " when in go, move the cursor if in same file 
-g:godef_same_file_in_same_window=1
+let g:godef_same_file_in_same_window=1
 
 "Improve autocomplete menu color
 highlight   clear

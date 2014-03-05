@@ -88,17 +88,19 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$(whoami)" = 'root' ]; then
-  RED_UL='\e[4;31m'
+  RED='\e[0;31m'
   GREEN='\e[0;32m'
   NC='\e[0m'
   GIT_BRANCH='$(__git_ps1 "(%s)")'
-  PS1="[${RED_UL}\u@\h:\W \t.\d${GREEN}${GIT_BRANCH}${NC}] \n > "
+  GVM='$(gvm-prompt "(%s)")'
+  PS1="[${RED}\u@\h:\W \t.\d${GREEN}${GIT_BRANCH}${NC} ${GVM}] \n > "
 else
-  RED_UL='\e[4;31m'
+  RED='\e[0;31m'
   GREEN='\e[0;32m'
   NC='\e[0m'
   GIT_BRANCH='$(__git_ps1 "(%s)")'
-  PS1="[${GREEN}\u@\h:\W ${RED_UL}${GIT_BRANCH}${NC}] \n > "
+  GVM='$(gvm-prompt "(%s)")'
+  PS1="[${GREEN}\u@\h:\W ${RED}${GIT_BRANCH}${NC} ${GVM}] \n > "
 fi
 unset color_prompt force_color_prompt
 
