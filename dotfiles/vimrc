@@ -151,8 +151,16 @@ au BufWritePost *.go silent! !ctags -R --exclude=*.js,*.html &
 " use golint for syntax checking in Go
 let g:syntastic_go_checkers = ['go','golint']
  
-" Mapping for Tasklist
-map <leader>td <Plug>TaskList
+" mapping for tasks in current file
+map <leader>tl <Plug>TaskList
+" set the window postion below
+let g:tlWindowPosition = 1
+
+" mapping for tasks in project
+noremap <Leader>tp :noautocmd vimgrep /TODO/j **/**<CR>:cw<CR>
+
+" Gundo 
+map <leader>g :GundoToggle<CR>
 
 "NerdTreeToggle
 map <leader>nt <plug>NERDTreeTabsToggle<CR>

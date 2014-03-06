@@ -14,9 +14,6 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = git://github.com/ervandew/supertab.git
-[submodule "bundle/command-t"]
-	path = bundle/command-t
-	url = git://github.com/wincent/Command-T.git
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = git://github.com/mileszs/ack.vim.git
@@ -39,9 +36,6 @@
 [submodule "bundle/ropevim"]
 	path = bundle/ropevim
 	url = git://github.com/sontek/rope-vim.git
-[submodule "bundle/ruby-debugger"]
-	path = bundle/ruby-debugger
-	url = git://github.com/astashov/vim-ruby-debugger.git
 [submodule "bundle/textile"]
 	path = bundle/textile
 	url = git://github.com/timcharper/textile.vim.git
@@ -102,9 +96,6 @@
 [submodule "bundle/vim-html5"]
 	path = bundle/vim-html5
 	url = git://github.com/othree/html5.vim.git
-[submodule "bundle/play2vim"]
-	path = bundle/play2vim
-	url = git://github.com/gre/play2vim.git
 [submodule "bundle/ctrl-p"]
 	path = bundle/ctrl-p
 	url = git://github.com/kien/ctrlp.vim.git
