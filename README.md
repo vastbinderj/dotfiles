@@ -28,6 +28,7 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
         - Airline
         - Ctrl-P
         - Fugitive
+        - gocode
         - NERDTree 
         - headlights
         - tmuxline
@@ -77,16 +78,12 @@ OS and vim configuration.
     
 ###    Install Ctags and Ack
 
-        > brew install ctags
-        
-###     For NerdTree-Ack
+        > brew install ctags ack
 
-        > brew install ack
+###    Install gocode for golang
+
+        > go get -u github.com/nsf/gocode
     
-###    For Ruby Debugging in VIM:
-
-        > gem install ruby-debug-ide
-
 
 ###    For Python folks:
         
@@ -95,12 +92,14 @@ Install virtualenv and pep8
 ## On Linux: 
 
         > sudo apt-get install ctags
+        > sudo apt-get install ack
         OR
         > sudo yum install ctags
+        > sudo yum install ack
     
-###    For Ruby Debugging in VIM:
+###    Install gocode for golang
 
-        > gem install ruby-debug-ide
+        > go get -u github.com/nsf/gocode
 
 ###    For Python folks:
 
