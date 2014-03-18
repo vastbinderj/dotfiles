@@ -179,3 +179,6 @@
 [submodule "bundle/vim-godef"]
 	path = bundle/vim-godef
 	url = https://github.com/dgryski/vim-godef.git
+[submodule "bundle/colorschemes"]
+	path = bundle/colorschemes
+	url = git@github.com:flazz/vim-colorschemes.git
