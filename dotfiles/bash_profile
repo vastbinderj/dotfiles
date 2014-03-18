@@ -25,21 +25,11 @@ export CLICOLOR=1
 export VISUAL='mvim -v'
 export EDITOR='vim'
 
-# Virtualenv setup stuff
-if [ -f /usr/local/share/python/virtualenvwrapper.sh ]; then
-    [ -d $HOME/sites/env ] || mkdir -p $HOME/sites/env
-    export WORKON_HOME="$HOME/sites/env"
-    source /usr/local/share/python/virtualenvwrapper.sh
-
-    # virtualenv stuff
-#    export VIRTUALENV_USE_DISTRIBUTE=true
-
-    # pip stuff
-    export PIP_VIRTUALENV_BASE=$WORKON_HOME
-    export PIP_REQUIRE_VIRTUALENV=true
-    export PIP_RESPECT_VIRTUALENV=true
-    export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-fi
+# Python setup stuff
+export PIP_REQUIRE_VIRTUALENV=true
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+[ -d $HOME/.virtualenv ] || mkdir -p $HOME/.virtualenv
+export WORKON_HOME=$HOME/.virtualenv
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -66,15 +56,15 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
-
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
 force_color_prompt=yes
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color) color_prompt=yes;;
+esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
