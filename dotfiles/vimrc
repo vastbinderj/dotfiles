@@ -145,19 +145,26 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
 \ }
 
+" Golang customizations
+"
+" when in go, move the cursor if in same file 
+let g:godef_same_file_in_same_window=1                              
 " generate go ctags upon save
-au BufWritePost *.go silent! !ctags -R --exclude=*.js,*.html &
-
+au BufWritePost *.go silent! !ctags -R --exclude=*.js,*.html &      
 " use golint for syntax checking in Go
-let g:syntastic_go_checkers = ['go','golint']
- 
+let g:syntastic_go_checkers = ['go','golint']                       
+" format files upon save in GO
+autocmd FileType go autocmd BufWritePre <buffer> Fmt                
+" set tabstop to 8 for go files
+autocmd FileType go setlocal shiftwidth=8 tabstop=8 softtabstop=8   
+" don't expand tabs to spaces for go files
+autocmd FileType go setlocal noexpandtab                            
+
 " mapping for tasks in current file
 map <leader>tl <Plug>TaskList
-" set the window postion below
-let g:tlWindowPosition = 1
-
+let g:tlWindowPosition = 1                                          " set the window postion below
 " mapping for tasks in project
-noremap <Leader>tp :noautocmd vimgrep /TODO/j **/**<CR>:cw<CR>
+noremap <Leader>tp :noautocmd vimgrep /TODO/j **/**<CR>:cw<CR>      
 
 " Gundo 
 map <leader>g :GundoToggle<CR>
@@ -232,11 +239,6 @@ if has("autocmd")
     autocmd FileType c set omnifunc=ccomplete#Complete
 endif
 
-" format files upon save in GO
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
-
-" when in go, move the cursor if in same file 
-let g:godef_same_file_in_same_window=1
 
 "Improve autocomplete menu color
 highlight   clear
