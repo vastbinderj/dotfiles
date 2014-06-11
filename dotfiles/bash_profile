@@ -6,11 +6,15 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
 
+# Golang 
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+
 # Update the Path
-export PATH=$HOME/.node/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$GOROOT/bin:$GOPATH/bin:$HOME/.node/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # GVM Configuration
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+#[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 # Initialize rbenv
 eval "$(rbenv init -)"
@@ -82,15 +86,15 @@ if [ "$(whoami)" = 'root' ]; then
   GREEN='\e[0;32m'
   NC='\e[0m'
   GIT_BRANCH='$(__git_ps1 "(%s)")'
-  GVM='$(gvm-prompt "(%s)")'
-  PS1="[${RED}\u@\h:\W \t.\d${GREEN}${GIT_BRANCH}${NC} ${GVM}] \n > "
+#  GVM='$(gvm-prompt "(%s)")'
+  PS1="[${RED}\u@\h:\W \t.\d${GREEN}${GIT_BRANCH}${NC} ] \n > "
 else
   RED='\e[0;31m'
   GREEN='\e[0;32m'
   NC='\e[0m'
   GIT_BRANCH='$(__git_ps1 "(%s)")'
-  GVM='$(gvm-prompt "(%s)")'
-  PS1="[${GREEN}\u@\h:\W ${RED}${GIT_BRANCH}${NC} ${GVM}] \n > "
+#  GVM='$(gvm-prompt "(%s)")'
+  PS1="[${GREEN}\u@\h:\W ${RED}${GIT_BRANCH}${NC} ] \n > "
 fi
 unset color_prompt force_color_prompt
 

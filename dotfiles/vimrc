@@ -145,8 +145,13 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
 \ }
 
+" Tag path
+set tags=./tags,tags;$HOME
+
 " Golang customizations
 "
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+
 " generate go ctags upon save
 au BufWritePost *.go silent! !ctags -R --exclude=*.js,*.html &    
 let g:godef_same_file_in_same_window=1                              " when in go, just move the cursor if in same file 
@@ -167,15 +172,11 @@ map <leader>g :GundoToggle<CR>
 "NerdTreeToggle
 map <leader>nt <plug>NERDTreeTabsToggle<CR>
 
-" Bind F4 to :TlistToggle
-nnoremap <F4> :TlistToggle<CR>
-let Tlist_Use_Right_Window = 1
+" Bind F4 to :TagbarToggle
+nnoremap <F4> :TagbarToggle<CR>
 
 " Bind F6 to CTAGS
-nnoremap <F6> :!/usr/local/bin/ctags -R --exclude=.git --exclude=log *<CR>
-
-" Bind F8 to Tagbar
-nnoremap <F8> :TagbarToggle<CR>
+nnoremap <F6> :!ctags -R --exclude=.git --exclude=log *<CR>
 
 " Rope Mappings
 nnoremap <,g> :RopeGotoDefinition<CR>
@@ -257,7 +258,7 @@ au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " Solarized stuff
-let g:solarized_termtrans=1
-let g:solarized_contrast='high'
+"let g:solarized_termtrans=1
+"let g:solarized_contrast='high'
 set background=dark
-colorscheme solarized
+colorscheme lucius
