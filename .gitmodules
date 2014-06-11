@@ -33,9 +33,6 @@
 	path = bundle/nerdtree
 	url = git://github.com/vim-scripts/The-NERD-tree.git
     ignore = dirty
-[submodule "bundle/ropevim"]
-	path = bundle/ropevim
-	url = git://github.com/sontek/rope-vim.git
 [submodule "bundle/textile"]
 	path = bundle/textile
 	url = git://github.com/timcharper/textile.vim.git
