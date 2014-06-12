@@ -154,6 +154,7 @@ set tags=./tags,tags;$HOME
 " Golang customizations
 "
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+let g:go_bin_path = expand("$HOME/go/bin")
 
 " generate go ctags upon save
 au BufWritePost *.go silent! !ctags -R --exclude=*.js,*.html &    
@@ -162,9 +163,24 @@ let g:syntastic_go_checkers = ['go','golint']                       " use golint
 autocmd FileType go autocmd BufWritePre <buffer> Fmt                " format files upon save in GO
 autocmd FileType go setlocal shiftwidth=8 tabstop=8 softtabstop=8   " set tabstop to 8 for go files
 autocmd FileType go setlocal noexpandtab                            " don't expand tabs to spaces for go files
-au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>
-au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef" <CR>
-au Filetype go nnoremap <leader>ts :tab split <CR>:exe "GoDef" <CR>
+" Go keymaps
+" Type Info
+au FileType go nmap <Leader>i <Plug>(go-info)
+" GoDoc
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au Filetype go nmap <Leader>gv <Plug>(go-doc-vertical)
+" Build/Run/Test
+au FileType go nmap <Leader>r <Plug>(go-run)
+au FileType go nmap <Leader>b <Plug>(go-build)
+au FileType go nmap <Leader>t <Plug>(go-test)
+" GoDef
+au FileType go nmap gd <Plug>(go-def)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+
+
 
 " mapping for tasks in current file
 map <leader>tl <Plug>TaskList
