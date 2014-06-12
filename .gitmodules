@@ -164,15 +164,6 @@
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
-[submodule "bundle/vim-golang"]
-	path = bundle/vim-golang
-	url = https://github.com/jnwhiteh/vim-golang.git
-[submodule "bundle/vim-gocode"]
-	path = bundle/vim-gocode
-	url = https://github.com/Blackrush/vim-gocode.git
-[submodule "bundle/vim-godef"]
-	path = bundle/vim-godef
-	url = https://github.com/dgryski/vim-godef.git
 [submodule "bundle/colorschemes"]
 	path = bundle/colorschemes
 	url = git@github.com:flazz/vim-colorschemes.git
