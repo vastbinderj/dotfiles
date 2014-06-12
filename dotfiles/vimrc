@@ -18,7 +18,7 @@ let mapleader=","
 syntax enable
 set encoding=utf-8
 set gfn=Ubuntu\ Mono\ 12
-set nowrap
+
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -80,6 +80,9 @@ endfunction
 
 nnoremap <silent> <Leader>mw :call MarkWindowSwap()<CR>
 nnoremap <silent> <Leader>pw :call DoWindowSwap()<CR>
+
+" map escape to jk
+:imap jk <Esc>
 
 " toggle the numbering in the gutter
 function! NumberToggle()
@@ -159,6 +162,9 @@ let g:syntastic_go_checkers = ['go','golint']                       " use golint
 autocmd FileType go autocmd BufWritePre <buffer> Fmt                " format files upon save in GO
 autocmd FileType go setlocal shiftwidth=8 tabstop=8 softtabstop=8   " set tabstop to 8 for go files
 autocmd FileType go setlocal noexpandtab                            " don't expand tabs to spaces for go files
+au Filetype go nnoremap <leader>v :vsp <CR>:exe "GoDef" <CR>
+au Filetype go nnoremap <leader>s :sp <CR>:exe "GoDef" <CR>
+au Filetype go nnoremap <leader>ts :tab split <CR>:exe "GoDef" <CR>
 
 " mapping for tasks in current file
 map <leader>tl <Plug>TaskList
@@ -177,10 +183,6 @@ nnoremap <F4> :TagbarToggle<CR>
 
 " Bind F6 to CTAGS
 nnoremap <F6> :!ctags -R --exclude=.git --exclude=log *<CR>
-
-" Rope Mappings
-nnoremap <,g> :RopeGotoDefinition<CR>
-nnoremap <,r> :RopeRename<CR>
 
 "Fuzzy Finder
 nnoremap <C-f><C-f> :FufFile<CR>
