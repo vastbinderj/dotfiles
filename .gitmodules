@@ -173,6 +173,6 @@
 [submodule "bundle/ycm"]
 	path = bundle/ycm
 	url = https://github.com/Valloric/YouCompleteMe.git
-[submodule "list-toggle"]
-	path = list-toggle
+[submodule "bundle/list-toggle"]
+	path = bundle/list-toggle
 	url = https://github.com/Valloric/ListToggle.git
