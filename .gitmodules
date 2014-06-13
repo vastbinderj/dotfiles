@@ -37,9 +37,6 @@
 	path = bundle/textile
 	url = git://github.com/timcharper/textile.vim.git
     ignore = dirty
-[submodule "bundle/cucumber"]
-	path = bundle/cucumber
-	url = git://github.com/tpope/vim-cucumber.git
 [submodule "bundle/haml"]
 	path = bundle/haml
 	url = git://github.com/tpope/vim-haml.git
