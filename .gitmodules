@@ -11,9 +11,6 @@
 	path = bundle/git
 	url = git://github.com/tpope/vim-git.git
     ignore = dirty
-[submodule "bundle/supertab"]
-	path = bundle/supertab
-	url = git://github.com/ervandew/supertab.git
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = git://github.com/mileszs/ack.vim.git

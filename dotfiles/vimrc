@@ -230,10 +230,6 @@ let g:nodejs_complete_config = {
             \ 'max_node_compl_len': 15 
             \ }
 
-" Configure SuperTab
-let g:SuperTabDefaultCompletionType = "context"
-set completeopt=menuone,menu,longest
-
 " Enable Omni complete
 if has("autocmd")
     autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
