@@ -19,6 +19,9 @@ syntax on
 " Set the Map Leader
 let mapleader=","
 
+" when vimrc is edited, reload it
+autocmd! BufWritePost vimrc source ~/.vimrc
+
 set encoding=utf-8
 set gfn=Ubuntu\ Mono\ 12
 
@@ -30,6 +33,7 @@ set smarttab
 set hlsearch
 set incsearch
 set showmatch
+set matchtime=5
 set number
 set relativenumber
 set title
@@ -40,11 +44,15 @@ set undolevels=1000
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set cursorline
 set ruler
+set wildmenu
 set showcmd
+set showfulltag
 set cmdheight=2
 set encoding=utf8
 set scrolloff=10
 set mat=2
+set splitbelow
+set splitright
 " Enable Code Folding
 set foldmethod=indent
 set foldlevel=99
@@ -65,6 +73,7 @@ map <c-h> <c-w>h
 
 " Mappings for two-handed save
 " insert to normal mode save
+inoremap ;a <ESC>:w<CR>
 inoremap ;d <ESC>:update<CR>
 " insert to normal to insert  
 inoremap ;f <C-O>:update<CR>
@@ -196,6 +205,9 @@ let g:tlWindowPosition = 1                                          " set the wi
 " mapping for tasks in project
 noremap <Leader>tp :noautocmd vimgrep /TODO/j **/**<CR>:cw<CR>      
 
+" List Toggle
+let g:lt_height = 10
+
 " Gundo 
 map <leader>g :GundoToggle<CR>
 
@@ -238,23 +250,33 @@ let g:nodejs_complete_config = {
             \ 'max_node_compl_len': 15 
             \ }
 
+" Syntastic symbols
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_style_error_symbol = '✗'
+let g:syntastic_style_warning_symbol = '⚠︎'
+
 " Enable Omni complete
 if has("autocmd")
+    set ofu=syntaxcomplete#Complete
+    autocmd FileType c set omnifunc=ccomplete#Complete
+    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+    autocmd FileType go set omnifunc=gocomplete#Complete
+    autocmd Filetype golang set omnifunc=gocomplete#Complete
+    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType java set completefunc=javacomplete#CompleteParamsInfo
+    autocmd FileType java set omnifunc=javascomplete#Complete
+    autocmd FileType java set completefunc=javacomplete#CompleteParamsInfo
+    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType php let php_sql_query=1
+    autocmd FileType php let php_htmlInStrings=1
+    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+    autocmd FileType python set omnifunc=pythoncomplete#Complete
     autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
     autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
     autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
     autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-
-    autocmd FileType python set omnifunc=pythoncomplete#Complete
-
-    autocmd FileType php let php_sql_query=1
-    autocmd FileType php let php_htmlInStrings=1
-    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-
-    autocmd FileType c set omnifunc=ccomplete#Complete
+    autocmd FileType sql set omnifunc=sqlcomplete#Complete
+    autocmd FileType xml set omnifunc=xmlcomlete#CompleteTags
 endif
 
 
