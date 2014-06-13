@@ -10,12 +10,15 @@ filetype off
 call pathogen#infect('bundle/{}')
 call pathogen#helptags()
 
+" Use all Go plugins
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
+syntax on
 
 " Set the Map Leader
 let mapleader=","
 
-syntax enable
 set encoding=utf-8
 set gfn=Ubuntu\ Mono\ 12
 
@@ -163,14 +166,12 @@ set tags=./tags,tags;$HOME
 
 " Golang customizations
 "
-set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 let g:go_bin_path = expand("$HOME/go/bin")
 
 " generate go ctags upon save
 au BufWritePost *.go silent! !ctags -R --exclude=*.js,*.html &    
 let g:godef_same_file_in_same_window=1                              " when in go, just move the cursor if in same file 
 let g:syntastic_go_checkers = ['go','golint']                       " use golint for syntax checking in Go
-"autocmd FileType go autocmd BufWritePre <buffer> Fmt                " format files upon save in GO
 autocmd FileType go setlocal shiftwidth=8 tabstop=8 softtabstop=8   " set tabstop to 8 for go files
 autocmd FileType go setlocal noexpandtab                            " don't expand tabs to spaces for go files
 " Go keymaps
@@ -188,9 +189,6 @@ au FileType go nmap gd <Plug>(go-def)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-
-
-
 
 " mapping for tasks in current file
 map <leader>tl <Plug>TaskList
