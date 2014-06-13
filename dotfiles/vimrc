@@ -5,6 +5,8 @@ if &term =~ '^screen'
   set ttymouse=xterm2
 endif
 
+
+
 " Call Pathogen
 filetype off
 call pathogen#infect('bundle/{}')
@@ -57,6 +59,8 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+"nmap <M-s> :w<CR>
+"imap <M-s> <ESC>:w<CR>a
 
 " Functions to easily mark and swap windows
 function! MarkWindowSwap()
@@ -160,7 +164,7 @@ let g:go_bin_path = expand("$HOME/go/bin")
 au BufWritePost *.go silent! !ctags -R --exclude=*.js,*.html &    
 let g:godef_same_file_in_same_window=1                              " when in go, just move the cursor if in same file 
 let g:syntastic_go_checkers = ['go','golint']                       " use golint for syntax checking in Go
-autocmd FileType go autocmd BufWritePre <buffer> Fmt                " format files upon save in GO
+"autocmd FileType go autocmd BufWritePre <buffer> Fmt                " format files upon save in GO
 autocmd FileType go setlocal shiftwidth=8 tabstop=8 softtabstop=8   " set tabstop to 8 for go files
 autocmd FileType go setlocal noexpandtab                            " don't expand tabs to spaces for go files
 " Go keymaps
