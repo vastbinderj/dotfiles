@@ -180,7 +180,6 @@ let g:go_bin_path = expand("$HOME/go/bin")
 " generate go ctags upon save
 au BufWritePost *.go silent! !ctags -R --exclude=*.js,*.html &    
 let g:godef_same_file_in_same_window=1                              " when in go, just move the cursor if in same file 
-let g:syntastic_go_checkers = ['go','golint']                       " use golint for syntax checking in Go
 autocmd FileType go setlocal shiftwidth=8 tabstop=8 softtabstop=8   " set tabstop to 8 for go files
 autocmd FileType go setlocal noexpandtab                            " don't expand tabs to spaces for go files
 " Go keymaps
@@ -206,7 +205,7 @@ let g:tlWindowPosition = 1                                          " set the wi
 noremap <Leader>tp :noautocmd vimgrep /TODO/j **/**<CR>:cw<CR>      
 
 " List Toggle
-let g:lt_height = 10
+let g:lt_height = 5
 
 " Gundo 
 map <leader>g :GundoToggle<CR>
@@ -250,10 +249,14 @@ let g:nodejs_complete_config = {
             \ 'max_node_compl_len': 15 
             \ }
 
-" Syntastic symbols
+" Syntastic settings
 let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠︎'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠︎'
+let g:syntastic_go_checkers = ['go','golint']                       " use golint for syntax checking in Go
+let g:syntastic_loc_list_height = 5                                 " set error window height to 5
+let g:syntastic_always_populate_loc_list = 1                        " stick errors into a location-list
 
 " Enable Omni complete
 if has("autocmd")
