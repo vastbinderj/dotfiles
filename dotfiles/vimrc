@@ -49,9 +49,9 @@ set showcmd
 set showfulltag
 set cmdheight=2
 set encoding=utf8
-set scrolloff=10
+set scrolloff=5
 set mat=2
-set splitbelow
+"set splitbelow
 set splitright
 " Enable Code Folding
 set foldmethod=indent
@@ -76,9 +76,9 @@ map <c-h> <c-w>h
 inoremap ;a <ESC>:w<CR>
 inoremap ;d <ESC>:update<CR>
 " insert to normal to insert  
-inoremap ;f <C-O>:update<CR>
+inoremap ;f <C-O>:w<CR>
 " normal to nomal mode save
-nnoremap ;f :update<CR>
+nnoremap ;f :w<CR>
 
 " Functions to easily mark and swap windows
 function! MarkWindowSwap()
