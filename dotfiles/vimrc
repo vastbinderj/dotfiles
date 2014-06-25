@@ -263,8 +263,8 @@ if has("autocmd")
     set ofu=syntaxcomplete#Complete
     autocmd FileType c set omnifunc=ccomplete#Complete
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-    autocmd FileType go set omnifunc=gocomplete#Complete
-    autocmd Filetype golang set omnifunc=gocomplete#Complete
+"    autocmd FileType go set omnifunc=go#complete#Complete
+"    autocmd Filetype golang set omnifunc=gocomplete#Complete
     autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
     autocmd FileType java set completefunc=javacomplete#CompleteParamsInfo
     autocmd FileType java set omnifunc=javascomplete#Complete
