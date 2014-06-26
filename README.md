@@ -86,7 +86,7 @@ Switch to the `~/.vim` directory, and fetch submodules:
         > git commit -m 'random message'
         > git submodule update --init
     
-Remember to download and install Exuberant Ctags, Ack and Pep8 if you want to use those features for your 
+Remember to download and install Exuberant Ctags, Ack and gocode if you want to use those features for your 
 OS and vim configuration.  
 
 
@@ -94,7 +94,7 @@ OS and vim configuration.
     
 ###    Install Ctags and Ack
 
-        > brew install ctags ack
+        > brew install ctags ack cmake
 
 ###    Install gocode for golang syntax highlighting with syntastic
 
@@ -109,11 +109,9 @@ Additionally, for golang you must set $GOROOT for YCM to pick up the standard li
 
 ## On Linux: 
 
-        > sudo apt-get install ctags
-        > sudo apt-get install ack
+        > sudo apt-get install ctags ack cmake build-essential python-dev
         OR
-        > sudo yum install ctags
-        > sudo yum install ack
+        > sudo yum install ctags ack cmake build-essential python-dev
     
 ###    Install gocode for golang syntax highlighting with syntastic
 
