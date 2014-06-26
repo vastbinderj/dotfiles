@@ -21,13 +21,31 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
 
 * To enable mouse scrolling on a mac in terminal, install [easySIMBL](https://github.com/norio-nomura/EasySIMBL) and [mouseterm](https://bitheap.org/mouseterm/) or use iTerm.  I use iTerm and have installed [patched fonts](https://github.com/Lokaltog/powerline-fonts) for airline and my tmuxline.
 
+* For golang development, I use [vim-go](https://github.com/fatih/vim-go) which does many things for me like auto-imports, gofmt upon save and provides easy jump mappings to quickly browse source code.  
+
+* Mappings for Escape
+  * j-k
+  * ;-f to save and coninue in the current mode
+  * ;-a to save and switch modes
+* Mappings for pane movement vim and tmux
+  * C-h - Left one pane
+  * C-j - Down one pane
+  * C-k - Up one pane
+  * C-l - Right one pane
+* Tmux mappings
+  * C-a,- to split a pane horizontally
+  * C-a,\ to split a pane vertically
+  * Shift-leftarrow to move to the left window
+  * Shift-rightarrow to move to the right window
+
 ## Installed Vim modules of note
         
         - Airline
         - Ctrl-P
         - DelimitMate
         - Fugitive
-        - [vim-go](https://github.com/fatih/vim-go)
+        - Gundo
+        - vim-go
         - NERDTree 
         - headlights
         - tmuxline
