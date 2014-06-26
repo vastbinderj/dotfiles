@@ -1,4 +1,4 @@
-This is my personal collection of dotfiles for golang/rails/node development.  I use [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for code completion and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to ones which suite me best. I use vim 7.4 installed with hombrew on my macs, but these work well with vim 7.2+ on Cent OS and Ubuntu.
+This is my personal collection of dotfiles for golang/rails/node development.  I use [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for code completion and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to ones which suite me best. I use vim 7.4 installed with hombrew on my macs, but these work well with vim 7.2+ on Cent OS and Ubuntu, which are my primary development environments at work.
 
 ## dotfiles included
 
@@ -23,7 +23,8 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
 
 * For golang development, I use [vim-go](https://github.com/fatih/vim-go) which does many things for me like auto-imports, gofmt upon save and provides easy jump mappings to quickly browse source code.  
 
-* Mappings for Escape
+
+* Mappings for Escape in Vim
   * j-k
   * ;-f to save and coninue in the current mode
   * ;-a to save and switch modes
