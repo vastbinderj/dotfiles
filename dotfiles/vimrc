@@ -25,10 +25,10 @@ autocmd! BufWritePost vimrc source ~/.vimrc
 set encoding=utf-8
 set gfn=Ubuntu\ Mono\ 12
 
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
-set softtabstop=2
+set softtabstop=4
 set smarttab
 set hlsearch
 set incsearch
@@ -250,10 +250,10 @@ let g:nodejs_complete_config = {
             \ }
 
 " Syntastic settings
-let g:syntastic_error_symbol = '✗'
+let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = '⚠︎'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠︎'
+let g:syntastic_style_error_symbol = '≋'
+let g:syntastic_style_warning_symbol = '≈'
 let g:syntastic_go_checkers = ['go','golint']                       " use golint for syntax checking in Go
 let g:syntastic_loc_list_height = 5                                 " set error window height to 5
 let g:syntastic_always_populate_loc_list = 1                        " stick errors into a location-list
@@ -263,8 +263,6 @@ if has("autocmd")
     set ofu=syntaxcomplete#Complete
     autocmd FileType c set omnifunc=ccomplete#Complete
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-    autocmd FileType go set omnifunc=gocomplete#Complete
-    autocmd Filetype golang set omnifunc=gocomplete#Complete
     autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
     autocmd FileType java set completefunc=javacomplete#CompleteParamsInfo
     autocmd FileType java set omnifunc=javascomplete#Complete
