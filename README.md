@@ -1,6 +1,4 @@
-This is my personal collection of dotfiles for rails/node dev.  I use Supertab for code completion 
-and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to 
-ones which suite me best. I use vim installed with hombrew on my macs, but these work well with vim 7.2+ on Cent OS and Ubuntu.
+This is my personal collection of dotfiles for golang/rails/node development.  I use [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for code completion and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to ones which suite me best. I use vim 7.4 installed with hombrew on my macs, but these work well with vim 7.2+ on Cent OS and Ubuntu, which are my primary development environments at work.
 
 ## dotfiles included
 
@@ -10,7 +8,7 @@ ones which suite me best. I use vim installed with hombrew on my macs, but these
         - gemrc
         - jshintrc
         - npmrc        (modify the path for your home dir)
-        - tmux.conf    
+        - tmux.conf    (prefix set to ctrl-a and vim key-mappings)
         
 All the dotfiles are in the dotfiles folder and must be symlinked into your home directory like:
         
@@ -21,14 +19,34 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
 
         > brew install bash-completion
 
-* To enable mouse scrolling on a mac in terminal, install [easySIMBL](https://github.com/norio-nomura/EasySIMBL) and [mouseterm](https://bitheap.org/mouseterm/) or use iTerm.
+* To enable mouse scrolling on a mac in terminal, install [easySIMBL](https://github.com/norio-nomura/EasySIMBL) and [mouseterm](https://bitheap.org/mouseterm/) or use iTerm.  I use iTerm and have installed [patched fonts](https://github.com/Lokaltog/powerline-fonts) for airline and my tmuxline.
+
+* For golang development, I use [vim-go](https://github.com/fatih/vim-go) which does many things for me like auto-imports, gofmt upon save and provides easy jump mappings to quickly browse source code.  
+
+
+* Mappings for Escape in Vim
+  * j-k
+  * ;-f to save and coninue in the current mode
+  * ;-a to save and switch modes
+* Mappings for pane movement vim and tmux
+  * C-h - Left one pane
+  * C-j - Down one pane
+  * C-k - Up one pane
+  * C-l - Right one pane
+* Tmux mappings
+  * C-a,- to split a pane horizontally
+  * C-a,\ to split a pane vertically
+  * Shift-leftarrow to move to the left window
+  * Shift-rightarrow to move to the right window
 
 ## Installed Vim modules of note
         
         - Airline
         - Ctrl-P
+        - DelimitMate
         - Fugitive
-        - gocode
+        - Gundo
+        - vim-go
         - NERDTree 
         - headlights
         - tmuxline
@@ -37,9 +55,10 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
         - SnipMate
         - SuperTab
         - Surround
+        - Syntastic
         - TComment
         - Vim Indent Guides
-        - ZenCoding (Emmet)
+        - Emmet
 
 
 
@@ -56,7 +75,7 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
 Switch to the `~/.vim` directory, and fetch submodules:
 
         > cd ~/.vim
-        > git submodule update --init
+        > git submodule update --init --recursive
         > mkdir autoload
         > ln -s ~/.vim/bundle/pathogen/autoload/pathogen.vim ~/.vim/autoload/pathogen.vim
 
@@ -67,40 +86,40 @@ Switch to the `~/.vim` directory, and fetch submodules:
         > git commit -m 'random message'
         > git submodule update --init
     
-Remember to download and install Exuberant Ctags, Ack and Pep8 if you want to use those features for your 
-OS and vim configuration.
+Remember to download and install Exuberant Ctags, Ack and gocode if you want to use those features for your 
+OS and vim configuration.  
 
-### For Django code completion on a project by project basis
-
-        > export DJANGO_SETTINGS_MODULE=project.settings
 
 ## On Mac:
     
 ###    Install Ctags and Ack
 
-        > brew install ctags ack
+        > brew install ctags ack cmake
 
-###    Install gocode for golang
+###    Install gocode for golang syntax highlighting with syntastic
 
         > go get -u github.com/nsf/gocode
-    
-
-###    For Python folks:
         
-Install virtualenv and pep8
+Additionally, for golang you must set $GOROOT for YCM to pick up the standard libary in completions.
+        
+###    Finish install of YouCompleteMe
+
+        > cd ~/.vim/bundle/YouCompleteMe
+        > ./install.sh --clang-completer
 
 ## On Linux: 
 
-        > sudo apt-get install ctags
-        > sudo apt-get install ack
+        > sudo apt-get install ctags ack cmake build-essential python-dev
         OR
-        > sudo yum install ctags
-        > sudo yum install ack
+        > sudo yum install ctags ack cmake build-essential python-dev
     
-###    Install gocode for golang
+###    Install gocode for golang syntax highlighting with syntastic
 
         > go get -u github.com/nsf/gocode
+        
+Additionally, for golang you must set $GOROOT for YCM to pick up the standard libary in completions.
 
-###    For Python folks:
+###    Finish install of YouCompleteMe
 
-Install virtualenv and pep8 for your OS
+        > cd ~/.vim/bundle/YouCompleteMe
+        > ./install.sh --clang-completer
