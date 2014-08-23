@@ -9,6 +9,9 @@
 --exclude=vendor
 --exclude=build
 --exclude=libs
+--exclude=$HOME
+--exclude=$HOME/.vim
+
 
 --exclude=vendors
 --exclude=*.min.js

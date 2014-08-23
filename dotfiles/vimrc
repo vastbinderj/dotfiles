@@ -5,6 +5,8 @@ if &term =~ '^screen'
   set ttymouse=xterm2
 endif
 
+
+
 " Call Pathogen
 filetype off
 call pathogen#infect('bundle/{}')
@@ -59,6 +61,7 @@ set foldlevel=99
 
 set laststatus=2
 set t_Co=256
+set term=screen-256color
 
 " airline settings
 let g:airline_powerline_fonts = 1
@@ -251,10 +254,10 @@ let g:nodejs_complete_config = {
 
 " Syntastic settings
 let g:syntastic_error_symbol = '✘'
-let g:syntastic_warning_symbol = '⚠︎'
+let g:syntastic_warning_symbol = '✘'
 let g:syntastic_style_error_symbol = '≋'
 let g:syntastic_style_warning_symbol = '≈'
-let g:syntastic_go_checkers = ['go','golint']                       " use golint for syntax checking in Go
+let g:syntastic_go_checkers = ['golint']                       " use golint for syntax checking in Go
 let g:syntastic_loc_list_height = 5                                 " set error window height to 5
 let g:syntastic_always_populate_loc_list = 1                        " stick errors into a location-list
 

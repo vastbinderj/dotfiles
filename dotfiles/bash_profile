@@ -22,8 +22,14 @@ export PATH=$GOROOT/bin:$GOPATH/bin:$HOME/.node/bin:$HOME/.rbenv/bin:/usr/local/
 # Initialize rbenv
 eval "$(rbenv init -)"
 
+# protect node install when upgrading nvm
+export NVM_DIR=~/.nvm
+
+# source nvm.sh
+source $(brew --prefix nvm)/nvm.sh
+
 # Set Node Path for NPM
-export NODE_PATH=$HOME/.node/lib/node_modules
+#export NODE_PATH=$HOME/.node/lib/node_modules
 
 export GREP_OPTIONS='--color=auto'
 export CLICOLOR=1
