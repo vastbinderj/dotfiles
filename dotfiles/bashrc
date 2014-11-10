@@ -7,7 +7,7 @@ set -o vi
 
 # Golang
 export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
+export GOPATH=$HOME/go:$HOME/workspace/foundation
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -126,7 +126,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # path customizations
-export PATH=$GOROOT/bin:$GOPATH/bin:$HOME/.rbenv/bin:$HOME/.node/bin:/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:$PATH
+export PATH=$GOROOT/bin:${GOPATH//://bin:}/bin:$HOME/.rbenv/bin:$HOME/.node/bin:/opt/idea/bin:/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:$PATH
 
 # initialize rbenv
 eval "$(rbenv init -)"
