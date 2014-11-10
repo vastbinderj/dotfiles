@@ -231,6 +231,18 @@ nnoremap <F6> :!ctags -R --exclude=.git --exclude=log *<CR>
 "Fuzzy Finder
 nnoremap <C-f><C-f> :FufFile<CR>
 
+" Trigger configuration for snippets
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+
+" Trigger configuration, do not use <tab>
+let g:UltiSnipsExpandTrigger="<c-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"
+" " If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 " Ack
 nnoremap <,a> <Esc>:Ack!
 
