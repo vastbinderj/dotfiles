@@ -181,7 +181,7 @@ set tags=./tags,tags;$HOME
 let g:go_bin_path = expand("$HOME/go/bin")
 
 " generate go ctags upon save
-au BufWritePost *.go silent! !ctags -R --exclude=*.js,*.html &    
+au BufWritePost *.go,*.js silent! !ctags -R  --exclude=*.html &    
 let g:godef_same_file_in_same_window=1                              " when in go, just move the cursor if in same file 
 autocmd FileType go setlocal shiftwidth=8 tabstop=8 softtabstop=8   " set tabstop to 8 for go files
 autocmd FileType go setlocal noexpandtab                            " don't expand tabs to spaces for go files
@@ -206,6 +206,17 @@ map <leader>tl <Plug>TaskList
 let g:tlWindowPosition = 1                                          " set the window postion below
 " mapping for tasks in project
 noremap <Leader>tp :noautocmd vimgrep /TODO/j **/**<CR>:cw<CR>      
+
+" easymotion leader binding
+map <Leader> <Plug>(easymotion-prefix)
+
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0
+let g:EasyMotion_smartcase = 1
 
 " For local replace
 nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
