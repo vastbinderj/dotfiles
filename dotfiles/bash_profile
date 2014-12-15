@@ -138,4 +138,4 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # eval hub
-eval "$(hub alias -s)"
+#eval "$(hub alias -s)"

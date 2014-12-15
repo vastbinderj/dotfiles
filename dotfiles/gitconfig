@@ -5,6 +5,7 @@
   editor = vim
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	autocrlf = input
+	excludesfile = /Users/kemosabi/.gitignore_global
 [sendemail]
   smtpencryption = tls
   smtpserver = smtp.gmail.com
@@ -32,6 +33,7 @@
   dc = diff --cached
   dk = diff --check
   dck = diff --cached --check
+    dt = difftool
   #############
   c = commit
   ca = commit -a
@@ -127,10 +129,9 @@
   user = vastbinderj
   token = token
 [push]
-#	default = simple
-[difftool "sourcetree"]
-	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-	trustExitCode = true
+[mergetool "fugitive"]
+	cmd = mvim -f -c "Gdiff" "$MERGED"
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
