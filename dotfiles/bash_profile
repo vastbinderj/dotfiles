@@ -39,7 +39,7 @@ export VISUAL='mvim -v'
 export EDITOR='vim'
 
 # Python setup stuff
-export PIP_REQUIRE_VIRTUALENV=true
+export PIP_REQUIRE_VIRTUALENV=false
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 [ -d $HOME/.virtualenv ] || mkdir -p $HOME/.virtualenv
 export WORKON_HOME=$HOME/.virtualenv

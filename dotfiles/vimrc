@@ -202,10 +202,10 @@ au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
 " mapping for tasks in current file
-map <leader>tt <Plug>TaskList
+map <leader>Tl <Plug>TaskList
 let g:tlWindowPosition = 1                                          " set the window postion below
 " mapping for tasks in project
-noremap <Leader>tp :noautocmd vimgrep /TODO/j **/**<CR>:cw<CR>      
+noremap <Leader>Tp :noautocmd vimgrep /TODO/j **/**<CR>:cw<CR>      
 
 " easymotion leader binding
 map <Leader> <Plug>(easymotion-prefix)
