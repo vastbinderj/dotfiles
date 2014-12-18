@@ -66,7 +66,7 @@ set term=screen-256color
 " airline settings
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_left_sep = ' '
@@ -182,7 +182,7 @@ let g:tagbar_type_go = {
 set tags=./tags,tags;$HOME
 
 " Golang customizations
-"
+let g:go_fmt_command = "goimports"
 let g:go_bin_path = expand("$HOME/go/bin")
 
 " generate go ctags upon save
