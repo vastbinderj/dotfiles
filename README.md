@@ -70,6 +70,7 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
 
         > ln -s ~/.vim/dotfiles/vimrc ~/.vimrc
         > ln -s ~/.vim/dotfiles/gvimrc ~/.gvimrc
+        # Neovim support    
         > ln -s ~/.nvim ~/.vim
         > ln -s ~/.nvimrc ~/.vimrc
 
