@@ -64,27 +64,21 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
 
 ## Installation:
 
-        > git clone https://github.com/vastbinderj/dotfiles.git
+        > git clone https://github.com/vastbinderj/dotfiles.git ~/.vim
 
 ### Create symlinks:
 
         > ln -s ~/.vim/dotfiles/vimrc ~/.vimrc
         > ln -s ~/.vim/dotfiles/gvimrc ~/.gvimrc
 
-### Add Sub-modules for bundles:
-Switch to the `~/.vim` directory, and fetch submodules:
+### Clone Vundle into bundle/
+        > git clone https://github.com/gmarik/Vundle.vim.git bundle/Vundle.vim
 
-        > cd ~/.vim
-        > git submodule update --init --recursive
-        > mkdir autoload
-        > ln -s ~/.vim/bundle/pathogen/autoload/pathogen.vim ~/.vim/autoload/pathogen.vim
+Open vim and run `:BundleInstall` to clone and install your plugins.
 
 ### To upgrade all bundled plugins at any time:
 
-        > git submodule foreach git pull origin master
-        > git add -A
-        > git commit -m 'random message'
-        > git submodule update --init
+Open vim and run `:BundleUpdate` or `:BundleInstall!` 
     
 Remember to download and install Exuberant Ctags, Ack and gocode if you want to use those features for your 
 OS and vim configuration.  
