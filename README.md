@@ -70,6 +70,8 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
 
         > ln -s ~/.vim/dotfiles/vimrc ~/.vimrc
         > ln -s ~/.vim/dotfiles/gvimrc ~/.gvimrc
+        > ln -s ~/.nvim ~/.vim
+        > ln -s ~/.nvimrc ~/.vimrc
 
 ### Clone Vundle into bundle/
         > git clone https://github.com/gmarik/Vundle.vim.git bundle/Vundle.vim
