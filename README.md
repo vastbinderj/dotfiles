@@ -1,4 +1,4 @@
-This is my personal collection of dotfiles for golang/rails/node development.  I use [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for code completion and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to ones which suite me best. I use vim 7.4 installed with hombrew on my macs, but these work well with vim 7.2+ on Cent OS and Ubuntu, which are my primary development environments at work.
+This is my personal collection of dotfiles for golang/rails/node development.  I use Vundle for plugin management and I use [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for code completion and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to ones which suite me best. This configuration works well vim 7.4 or neovim installed with hombrew on my macs, but these work well with vim 7.2+ on Cent OS and Ubuntu, which are my primary development environments at work.
 
 ## dotfiles included
 
@@ -35,7 +35,7 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
   * C-l - Right one pane
 * Tmux mappings
   * C-a,- to split a pane horizontally
-  * C-a,\ to split a pane vertically
+  * C-a,| to split a pane vertically
   * Shift-leftarrow to move to the left window
   * Shift-rightarrow to move to the right window
 
