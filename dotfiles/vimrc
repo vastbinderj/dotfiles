@@ -1,3 +1,13 @@
+" set 
+set nocompatible
+
+" Vundle Setup
+filetype off
+set runtimepath+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
 " set mouse if possible
 set mouse+=a
 if &term =~ '^screen'
@@ -5,12 +15,152 @@ if &term =~ '^screen'
   set ttymouse=xterm2
 endif
 
+" L9
+Bundle 'vim-scripts/L9'
 
+" Ack
+Bundle 'mileszs/ack.vim'
 
-" Call Pathogen
-filetype off
-call pathogen#infect('bundle/{}')
-call pathogen#helptags()
+" Color Schemes
+Bundle 'flazz/vim-colorschemes'
+
+" CTRL P
+Bundle 'kien/ctrlp.vim'
+
+" delimitMate
+Bundle 'Raimondi/delimitMate'
+
+" Emmet
+Bundle 'mattn/emmet-vim'
+
+" Fugitive
+Bundle 'tpope/vim-fugitive'
+
+" Git
+Bundle 'tpope/vim-git'
+
+" Gundo
+Bundle 'sjl/gundo.vim'
+
+" HAML
+Bundle 'tpope/vim-haml'
+
+" Headlights
+Bundle 'mbadran/headlights'
+
+" JSHint
+Bundle 'wookiehangover/jshint.vim'
+
+" List Toggle
+Bundle 'Valloric/ListToggle'
+
+" Markdown
+Bundle 'tpope/vim-markdown'
+
+" Mustache
+Bundle 'juvenn/mustache.vim'
+
+" Nerdtree
+Bundle 'vim-scripts/The-NERD-tree'
+
+" Nerdtree Ack
+Bundle 'tyok/nerdtree-ack'
+
+" Pep8
+Bundle 'vim-scripts/pep8'
+
+" Rails
+Bundle 'tpope/vim-rails'
+
+" Repeat
+Bundle 'tpope/vim-repeat'
+
+" Ruby
+Bundle 'vim-ruby/vim-ruby'
+
+" Surround
+Bundle 'tpope/vim-surround'
+
+" Syntastic
+Bundle 'scrooloose/syntastic'
+
+" Tabular
+Bundle 'godlygeek/tabular'
+
+" Tagbar
+Bundle 'majutsushi/tagbar'
+
+" Tasklist
+Bundle 'vim-scripts/TaskList.vim'
+
+" TmuxLine
+Bundle 'edkolev/tmuxline.vim'
+
+" Ultisnips
+Bundle 'SirVer/ultisnips'
+
+" Vim-Airline
+Bundle 'bling/vim-airline'
+
+" Coffescript
+Bundle 'kchmck/vim-coffee-script'
+
+" Django 
+Bundle 'gerardo/vim-django-support'
+
+" EasyMotion
+Bundle 'Lokaltog/vim-easymotion'
+
+" GitGutter
+Bundle 'airblade/vim-gitgutter'
+
+" Vim-Go
+Bundle 'fatih/vim-go'
+
+" HTML5 Support
+Bundle 'othree/html5.vim'
+
+" Indent Guides
+Bundle 'nathanaelkane/vim-indent-guides'
+
+" Jade
+Bundle 'digitaltoad/vim-jade'
+
+" Javascript
+Bundle 'pangloss/vim-javascript'
+
+" jQuery
+Bundle 'nono/jquery.vim'
+
+" JSON
+Bundle 'elzr/vim-json'
+
+" NerdTree Tabs
+Bundle 'jistr/vim-nerdtree-tabs'
+
+" Node
+Bundle 'guileen/vim-node'
+
+" Node Completion
+Bundle 'myhere/vim-nodejs-complete'
+
+" Scala
+Bundle 'ornicar/vim-scala'
+
+" Snippets
+Bundle 'honza/vim-snippets'
+
+" TComment
+Bundle 'tomtom/tcomment_vim'
+
+" TMUX Navigator
+Bundle 'christoomey/vim-tmux-navigator'
+
+" Unimpaired
+Bundle 'tpope/vim-unimpaired'
+
+" YCM
+Bundle 'Valloric/YouCompleteMe'
 
 " Use all Go plugins
 filetype plugin indent off

@@ -33,7 +33,7 @@
   dc = diff --cached
   dk = diff --check
   dck = diff --cached --check
-    dt = difftool
+  dt = difftool
   #############
   c = commit
   ca = commit -a
