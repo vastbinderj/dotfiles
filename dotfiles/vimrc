@@ -357,7 +357,7 @@ au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
 " mapping for tasks in current file
-map <leader>Tl <Plug>TaskList
+map <leader>Tt <Plug>TaskList
 let g:tlWindowPosition = 1                                          " set the window postion below
 " mapping for tasks in project
 noremap <Leader>Tp :noautocmd vimgrep /TODO/j **/**<CR>:cw<CR>      
@@ -426,6 +426,11 @@ let g:ctrlp_custom_ignore = {
 
 " Pep8 Mapping
 let g:pep8_map=',p8'
+
+" List Toggle Settings
+let g:lt_location_list_toggle_map = '<leader>Tl'
+let g:lt_quickfix_list_toggle_map = '<leader>Tq'
+
 
 " Ultisnips
 "let g:UltiSnipsUsePythonVersion = 2
