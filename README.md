@@ -77,11 +77,11 @@ All the dotfiles are in the dotfiles folder and must be symlinked into your home
 ### Clone Vundle into bundle/
         > git clone https://github.com/gmarik/Vundle.vim.git bundle/Vundle.vim
 
-Open vim and run `:BundleInstall` to clone and install your plugins.
+Open vim and run `:PluginInstall` to clone and install your plugins.
 
 ### To upgrade all bundled plugins at any time:
 
-Open vim and run `:BundleUpdate` or `:BundleInstall!` 
+Open vim and run `:PluginUpdate` or `:PluginInstall!` 
     
 Remember to download and install Exuberant Ctags, Ack and gocode if you want to use those features for your 
 OS and vim configuration.  
