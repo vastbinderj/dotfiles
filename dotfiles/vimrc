@@ -3,7 +3,7 @@ set nocompatible
 
 " Vundle Setup
 filetype off
-set runtimepath+=~/.vim/bundle/vundle
+set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/bundle')
 
 Plugin 'gmarik/Vundle.vim'
