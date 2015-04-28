@@ -433,14 +433,12 @@ let g:UltiSnipsEditSplit="vertical"
 nnoremap <,a> <Esc>:Ack!
 
 " CTRL-P
+set wildignore+=*/.git/*,*/.idea/*,*/.DS_Store,*/node_modules/*,*/bower_components/*.so,*.swp,*.zip
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'         " Working Directory
-if exists("g:ctrl_user_command")
-    unlet g:ctrlp_user_command
-endif
-set wildignore+=*/.git/*,*/.idea/*,*/.DS_Store,*/node_modules/*,*/bower_components/*.so,*.swp,*.zip
-let g:ctrlp_user_command = 'find %s -type f'
+let g:ctrlp_max_files = 0
+let g:ctrlp_working_path_mode = '0'         " Current Working Directory
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/](\.(git|idea|sass-cache)|node_modules|bower_components|dist)$',
             \ 'file': '\v\.(exe|so|dll)$',
