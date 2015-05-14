@@ -9,8 +9,8 @@ This is my personal collection of dotfiles for golang/rails/node development.  I
         > ln -s ~/.vim/dotfiles/vimrc ~/.vimrc
         > ln -s ~/.vim/dotfiles/gvimrc ~/.gvimrc
         # Neovim support    
-        > ln -s ~/.nvim ~/.vim
-        > ln -s ~/.nvimrc ~/.vimrc
+        > ln -s ~/.vim ~/.nvim
+        > ln -s ~/.vimrc ~/.nvimrc
 
 ### Clone Vundle into bundle/
         > git clone https://github.com/gmarik/Vundle.vim.git bundle/Vundle.vim
