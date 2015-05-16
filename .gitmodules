@@ -185,3 +185,6 @@
 [submodule "bundle/vim-easymotion"]
 	path = bundle/vim-easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "dotfiles/antigen"]
+	path = dotfiles/antigen
+	url = https://github.com/zsh-users/antigen.git
