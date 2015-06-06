@@ -192,6 +192,7 @@ autocmd! BufWritePost vimrc source ~/.vimrc
 set encoding=utf-8
 set gfn=Ubuntu\ Mono\ 12
 
+set clipboard=unnamed
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -349,6 +350,13 @@ set tags=./tags,tags;$HOME
 " Golang customizations
 let g:go_fmt_command = "goimports"
 let g:go_bin_path = expand("$HOME/go/bin")
+
+" Syntax Highlighting for Golang
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 " generate go ctags upon save
 au BufWritePost *.go,*.js,*.rb,*.py silent! !ctags -R --exclude=*.html 2> /dev/null &    
