@@ -1,8 +1,10 @@
 # This prompt inspired by gf3, sindresorhus, alrra, and mathiasbynens.
 # but customized to me. <3
 
-default_username=`james`
+# set to null to always show $USER at $HOSTNAME
+default_username=''
 
+# remove .local from OSX
 export HOSTNAME=$(hostname -s)
 
 if [[ -n "$ZSH_VERSION" ]]; then  # quit now if in zsh
