@@ -2,6 +2,7 @@
 # but customized to me. <3
 
 # set to null to always show $USER at $HOSTNAME
+# set to default username to shorten prompt
 default_username=''
 
 # remove .local from OSX
