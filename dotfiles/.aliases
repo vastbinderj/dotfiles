@@ -14,9 +14,16 @@ alias rm="rm -i"
 # Listing
 #######################################
 # ls options: F = put `/` after folders, h = byte unit suffixes, color! (even with piping to awk)
-alias ls='CLICOLOR_FORCE=1 gls -aFh --color'
-alias l='ls'
-alias ll="gls -alF --color"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    alias ls='CLICOLOR_FORCE=1 gls -aFh --color'
+    alias l='ls'
+    alias ll="gls -alF --color"
+else
+    alias ls='CLICOLOR_FORCE=1 ls -aFh --color'
+    alias l='ls'
+    alias ll="ls -alF --color"
+fi
+
 
 # List directories
 alias ld='ls -l | grep "^d"'
@@ -33,42 +40,53 @@ alias gdc='g d --cached'
 alias ga='g add'
 
 
-# setting up the sublime symlink
-if [ ! -f /usr/local/bin/subl ]; then
-    ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Found Mac OSX
+    #
+
+    # setting up the sublime symlink
+    if [ ! -f /usr/local/bin/subl ]; then
+        ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+    fi
+
+    # Add an "alert" alias for long running commands.  Use like so:
+    #   sleep 10; alert
+    alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+    # Recursively delete `.DS_Store` files
+    alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
+
+    # Flush Directory Service cache
+    alias flush="dscacheutil -flushcache"
+
+    # Trim new lines and copy to clipboard
+    alias trimcopy="tr -d '\n' | pbcopy"
+
+    # Empty the Trash on all mounted volumes and the main HDD
+    alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
+
+    # use coreutils `ls` if possible…
+    command -v gls >/dev/null 2>&1 || alias gls="ls"
+
 fi
 
 # be nice
 alias please=sudo
 alias hosts='sudo $EDITOR /etc/hosts'
 
-# use coreutils `ls` if possible…
-command -v gls >/dev/null 2>&1 || alias gls="ls"
-
 # `cat` with beautiful colors. requires Pygments installed.
-# 							   sudo easy_install -U Pygments
 alias c='pygmentize -O style=monokai -f console256 -g'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en1"
+alias localip="ifconfig getifaddr en1"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
 # All the dig info
 alias dig="dig +nocmd any +multiline +noall +answer"
 
-# Flush Directory Service cache
-alias flush="dscacheutil -flushcache"
-
-# Trim new lines and copy to clipboard
-alias trimcopy="tr -d '\n' | pbcopy"
-
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
-
 # File size
 alias fs="stat -f \"%z bytes\""
 
-# Empty the Trash on all mounted volumes and the main HDD
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
-
+# tmux alias
+alias tmux='tmux -2'
