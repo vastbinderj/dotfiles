@@ -1,6 +1,7 @@
 This is my personal collection of dotfiles for golang/rails/node development.  I use Vundle for plugin management and I use [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for code completion and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to ones which suite me best. This configuration works well vim 7.4 or neovim installed with hombrew on my macs, but these work well with vim 7.2+ on Cent OS and Ubuntu, which are my primary development environments at work.
 
-## Installation for a Mac and Ubuntu Linux (redhat/centos coming soon)
+## Installation for a Mac and Ubuntu Linux 
+(redhat/centos coming soon)
 
         > git clone https://github.com/vastbinderj/dotfiles.git ~/.vim
         > cd ~/.vim/dotfiles
