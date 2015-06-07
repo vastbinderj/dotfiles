@@ -33,7 +33,6 @@ brew install git
 brew install bzr
 brew install hg
 brew install imagemagick --with-webp
-brew install node # This installs `npm` too using the recommended installation method
 brew install pv
 brew install rename
 brew install tree
@@ -41,7 +40,6 @@ brew install zopfli
 brew install ffmpeg --with-libvpx
 brew install git-tracker
 brew install ssh-copy-id
-# brew install android-platform-tools
 
 
 # Install native apps
@@ -59,10 +57,14 @@ brew cask install iterm2
 brew cask install sublime-text3
 brew cask install imagealpha
 brew cask install imageoptim
+brew install tmux
+brew install cmake
 brew install ctags
 brew install cscope
 brew install macvim
 brew install neovim
+brew install go
+
 
 
 # fun
