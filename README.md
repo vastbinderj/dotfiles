@@ -1,18 +1,14 @@
 This is my personal collection of dotfiles for golang/rails/node development.  I use Vundle for plugin management and I use [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for code completion and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to ones which suite me best. This configuration works well vim 7.4 or neovim installed with hombrew on my macs, but these work well with vim 7.2+ on Cent OS and Ubuntu, which are my primary development environments at work.
 
-## Installation:
+## Installation for a Mac (Linux is coming soon.....):
 
         > git clone https://github.com/vastbinderj/dotfiles.git ~/.vim
-
-### Create symlinks:
-
-        > ln -s ~/.vim/dotfiles/vimrc ~/.vimrc
-        > ln -s ~/.vim/dotfiles/gvimrc ~/.gvimrc
-        # Neovim support    
-        > ln -s ~/.vim ~/.nvim
-        > ln -s ~/.vimrc ~/.nvimrc
+        > cd ~/.vim/dotfiles
+        > ./setup-a-new-machine.sh
 
 ### Clone Vundle into bundle/
+
+        > cd ~/.vim
         > git clone https://github.com/gmarik/Vundle.vim.git bundle/Vundle.vim
 
 Open vim and run `:PluginInstall` to clone and install your plugins.
@@ -24,19 +20,6 @@ Open vim and run `:PluginUpdate` or `:PluginInstall!`
 Remember to download and install Exuberant Ctags, Ack and gocode if you want to use those features for your 
 OS and vim configuration.  
 
-
-## On Mac:
-    
-###    Install Ctags and Ack
-
-        > brew install ctags ack cmake
-
-###    Install gocode for golang syntax highlighting with syntastic
-
-        > go get -u github.com/nsf/gocode
-        
-Additionally, for golang you must set $GOROOT for YCM to pick up the standard libary in completions.
-        
 ###    Finish install of YouCompleteMe
 
         > cd ~/.vim/bundle/YouCompleteMe
