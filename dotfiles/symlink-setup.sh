@@ -164,6 +164,9 @@ main() {
 
     done
 
+    # hack symlink for neovim
+    ln -fs ~/.vim ~/.nvim && ln -fs ~/.vimrc ~/.nvimrc
+
 }
 
 main
