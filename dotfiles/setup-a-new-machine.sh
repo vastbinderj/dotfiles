@@ -18,15 +18,9 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ./brew.sh
 
 
-
-
 # github.com/jamiew/git-friendly
 # the `push` command which copies the github compare URL to my clipboard is heaven
 bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
-
-
-# Type `git open` to open the GitHub page or website for a repository.
-npm install -g git-open
 
 
 # github.com/rupa/z   - oh how i love you
@@ -51,15 +45,6 @@ sudo echo $BASHPATH >> /etc/shells
 chsh -s $BASHPATH # will set for current user only.
 echo $BASH_VERSION # should be 4.x not the old 3.2.X
 # Later, confirm iterm settings aren't conflicting.
-
-
-# iterm with more margin! http://hackr.it/articles/prettier-gutter-in-iterm-2/ 
-
-# software licenses like sublimetext
-
-# set up osx defaults
-#   maybe something else in here https://github.com/hjuutilainen/dotfiles/blob/master/bin/osx-user-defaults.sh
-sh .osx
 
 
 # symlinks!
