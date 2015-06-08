@@ -59,9 +59,6 @@ Plugin 'vim-scripts/The-NERD-tree'
 " Nerdtree Ack
 Plugin 'tyok/nerdtree-ack'
 
-" Pep8
-" Plugin 'vim-scripts/pep8'
-
 " Rails
 Plugin 'tpope/vim-rails'
 
@@ -143,6 +140,9 @@ Plugin 'elzr/vim-json'
 " NerdTree Tabs
 Plugin 'jistr/vim-nerdtree-tabs'
 
+" NerdTree Commenter
+Plugin 'scrooloose/nerdcommenter'
+
 " Node
 Plugin 'guileen/vim-node'
 
@@ -155,8 +155,20 @@ Plugin 'ornicar/vim-scala'
 " Snippets
 Plugin 'honza/vim-snippets'
 
-" TComment
-Plugin 'tomtom/tcomment_vim'
+" Vim OrgMode
+Plugin 'jceb/vim-orgmode'
+
+" Unviversal Text Linking
+Plugin 'vim-scripts/utl.vim'
+
+" Calendar 
+Plugin 'mattn/calendar-vim'
+
+" SyntaxRange
+Plugin 'vim-scripts/SyntaxRange'
+
+" SpeedDating
+Plugin 'tpope/vim-speeddating'
 
 " TMUX Navigator
 Plugin 'christoomey/vim-tmux-navigator'
@@ -526,7 +538,7 @@ au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " Solarized stuff
-"let g:solarized_termtrans=1
-"let g:solarized_contrast='high'
+let g:solarized_termtrans=1
+let g:solarized_contrast='high'
 set background=dark
 colorscheme Tomorrow-Night-Bright
