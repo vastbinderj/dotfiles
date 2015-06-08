@@ -63,6 +63,10 @@ chmod +x ~/code/z/z.sh
 sudo easy_install Pygments
 
 
+# clone vundle in ~/.vim/bundle
+git clone https://github.com/gmarik/Vundle.vim.git $Home/.vim/bundle/Vundle.vim
+
+
 # install vundle packages in vim
 vim +PluginInstall +qall
 
