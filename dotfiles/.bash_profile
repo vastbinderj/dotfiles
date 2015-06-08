@@ -1,4 +1,2 @@
-# if Mac OSX source .bashrc 
-if [[ "$OSTYPE" == "darwin"* ]]; then
+# source .bashrc if on a Mac or coming in via ssh
     source $HOME/.bashrc
-fi
