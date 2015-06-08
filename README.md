@@ -7,6 +7,8 @@ This is my personal collection of dotfiles for golang/rails/node development.  I
         > cd ~/.vim/dotfiles
         > ./setup-a-new-machine.sh
 
+## Only run these steps if Vundle and vim packages weren't installed
+
 ### Clone Vundle into bundle/
 
         > cd ~/.vim
