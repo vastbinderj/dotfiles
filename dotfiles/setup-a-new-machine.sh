@@ -63,6 +63,15 @@ chmod +x ~/code/z/z.sh
 sudo easy_install Pygments
 
 
+# install vundle packages in vim
+vim +PluginInstall +qall
+
+# build YouCompleteMe
+if [ -f $HOME/.vim/bundle/YouCompleteMe/install.sh  ]; then
+    $HOME/.vim/bundle/YouCompleteMe/install.sh --clang-completer
+fi
+
+
 # symlinks!
 #   put/move git credentials into ~/.gitconfig.local
 #   http://stackoverflow.com/a/13615531/89484
