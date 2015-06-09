@@ -47,8 +47,8 @@ Plugin 'wookiehangover/jshint.vim'
 " List Toggle
 Plugin 'Valloric/ListToggle'
 
-" Markdown
-Plugin 'tpope/vim-markdown'
+" Markdown from PlasticBoy
+Plugin 'plasticboy/vim-markdown'
 
 " Mustache
 Plugin 'juvenn/mustache.vim'
