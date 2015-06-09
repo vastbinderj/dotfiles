@@ -183,9 +183,11 @@ Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 " set mouse if possible
-set mouse+=a
+if has('mouse')
+    set mouse+=a
+endif
+"tmux knows extended mouse mode
 if &term =~ '^screen'
-  "tmux knows the extended mouse mode
   set ttymouse=xterm2
 endif
 
@@ -241,6 +243,7 @@ set laststatus=2
 set t_Co=256
 "set term=screen-256color
 
+
 " airline settings
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#enabled = 0
@@ -251,11 +254,22 @@ let g:airline_left_sep = ' '
 let g:airline_right_sep = ' '
 let g:airline_theme = "badwolf"
 
+
+" to move from neovim terminal window to another window
+if has ('nvim')
+    tnoremap <C-h> <C-\><C-n><C-w>h
+    tnoremap <C-j> <C-\><C-n><C-w>j
+    tnoremap <C-k> <C-\><C-n><C-w>k
+    tnoremap <C-l> <C-\><C-n><C-w>l
+    " enter insert mode when cycling back to a terminal window
+    autocmd WinEnter term://* startinsert
+endif
 " move around windows with ctrl key
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+
 
 " Mappings for two-handed save
 " insert to normal mode save
