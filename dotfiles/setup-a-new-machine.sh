@@ -37,6 +37,10 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     if [ -f /etc/lsb-release  ]; then
             # Found Ubuntu
             . /etc/lsb-release
+
+            # Add PPAs
+            sudo add-apt-repository ppa:neovim-ppa/unstable -y
+            sudo apt-get update
             
             # Install stuff
             sudo apt-get update && sudo apt-get install \
@@ -48,6 +52,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
                 cmake \
                 golang \
                 grc \
+                neovim \
                 python-dev \
                 python-setuptools \
                 python3-dev \
