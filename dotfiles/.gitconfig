@@ -126,7 +126,7 @@
   updated =  green bold
   changed = red bold
   untracked = blue reverse
-  branch = red reverse bold
+  branch = white bold red
     nobranch = red white bold
 [github]
   user = vastbinderj
