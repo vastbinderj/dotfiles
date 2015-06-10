@@ -39,7 +39,24 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             . /etc/lsb-release
             
             # Install stuff
-            sudo apt-get update && sudo apt-get install bash-completion build-essential bzr ctags cmake golang grc python-dev rbenv ruby-build silversearcher-ag -y
+            sudo apt-get update && sudo apt-get install \
+                # packages to install 
+                bash-completion \
+                build-essential \
+                bzr \
+                ctags \
+                cmake \
+                golang \
+                grc \
+                python-dev \
+                python-setuptools \
+                python3-dev \
+                python3-setuptools \
+                rbenv \
+                ruby-build \
+                silversearcher-ag \
+                # tags for apt-get install
+                -y
 
             # create GOPATH dirs
             mkdir -p $HOME/go
