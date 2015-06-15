@@ -20,7 +20,7 @@ brew install bash
 brew install bash-completion
 brew install grc
 
-brew install wget --enable-iri
+brew install wget --with-iri
 
 # Install more recent versions of some OS X tools
 brew install vim --override-system-vi
@@ -62,8 +62,7 @@ brew install cmake
 brew install ctags
 brew install cscope
 brew install macvim
-brew install neovim
-brew install go
+brew install --HEAD neovim/neovim/neovim
 
 
 
