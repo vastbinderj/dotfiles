@@ -309,7 +309,6 @@ nnoremap <silent> <Leader>pw :call DoWindowSwap()<CR>
 " toggle the numbering in the gutter
 function! NumberToggle()
   if(&relativenumber == 1)
-    set nonumber
     set norelativenumber
   else
     set number
