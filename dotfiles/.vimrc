@@ -11,9 +11,6 @@ Plugin 'gmarik/Vundle.vim'
 " L9
 Plugin 'vim-scripts/L9'
 
-" Ack
-Plugin 'mileszs/ack.vim'
-
 " Color Schemes
 Plugin 'flazz/vim-colorschemes'
 
@@ -309,10 +306,8 @@ nnoremap <silent> <Leader>pw :call DoWindowSwap()<CR>
 " toggle the numbering in the gutter
 function! NumberToggle()
   if(&relativenumber == 1)
-    set nonumber
     set norelativenumber
   else
-    set number
     set relativenumber
   endif
 endfunc
@@ -450,6 +445,9 @@ endif
 
 "Fuzzy Finder
 nnoremap <C-f><C-f> :FufFile<CR>
+
+" Diff Options
+set diffopt=vertical
 
 " Trigger configuration for snippets
 let g:ycm_key_list_select_completion=[]
