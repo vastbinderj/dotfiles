@@ -17,6 +17,9 @@ Plugin 'flazz/vim-colorschemes'
 " CTRL P
 Plugin 'kien/ctrlp.vim'
 
+" Ag 
+Plugin 'rking/ag.vim'
+
 " delimitMate
 Plugin 'Raimondi/delimitMate'
 
@@ -437,11 +440,6 @@ nnoremap <F4> :TagbarToggle<CR>
 
 " Bind F6 to CTAGS
 nnoremap <F6> :!ctags -R --exclude=.git --exclude=log *<CR>
-
-" Tell Ack.vim to use Ag
-if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
-endif
 
 "Fuzzy Finder
 nnoremap <C-f><C-f> :FufFile<CR>
