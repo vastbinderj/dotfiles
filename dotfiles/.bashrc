@@ -35,7 +35,7 @@ set -o vi
 export GOPATH=$HOME/go
 
 # Update the Path
-export PATH=$GOPATH/bin:$HOME/.node/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$GOPATH/bin:$HOME/bin:$HOME/.node/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # add z
 . $HOME/code/z/z.sh
