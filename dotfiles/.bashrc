@@ -32,11 +32,10 @@ fi
 set -o vi
 
 # Golang 
-export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 
 # Update the Path
-export PATH=$GOROOT/bin:$GOPATH/bin:$HOME/.node/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$GOPATH/bin:$HOME/.node/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # add z
 . $HOME/code/z/z.sh
