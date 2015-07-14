@@ -549,5 +549,5 @@ au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 let g:solarized_termtrans=1
 let g:solarized_contrast='high'
 set background=dark
-highlight Normal ctermbg=NONE
 colorscheme molokai
+highlight Normal ctermbg=NONE
