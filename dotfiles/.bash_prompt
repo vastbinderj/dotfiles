@@ -3,7 +3,7 @@
 
 # set to null to always show $USER at $HOSTNAME
 # set to default username to shorten prompt
-default_username=''
+default_username='james'
 
 # remove .local from OSX
 export HOSTNAME=$(hostname -s)
