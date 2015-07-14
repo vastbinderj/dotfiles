@@ -191,9 +191,7 @@ if &term =~ '^screen'
   set ttymouse=xterm2
 endif
 
-" Use all Go plugins
-filetype plugin indent off
-set runtimepath+=$GOROOT/misc/vim
+" turn filetype and syntax back on
 filetype plugin indent on
 syntax on
 
