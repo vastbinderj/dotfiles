@@ -147,7 +147,7 @@ bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
 
 # github.com/mooveweb/gvm
 # use gvm for golang versions
-bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+#bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 
 
 # github.com/rupa/z   - oh how i love you
