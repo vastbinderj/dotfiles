@@ -41,47 +41,75 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     # Found Linux
 
     if [ -f /etc/lsb-release  ]; then
-            # Found Ubuntu
-            . /etc/lsb-release
+        # Found Ubuntu
+        . /etc/lsb-release
 
-            # Add PPAs
-            sudo add-apt-repository ppa:neovim-ppa/unstable -y
-            sudo apt-get update
-            
-            # Install stuff
-            sudo apt-get install \
-                bash-completion \
-                build-essential \
-                mercurial \
-                curl \
-                git \
-                binutils \
-                bison \
-                gcc \
-                bzr \
-                exuberant-ctags \
-                cmake \
-                grc \
-                neovim \
-                python-dev \
-                python-setuptools \
-                python3-dev \
-                python3-setuptools \
-                rbenv \
-                ruby-build \
-                silversearcher-ag \
-                -y
+        # Add PPAs
+        sudo add-apt-repository ppa:neovim-ppa/unstable -y
+        sudo apt-get update
 
-            # create GOPATH dirs
-            if [ ! -d "$HOME/go" ]; then
-                mkdir -p $HOME/go
-                mkdir -p $HOME/go/{src,pkg,bin}
-            fi
+        # Install stuff
+        sudo apt-get install \
+            bash-completion \
+            build-essential \
+            mercurial \
+            curl \
+            git \
+            binutils \
+            bison \
+            gcc \
+            bzr \
+            exuberant-ctags \
+            cmake \
+            grc \
+            neovim \
+            python-dev \
+            python-setuptools \
+            python3-dev \
+            python3-setuptools \
+            rbenv \
+            ruby-build \
+            silversearcher-ag \
+            -y --reinstall
 
-            # create code dir
-            if [ ! -d "$HOME/code" ]; then
-                mkdir -p $HOME/code
-            fi
+    elif [ -f /etc/os-release  ]; then
+        # Found Debian
+        . /etc/os-release
+
+        sudo apt-get update
+        # Install stuff
+        sudo apt-get install \
+            bash-completion \
+            build-essential \
+            mercurial \
+            curl \
+            git \
+            binutils \
+            bison \
+            gcc \
+            bzr \
+            exuberant-ctags \
+            cmake \
+            grc \
+            python-dev \
+            python-setuptools \
+            python3-dev \
+            python3-setuptools \
+            rbenv \
+            ruby-build \
+            silversearcher-ag \
+            -y --reinstall
+    fi
+
+    # create GOPATH dirs
+    if [ ! -d "$HOME/go" ]; then
+        mkdir -p $HOME/go
+        mkdir -p $HOME/go/{src,pkg,bin}
+    fi
+
+    # create code dir
+    if [ ! -d "$HOME/code" ]; then
+        mkdir -p $HOME/code
     fi
 fi
 
