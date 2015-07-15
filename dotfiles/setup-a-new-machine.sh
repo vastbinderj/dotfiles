@@ -2,6 +2,9 @@
 ## new machine setup.
 ##
 
+WORKDIR=`pwd`
+GOSYSTEMVERSION=`go version`
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Found Mac OSX
 
@@ -58,6 +61,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             binutils \
             bison \
             gcc \
+            libc6-dev \
             bzr \
             exuberant-ctags \
             cmake \
@@ -69,6 +73,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             python3-setuptools \
             rbenv \
             ruby-build \
+            vim-nox \
             silversearcher-ag \
             -y --reinstall
 
@@ -87,6 +92,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             binutils \
             bison \
             gcc \
+            libc6-dev \
             bzr \
             exuberant-ctags \
             cmake \
@@ -100,7 +106,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             vim-nox \   
             silversearcher-ag \
             -y --reinstall
-    fi
+        fi
 
     # create GOPATH dirs
     if [ ! -d "$HOME/go" ]; then
@@ -112,6 +118,26 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     if [ ! -d "$HOME/code" ]; then
         mkdir -p $HOME/code
     fi
+fi
+
+# go.googlesource.com/go
+# install golang from the source repository
+if [[ "$GOSYSTEMVERSION" == *"go1.4.2"* ]]; then
+    # clean up soure dir if exists already
+    if [ -d  $HOME/code/go ]; then 
+        rm -f $HOME/code/go
+    fi
+    git clone https://go.googlesource.com/go $HOME/code/go
+    cd $HOME/code/go
+    # checkout go 1.4.2
+    git checkout go1.4.2
+    cd $HOME/code/go/src
+    # build from source
+    CMD="sudo ./all.bash"
+    eval $CMD
+    # back to working dir
+    cd $WORKDIR
+    unset CMD
 fi
 
 # github.com/jamiew/git-friendly
