@@ -100,3 +100,6 @@ for file in ~/.{bash_prompt,aliases,functions}; do
     [ -r "$file" ] && source "$file"
 done
 unset file
+
+# Support the use of GVM for golang versions
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
