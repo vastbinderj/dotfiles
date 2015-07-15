@@ -73,9 +73,9 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             python-setuptools \
             python3-dev \
             python3-setuptools \
+            vim-nox \
             rbenv \
             ruby-build \
-            vim-nox \
             silversearcher-ag \
             -y --reinstall
 
@@ -103,13 +103,12 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             python-setuptools \
             python3-dev \
             python3-setuptools \
+            vim-nox \
             rbenv \
             ruby-build \
-            vim-nox \   
             silversearcher-ag \
             -y --reinstall
-        fi
-
+    fi
 fi
 
 # go.googlesource.com/go
