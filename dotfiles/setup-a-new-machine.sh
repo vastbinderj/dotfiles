@@ -27,9 +27,15 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # Later, confirm iterm settings aren't conflicting.
 
     # create GOPATH dirs
-    mkdir -p $HOME/go
-    mkdir -p $HOME/go/{src,pkg,bin}
+    if [ ! -d "$HOME/go" ]; then
+        mkdir -p $HOME/go
+        mkdir -p $HOME/go/{src,pkg,bin}
+    fi
 
+    # create code dir
+    if [ ! -d "$HOME/code" ]; then
+        mkdir -p $HOME/code
+    fi
 
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     # Found Linux
@@ -43,14 +49,18 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             sudo apt-get update
             
             # Install stuff
-            sudo apt-get update && sudo apt-get install \
-                # packages to install 
+            sudo apt-get install \
                 bash-completion \
                 build-essential \
+                mercurial \
+                curl \
+                git \
+                binutils \
+                bison \
+                gcc \
                 bzr \
-                ctags \
+                exuberant-ctags \
                 cmake \
-                golang \
                 grc \
                 neovim \
                 python-dev \
@@ -60,12 +70,18 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
                 rbenv \
                 ruby-build \
                 silversearcher-ag \
-                # tags for apt-get install
                 -y
 
             # create GOPATH dirs
-            mkdir -p $HOME/go
-            mkdir -p $HOME/go/{src,pkg,bin}
+            if [ ! -d "$HOME/go" ]; then
+                mkdir -p $HOME/go
+                mkdir -p $HOME/go/{src,pkg,bin}
+            fi
+
+            # create code dir
+            if [ ! -d "$HOME/code" ]; then
+                mkdir -p $HOME/code
+            fi
     fi
 fi
 
@@ -74,8 +90,13 @@ fi
 bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
 
 
+# github.com/mooveweb/gvm
+# use gvm for golang versions
+bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+
+
 # github.com/rupa/z   - oh how i love you
-git clone https://github.com/rupa/z.git ~/code/z
+git clone https://github.com/rupa/z.git $HOME/code/z
 chmod +x ~/code/z/z.sh
 # consider reusing your current .z file if possible. it's painful to rebuild :)
 # z hooked up in .bash_profile
