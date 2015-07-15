@@ -5,6 +5,19 @@
 WORKDIR=`pwd`
 GOSYSTEMVERSION=`go version`
 
+# create code dir if it doesn't exist
+if [ ! -d "$HOME/code" ]; then
+    mkdir -p $HOME/code
+fi
+$CODEDIR="$HOME/code"
+
+# create GOPATH dirs
+if [ ! -d "$HOME/go" ]; then
+    mkdir -p $CODEDIR/go
+    mkdir -p $CODEDIR/go/{src,pkg,bin}
+fi
+
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Found Mac OSX
 
@@ -28,17 +41,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     chsh -s $BASHPATH # will set for current user only.
     echo $BASH_VERSION # should be 4.x not the old 3.2.X
     # Later, confirm iterm settings aren't conflicting.
-
-    # create GOPATH dirs
-    if [ ! -d "$HOME/go" ]; then
-        mkdir -p $HOME/go
-        mkdir -p $HOME/go/{src,pkg,bin}
-    fi
-
-    # create code dir
-    if [ ! -d "$HOME/code" ]; then
-        mkdir -p $HOME/code
-    fi
 
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     # Found Linux
@@ -108,30 +110,20 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             -y --reinstall
         fi
 
-    # create GOPATH dirs
-    if [ ! -d "$HOME/go" ]; then
-        mkdir -p $HOME/go
-        mkdir -p $HOME/go/{src,pkg,bin}
-    fi
-
-    # create code dir
-    if [ ! -d "$HOME/code" ]; then
-        mkdir -p $HOME/code
-    fi
 fi
 
 # go.googlesource.com/go
 # install golang from the source repository
 if [[ "$GOSYSTEMVERSION" == *"go1.4.2"* ]]; then
     # clean up soure dir if exists already
-    if [ -d  $HOME/code/go ]; then 
-        rm -f $HOME/code/go
+    if [ -d  $HOME/go ]; then 
+        rm -f $HOME/go
     fi
     git clone https://go.googlesource.com/go $HOME/code/go
-    cd $HOME/code/go
+    cd $HOME/go
     # checkout go 1.4.2
     git checkout go1.4.2
-    cd $HOME/code/go/src
+    cd $HOME/go/src
     # build from source
     CMD="sudo ./all.bash"
     eval $CMD
