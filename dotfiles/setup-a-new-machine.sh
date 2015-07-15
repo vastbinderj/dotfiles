@@ -97,6 +97,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             python3-setuptools \
             rbenv \
             ruby-build \
+            vim-nox \   
             silversearcher-ag \
             -y --reinstall
     fi
