@@ -268,6 +268,15 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+" resize windows using arrow keys
+nnoremap <Left> :vertical resize +1<CR>
+nnoremap <Right> :vertical resize -1<CR>
+nnoremap <Up> :resize +1<CR>
+nnoremap <Down> :resize -1<CR>
+nnoremap <C-w><Right> :exe "vertical resize +" . (winwidth(0) * 1/2)<CR>
+nnoremap <C-w><Left> :exe "vertical resize -" . (winwidth(0) * 1/2)<CR>
+nnoremap <C-w><Up> :exe "resize +" . (winheight(0) * 1/2)<CR>
+nnoremap <C-w><Down> :exe "resize -" . (winheight(0) * 1/2)<CR>
 
 " Mappings for two-handed save
 " insert to normal mode save
