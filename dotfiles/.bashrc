@@ -17,6 +17,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     # source nvm.sh
     source $(brew --prefix nvm)/nvm.sh
+
+    # Golang 
+    export GOROOT=/usr/local/go
+    export GOPATH=$HOME/code/go
+    
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     # add bash completion
     if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -25,15 +30,16 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     # protect node install when upgrading nvm
     export NVM_DIR=~/.nvm
+
+    # Golang 
+    export GOROOT=$HOME/go
+    export GOPATH=$HOME/code/go
 fi
 
 
 # bindkey to vim
 set -o vi
 
-# Golang 
-export GOROOT=$HOME/go
-export GOPATH=$HOME/code/go
 
 # Update the Path
 export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/bin:$HOME/.node/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
