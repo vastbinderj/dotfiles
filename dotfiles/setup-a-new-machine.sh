@@ -9,7 +9,7 @@ GOSYSTEMVERSION=`go version`
 if [ ! -d "$HOME/code" ]; then
     mkdir -p $HOME/code
 fi
-$CODEDIR="$HOME/code"
+CODEDIR="$HOME/code"
 
 # create GOPATH dirs
 if [ ! -d "$HOME/go" ]; then
@@ -109,27 +109,29 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             silversearcher-ag \
             -y --reinstall
     fi
+
+
+    # go.googlesource.com/go
+    # install golang from the source repository
+    if [[ "$GOSYSTEMVERSION" == *"go1.4.2"* ]]; then
+        # clean up soure dir if exists already
+        if [ -d  $HOME/go ]; then 
+            rm -f $HOME/go
+        fi
+        git clone https://go.googlesource.com/go $HOME/code/go
+        cd $HOME/go
+        # checkout go 1.4.2
+        git checkout go1.4.2
+        cd $HOME/go/src
+        # build from source
+        CMD="sudo ./all.bash"
+        eval $CMD
+        # back to working dir
+        cd $WORKDIR
+        unset CMD
+    fi
 fi
 
-# go.googlesource.com/go
-# install golang from the source repository
-if [[ "$GOSYSTEMVERSION" == *"go1.4.2"* ]]; then
-    # clean up soure dir if exists already
-    if [ -d  $HOME/go ]; then 
-        rm -f $HOME/go
-    fi
-    git clone https://go.googlesource.com/go $HOME/code/go
-    cd $HOME/go
-    # checkout go 1.4.2
-    git checkout go1.4.2
-    cd $HOME/go/src
-    # build from source
-    CMD="sudo ./all.bash"
-    eval $CMD
-    # back to working dir
-    cd $WORKDIR
-    unset CMD
-fi
 
 # github.com/jamiew/git-friendly
 # the `push` command which copies the github compare URL to my clipboard is heaven
