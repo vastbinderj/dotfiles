@@ -12,7 +12,7 @@ fi
 CODEDIR="$HOME/code"
 
 # create GOPATH dirs
-if [ ! -d "$HOME/go" ]; then
+if [ ! -d "$HOME/code/go" ]; then
     mkdir -p $CODEDIR/go
     mkdir -p $CODEDIR/go/{src,pkg,bin}
 fi
@@ -113,34 +113,28 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     # go.googlesource.com/go
     # install golang from the source repository
-    if [[ "$GOSYSTEMVERSION" == *"go1.4.2"* ]]; then
-        # clean up soure dir if exists already
-        if [ -d  $HOME/go ]; then 
-            rm -f $HOME/go
-        fi
-        git clone https://go.googlesource.com/go $HOME/code/go
-        cd $HOME/go
-        # checkout go 1.4.2
-        git checkout go1.4.2
-        cd $HOME/go/src
-        # build from source
-        CMD="sudo ./all.bash"
-        eval $CMD
-        # back to working dir
-        cd $WORKDIR
-        unset CMD
+
+    # first clean up soure dir if exists already
+    if [ -d  $HOME/go ]; then 
+        rm -rf $HOME/go
     fi
+    git clone https://go.googlesource.com/go $HOME/go
+    cd $HOME/go
+    # checkout go 1.4.2
+    git checkout go1.4.2
+    cd $HOME/go/src
+    # build from source
+    CMD="sudo ./all.bash"
+    eval $CMD
+    # back to working dir
+    cd $WORKDIR
+    unset CMD
 fi
 
 
 # github.com/jamiew/git-friendly
 # the `push` command which copies the github compare URL to my clipboard is heaven
 bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
-
-
-# github.com/mooveweb/gvm
-# use gvm for golang versions
-#bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 
 
 # github.com/rupa/z   - oh how i love you
