@@ -42,7 +42,7 @@ set -o vi
 
 
 # Update the Path
-export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/bin:$HOME/.node/bin:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/bin:$HOME/.node/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # add z
 . $HOME/code/z/z.sh
