@@ -380,7 +380,7 @@ set tags=./tags,tags;$HOME
 
 " Golang customizations
 let g:go_fmt_command = "goimports"
-let g:go_bin_path = expand("$HOME/go/bin")
+let g:go_bin_path = expand("$HOME/code/go/bin")
 
 " Syntax Highlighting for Golang
 let g:go_highlight_functions = 1
