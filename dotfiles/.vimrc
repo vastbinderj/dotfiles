@@ -23,6 +23,9 @@ Plugin 'rking/ag.vim'
 " delimitMate
 Plugin 'Raimondi/delimitMate'
 
+" base16-vim colorschemes
+Plugin 'chriskempson/base16-vim'
+
 " Emmet
 Plugin 'mattn/emmet-vim'
 
@@ -557,6 +560,7 @@ au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 " Solarized stuff
 let g:solarized_termtrans=1
 let g:solarized_contrast='high'
+let base16colorspace=256
 set background=dark
-colorscheme molokai
+colorscheme base16-ocean
 highlight Normal ctermbg=NONE
