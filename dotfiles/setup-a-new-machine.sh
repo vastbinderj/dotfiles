@@ -144,6 +144,10 @@ chmod +x ~/code/z/z.sh
 # z hooked up in .bash_profile
 
 
+# Base16 Shell
+git clone https://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
+
+
 # for the c alias (syntax highlighted cat)
 sudo easy_install Pygments
 
