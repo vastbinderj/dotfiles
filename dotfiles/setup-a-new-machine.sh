@@ -165,9 +165,12 @@ git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 # install vundle packages in vim
 vim +PluginInstall +qall
 
+# install golang binaries
+vim +GoInstallBinaries +qall
+
 # build YouCompleteMe
 if [ -f $HOME/.vim/bundle/YouCompleteMe/install.sh  ]; then
-    $HOME/.vim/bundle/YouCompleteMe/install.sh --clang-completer
+    $HOME/.vim/bundle/YouCompleteMe/install.py --clang-completer
 fi
 
 
