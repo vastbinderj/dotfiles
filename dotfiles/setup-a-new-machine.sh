@@ -52,7 +52,6 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         # Add PPAs
         sudo add-apt-repository ppa:neovim-ppa/unstable -y
         curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
-        sudo apt-get update
 
         # Install stuff
         sudo apt-get install \
@@ -70,6 +69,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             cmake \
             grc \
             neovim \
+            nodejs \
             python-dev \
             python-setuptools \
             python3-dev \
@@ -87,7 +87,6 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         # add the Nodesource 0.12 repo to apt
         sudo add-apt-repository ppa:neovim-ppa/unstable -y
         curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
-        sudo apt-get update
 
         # Install stuff
         sudo apt-get install \
@@ -104,6 +103,8 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             exuberant-ctags \
             cmake \
             grc \
+            neovim \
+            nodejs \
             python-dev \
             python-setuptools \
             python3-dev \
