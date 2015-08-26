@@ -51,6 +51,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
         # Add PPAs
         sudo add-apt-repository ppa:neovim-ppa/unstable -y
+        curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
         sudo apt-get update
 
         # Install stuff
@@ -83,7 +84,11 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         # Found Debian
         . /etc/os-release
 
+        # add the Nodesource 0.12 repo to apt
+        sudo add-apt-repository ppa:neovim-ppa/unstable -y
+        curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
         sudo apt-get update
+
         # Install stuff
         sudo apt-get install \
             bash-completion \
