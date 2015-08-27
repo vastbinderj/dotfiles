@@ -64,6 +64,9 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             bison \
             gcc \
             libc6-dev \
+            libpcre3 \
+            libpcre3-dev \
+            libssl-dev \
             bzr \
             exuberant-ctags \
             cmake \
@@ -91,18 +94,21 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         # Install stuff
         sudo apt-get install \
             bash-completion \
-            build-essential \
-            mercurial \
-            curl \
-            git \
             binutils \
             bison \
-            gcc \
-            libc6-dev \
+            build-essential \
             bzr \
-            exuberant-ctags \
             cmake \
+            curl \
+            git \
+            gcc \
             grc \
+            libc6-dev \
+            libpcre3 \
+            libpcre3-dev \
+            libssl-dev \
+            exuberant-ctags \
+            mercurial \
             neovim \
             nodejs \
             python-dev \
