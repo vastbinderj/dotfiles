@@ -124,24 +124,6 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             -y --reinstall
     fi
 
-    # go.googlesource.com/go
-    # install golang from the source repository
-
-    # first clean up soure dir if exists already
-    if [ -d  $HOME/go ]; then 
-        rm -rf $HOME/go
-    fi
-    git clone https://go.googlesource.com/go $HOME/go
-    cd $HOME/go
-    # checkout go 1.4.2
-    git checkout go1.4.2
-    cd $HOME/go/src
-    # build from source
-    CMD="sudo ./all.bash"
-    eval $CMD
-    # back to working dir
-    cd $WORKDIR
-    unset CMD
 fi
 
 
