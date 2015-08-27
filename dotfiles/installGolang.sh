@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ##
 # Install Golang from source and configure GOPATH
 ##
@@ -7,6 +9,12 @@ WORKDIR=`pwd`
 # first clean up soure dir if exists already
 if [ -d  $HOME/go ]; then 
     rm -rf $HOME/go
+fi
+
+# create GOPATH dirs
+if [ ! -d "$HOME/code/go" ]; then
+    mkdir -p $CODEDIR/go
+    mkdir -p $CODEDIR/go/{src,pkg,bin}
 fi
 
 # install golang from the source repository

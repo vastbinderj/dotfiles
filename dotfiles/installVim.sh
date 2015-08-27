@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ##
 #  Install Vim, Golang binaries and YCM
 ##

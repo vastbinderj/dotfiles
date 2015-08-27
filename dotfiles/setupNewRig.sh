@@ -1,5 +1,7 @@
+#!/bin/bash
+
 ##
-## new machine setup.
+# new rig setup and configuration
 ##
 
 WORKDIR=`pwd`
@@ -150,5 +152,5 @@ sudo easy_install Pygments
 # symlinks!
 #   put/move git credentials into ~/.gitconfig.local
 #   http://stackoverflow.com/a/13615531/89484
-./symlink-setup.sh
+./createSymLinks.sh
 
