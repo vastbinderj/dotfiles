@@ -7,6 +7,7 @@ This is my personal collection of dotfiles for golang/rails/node development.  I
         > git clone https://github.com/vastbinderj/dotfiles.git ~/code/dotfiles
         > cd $HOME/dotfiles
         > ./setupNewRig.sh                  # this sets up a mac or x64 linux server
+        > exec -l $SHELL                    # checkout the shiny new prompt
         > ./installGolang.sh                # build golang from source
         > ./setupVim.sh                     # configure vim and install plugins
 
