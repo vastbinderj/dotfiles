@@ -5,19 +5,12 @@
 ##
 
 WORKDIR=`pwd`
-GOSYSTEMVERSION=`go version`
 
 # create code dir if it doesn't exist
 if [ ! -d "$HOME/code" ]; then
     mkdir -p $HOME/code
 fi
 CODEDIR="$HOME/code"
-
-# create GOPATH dirs
-if [ ! -d "$HOME/code/go" ]; then
-    mkdir -p $CODEDIR/go
-    mkdir -p $CODEDIR/go/{src,pkg,bin}
-fi
 
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
