@@ -5,6 +5,11 @@
 ##
 
 WORKDIR=`pwd`
+if ! [ $(id -u) = 0  ]; then
+    INSTALLCMD="sudo apt-get install"
+else
+    INSTALLCMD="apt-get install"
+fi
 
 # create code dir if it doesn't exist
 if [ ! -d "$HOME/code" ]; then
@@ -45,11 +50,16 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         . /etc/lsb-release
 
         # Add PPAs
-        sudo add-apt-repository ppa:neovim-ppa/unstable -y
-        curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+        if [ $(id -u) = 0  ]; then
+            add-apt-repository ppa:neovim-ppa/unstable -y
+            curl -sL https://deb.nodesource.com/setup_0.12 | bash -
+        else
+            sudo add-apt-repository ppa:neovim-ppa/unstable -y
+            curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+        fi
 
         # Install stuff
-        sudo apt-get install \
+        eval $INSTALLCMD \
             bash-completion \
             build-essential \
             mercurial \
@@ -83,12 +93,17 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         # Found Debian
         . /etc/os-release
 
-        # add the Nodesource 0.12 repo to apt
-        sudo add-apt-repository ppa:neovim-ppa/unstable -y
-        curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+        # add PPAs
+        if [ $(id -u) = 0  ]; then
+            add-apt-repository ppa:neovim-ppa/unstable -y
+            curl -sL https://deb.nodesource.com/setup_0.12 | bash -
+        else
+            sudo add-apt-repository ppa:neovim-ppa/unstable -y
+            curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+        fi
 
         # Install stuff
-        sudo apt-get install \
+        eval $INSTALLCMD \
             bash-completion \
             binutils \
             bison \
