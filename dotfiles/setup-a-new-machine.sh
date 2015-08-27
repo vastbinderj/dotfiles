@@ -58,6 +58,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             bash-completion \
             build-essential \
             mercurial \
+            checkinstall \
             curl \
             git \
             binutils \
@@ -98,6 +99,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             bison \
             build-essential \
             bzr \
+            checkinstall \
             cmake \
             curl \
             git \
