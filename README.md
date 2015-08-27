@@ -3,23 +3,26 @@ This is my personal collection of dotfiles for golang/rails/node development.  I
 ## Installation for a Mac and Ubuntu Linux 
 (redhat/centos coming soon)
 
-        > git clone https://github.com/vastbinderj/dotfiles.git ~/.vim
-        > cd ~/.vim/dotfiles
-        > ./setup-a-new-machine.sh
+        > mkdir -p $HOME/code
+        > git clone https://github.com/vastbinderj/dotfiles.git ~/code/dotfiles
+        > cd $HOME/dotfiles
+        > ./setupNewRig.sh                  # this sets up a mac or x64 linux server
+        > ./installGolang.sh                # build golang from source
+        > ./setupVim.sh                     # configure vim and install plugins
 
-## Only run these steps if Vundle and vim packages weren't installed
+## Manual steps for just setting up vim
 
-### Clone Vundle into bundle/
+### Clone Vundle into bundle/ and install all Plugins
 
+        > ln -s $HOME/code/dotfiles/.vimrc $HOME/.vimrc
         > cd ~/.vim
         > git clone https://github.com/gmarik/Vundle.vim.git bundle/Vundle.vim
-
-Open vim and run `:PluginInstall` to clone and install your plugins.
+        > vim +PluginInstall +qall
 
 ###    Finish install of YouCompleteMe
 
         > cd ~/.vim/bundle/YouCompleteMe
-        > ./install.sh --clang-completer
+        > ./install.py --clang-completer 
 
 ### To upgrade all bundled plugins at any time:
 
