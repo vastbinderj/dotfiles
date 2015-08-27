@@ -124,7 +124,6 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             -y --reinstall
     fi
 
-
     # go.googlesource.com/go
     # install golang from the source repository
 
@@ -164,22 +163,6 @@ git clone https://github.com/chriskempson/base16-shell.git $HOME/.config/base16-
 
 # for the c alias (syntax highlighted cat)
 sudo easy_install Pygments
-
-
-# clone vundle in ~/.vim/bundle
-git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
-
-
-# install vundle packages in vim
-vim +PluginInstall +qall
-
-# install golang binaries
-vim +GoInstallBinaries +qall
-
-# build YouCompleteMe
-if [ -f $HOME/.vim/bundle/YouCompleteMe/install.sh  ]; then
-    $HOME/.vim/bundle/YouCompleteMe/install.py --clang-completer
-fi
 
 
 # symlinks!
