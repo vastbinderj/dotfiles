@@ -20,9 +20,6 @@ Plugin 'kien/ctrlp.vim'
 " Ag 
 Plugin 'rking/ag.vim'
 
-" delimitMate
-Plugin 'Raimondi/delimitMate'
-
 " base16-vim colorschemes
 Plugin 'chriskempson/base16-vim'
 
