@@ -19,7 +19,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     source $(brew --prefix nvm)/nvm.sh
 
     # Golang 
-    export GOROOT=/usr/local/go
     export GOPATH=$HOME/code/go
     
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
@@ -42,7 +41,7 @@ set -o vi
 
 
 # Update the Path
-export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/bin:$HOME/.node/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$GOPATH/bin:$HOME/bin:$HOME/.node/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # add z
 . $HOME/code/z/z.sh
