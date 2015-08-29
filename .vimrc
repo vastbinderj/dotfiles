@@ -20,6 +20,9 @@ Plugin 'kien/ctrlp.vim'
 " Ag 
 Plugin 'rking/ag.vim'
 
+" AutoPairs
+Plugin 'jiangmiao/auto-pairs'
+
 " base16-vim colorschemes
 Plugin 'chriskempson/base16-vim'
 
