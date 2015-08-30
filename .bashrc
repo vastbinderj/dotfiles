@@ -40,6 +40,15 @@ fi
 set -o vi
 
 
+# add ssh agent on login
+if [ ! -S ~/.ssh/ssh_auth_sock  ]; then
+    eval `ssh-agent`
+    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+ssh-add -l | grep "The agent has no identities" && ssh-add
+
+
 # Update the Path
 export PATH=$GOPATH/bin:$HOME/bin:$HOME/.node/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
