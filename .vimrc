@@ -20,8 +20,8 @@ Plugin 'kien/ctrlp.vim'
 " Ag 
 Plugin 'rking/ag.vim'
 
-" delimitMate
-Plugin 'Raimondi/delimitMate'
+" AutoPairs
+Plugin 'jiangmiao/auto-pairs'
 
 " base16-vim colorschemes
 Plugin 'chriskempson/base16-vim'
