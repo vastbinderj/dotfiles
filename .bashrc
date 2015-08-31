@@ -21,6 +21,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # Golang 
     export GOPATH=$HOME/code/go
     
+    # Update the Path
+    export PATH=$GOPATH/bin:$HOME/bin:$HOME/.node/bin:/usr/local/bin:/usr/local/sbin:$PATH
+
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     # add bash completion
     if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -33,6 +36,10 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     # Golang 
     export GOROOT=$HOME/go
     export GOPATH=$HOME/code/go
+
+    # Update the Path
+    export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/bin:$HOME/.node/bin:/usr/local/bin:/usr/local/sbin:$PATH
+
 fi
 
 
@@ -48,9 +55,6 @@ fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l | grep "The agent has no identities" && ssh-add
 
-
-# Update the Path
-export PATH=$GOPATH/bin:$HOME/bin:$HOME/.node/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 # add z
 . $HOME/code/z/z.sh
