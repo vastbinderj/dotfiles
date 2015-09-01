@@ -59,7 +59,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         fi
 
         # Install stuff
-        sudo apt-get install \
+        eval $INSTALLCMD \
             bash-completion \
             build-essential \
             mercurial \
