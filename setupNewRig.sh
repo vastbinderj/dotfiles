@@ -59,7 +59,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         fi
 
         # Install stuff
-        eval $INSTALLCMD \
+        sudo apt-get install \
             bash-completion \
             build-essential \
             mercurial \
@@ -93,22 +93,24 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         # Found Debian
         . /etc/os-release
 
+        # add add-apt-repository
+        eval $INSTALLCMD software-properties-common -y
+
         # add PPAs
         if [ $(id -u) = 0  ]; then
-            add-apt-repository ppa:neovim-ppa/unstable -y
             curl -sL https://deb.nodesource.com/setup_0.12 | bash -
         else
-            sudo add-apt-repository ppa:neovim-ppa/unstable -y
             curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
         fi
 
         # Install stuff
-        eval $INSTALLCMD \
+        sudo apt-get install \
             bash-completion \
             binutils \
             bison \
             build-essential \
             bzr \
+            bzip2 \
             checkinstall \
             cmake \
             curl \
@@ -121,7 +123,6 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             libssl-dev \
             exuberant-ctags \
             mercurial \
-            neovim \
             nodejs \
             python-dev \
             python-setuptools \
