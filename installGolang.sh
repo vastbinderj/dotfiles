@@ -43,11 +43,7 @@ cd $HOME/go/src
 
 
 # build from source
-if ! [ $(id -u) = 0 ]; then
-    CMD="sudo ./make.bash"
-else
-    CMD="./make.bash"
-fi
+CMD="./all.bash"
 eval $CMD
 
 
