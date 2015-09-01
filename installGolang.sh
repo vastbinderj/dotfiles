@@ -27,8 +27,8 @@ fi
 
 # create GOPATH dirt
 if [ ! -d "$HOME/code/go" ]; then
-    mkdir -p $CODEDIR/go
-    mkdir -p $CODEDIR/go/{src,pkg,bin}
+    mkdir -p $HOME/code/go
+    mkdir -p $HOME/code/go/{src,pkg,bin}
 fi
 
 
@@ -44,9 +44,9 @@ cd $HOME/go/src
 
 # build from source
 if ! [ $(id -u) = 0 ]; then
-    CMD="sudo ./all.bash"
+    CMD="sudo ./make.bash"
 else
-    CMD="./all.bash"
+    CMD="./make.bash"
 fi
 eval $CMD
 
