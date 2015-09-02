@@ -79,6 +79,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             grc \
             neovim \
             nodejs \
+            python-software-properties \
             python-dev \
             python-setuptools \
             python3-dev \
@@ -124,6 +125,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             exuberant-ctags \
             mercurial \
             nodejs \
+            python-software-properties \
             python-dev \
             python-setuptools \
             python3-dev \
