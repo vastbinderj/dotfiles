@@ -327,11 +327,6 @@ endfunc
 
 nnoremap <C-n> :call NumberToggle()<cr>
 
-" set delimitMate options
-set backspace=indent,eol,start
-let delimitMate_expand_cr = 2
-let delimitMate_expand_space = 1
-
 "Scala Tagbar configuration
 let g:tagbar_type_scala = {
     \ 'ctagstype' : 'Scala',
