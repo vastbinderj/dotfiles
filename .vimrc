@@ -415,12 +415,12 @@ let g:tlWindowPosition = 1                                          " set the wi
 noremap <Leader>Tp :noautocmd vimgrep /TODO/j **/**<CR>:cw<CR>      
 
 " easymotion leader binding
-map <Leader> <Plug>(easymotion-prefix)
+map <Leader><Leader> <Plug>(easymotion-prefix)
 
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
+map <Leader><Leader>l <Plug>(easymotion-lineforward)
+map <Leader><Leader>j <Plug>(easymotion-j)
+map <Leader><Leader>k <Plug>(easymotion-k)
+map <Leader><Leader>h <Plug>(easymotion-linebackward)
 
 let g:EasyMotion_startofline = 0
 let g:EasyMotion_smartcase = 1
