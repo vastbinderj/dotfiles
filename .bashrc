@@ -64,7 +64,6 @@ eval "$(rbenv init -)"
 
 
 # Set my preferred editor
-export VISUAL='mvim -v'
 export EDITOR='vim'
 
 
