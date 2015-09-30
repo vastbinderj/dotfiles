@@ -64,7 +64,6 @@ eval "$(rbenv init -)"
 
 
 # Set my preferred editor
-export VISUAL='mvim -v'
 export EDITOR='vim'
 
 
@@ -126,3 +125,9 @@ unset file
 
 # Support the use of GVM for golang versions
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+# The next line updates PATH for the Google Cloud SDK.
+[ -f "$HOME/code/google-cloud-sdk/path.bash.inc"  ] && source "$HOME/code/google-cloud-sdk/path.bash.inc"
+
+# The next line enables shell command completion for gcloud.
+[ -f "$HOME/code/google-cloud-sdk/completion.bash.inc" ] && source "$HOME/code/google-cloud-sdk/completion.bash.inc"
