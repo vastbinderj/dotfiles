@@ -62,21 +62,22 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         eval $INSTALLCMD \
             bash-completion \
             build-essential \
-            mercurial \
+            bzr \
             checkinstall \
+            cmake \
             curl \
+            exuberant-ctags \
             git \
             binutils \
             bison \
+            gawk \
             gcc \
+            grc \
             libc6-dev \
             libpcre3 \
             libpcre3-dev \
             libssl-dev \
-            bzr \
-            exuberant-ctags \
-            cmake \
-            grc \
+            mercurial \
             neovim \
             nodejs \
             python-software-properties \
@@ -84,10 +85,10 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             python-setuptools \
             python3-dev \
             python3-setuptools \
-            vim-nox \
             rbenv \
             ruby-build \
             silversearcher-ag \
+            vim-nox \
             -y --reinstall
 
     elif [ -f /etc/os-release  ]; then
@@ -115,6 +116,8 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             checkinstall \
             cmake \
             curl \
+            exuberant-ctags \
+            gawk \
             git \
             gcc \
             grc \
@@ -122,7 +125,6 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             libpcre3 \
             libpcre3-dev \
             libssl-dev \
-            exuberant-ctags \
             mercurial \
             nodejs \
             python-software-properties \
