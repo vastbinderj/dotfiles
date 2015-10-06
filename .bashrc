@@ -12,12 +12,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # Set architecture flags
     export ARCHFLAGS="-arch x86_64"
 
-    # protect node install when upgrading nvm
-    export NVM_DIR=~/.nvm
-
-    # source nvm.sh
-    source $(brew --prefix nvm)/nvm.sh
-
     # Golang 
     export GOPATH=$HOME/code/go
     
@@ -29,9 +23,6 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     if [ -f /usr/share/bash-completion/bash_completion ]; then
         . /usr/share/bash-completion/bash_completion
     fi
-
-    # protect node install when upgrading nvm
-    export NVM_DIR=~/.nvm
 
     # Golang 
     export GOROOT=$HOME/go
