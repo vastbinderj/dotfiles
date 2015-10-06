@@ -145,4 +145,4 @@
 	cmd = "vimdiff "
 	trustExitCode = true
 [push]
-	default = simple
+	default = matching
