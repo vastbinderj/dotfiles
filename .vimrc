@@ -205,7 +205,6 @@ let mapleader=","
 autocmd! BufWritePost vimrc source ~/.vimrc
 
 set encoding=utf-8
-set gfn=Ubuntu\ Mono\ 12
 
 set clipboard=unnamed
 set tabstop=4
@@ -234,15 +233,12 @@ set cmdheight=2
 set encoding=utf8
 set scrolloff=5
 set mat=2
-"set splitbelow
 set splitright
-" Enable Code Folding
-set foldmethod=indent
+set foldmethod=indent           " Enable Code Folding
 set foldlevel=99
 
 set laststatus=2
 set t_Co=256
-"set term=screen-256color
 
 
 " airline settings
@@ -262,24 +258,19 @@ if has ('nvim')
     tnoremap <C-j> <C-\><C-n><C-w>j
     tnoremap <C-k> <C-\><C-n><C-w>k
     tnoremap <C-l> <C-\><C-n><C-w>l
+
+    " mapping to enter command mode in terminal
+    tnoremap <Leader>e <C-\><C-n>
+
     " enter insert mode when cycling back to a terminal window
     autocmd WinEnter term://* startinsert
 endif
+
 " move around windows with ctrl key
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-
-" resize windows using arrow keys
-nnoremap <Left> :vertical resize +1<CR>
-nnoremap <Right> :vertical resize -1<CR>
-nnoremap <Up> :resize +1<CR>
-nnoremap <Down> :resize -1<CR>
-nnoremap <C-w><Right> :exe "vertical resize +" . (winwidth(0) * 1/2)<CR>
-nnoremap <C-w><Left> :exe "vertical resize -" . (winwidth(0) * 1/2)<CR>
-nnoremap <C-w><Up> :exe "resize +" . (winheight(0) * 1/2)<CR>
-nnoremap <C-w><Down> :exe "resize -" . (winheight(0) * 1/2)<CR>
 
 " Mappings for two-handed save
 " insert to normal mode save
@@ -486,7 +477,6 @@ let g:ctrlp_custom_ignore = {
 " List Toggle Settings
 let g:lt_location_list_toggle_map = '<leader>Tl'
 let g:lt_quickfix_list_toggle_map = '<leader>Tq'
-
 
 " Ultisnips
 "let g:UltiSnipsUsePythonVersion = 2
