@@ -262,6 +262,9 @@ if has ('nvim')
     " mapping to enter command mode in terminal
     tnoremap <Leader>e <C-\><C-n>
 
+    " open a terminal below the current buffer
+    nnoremap <leader>o :below 10sp term://$SHELL<cr>i
+
     " enter insert mode when cycling back to a terminal window
     autocmd WinEnter term://* startinsert
 endif
