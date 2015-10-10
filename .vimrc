@@ -556,3 +556,4 @@ let base16colorspace=256
 set background=dark
 colorscheme base16-ocean
 highlight Normal ctermbg=NONE
+execute "set colorcolumn=" . join(range(81,335), ',')
