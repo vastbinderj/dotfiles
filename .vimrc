@@ -485,6 +485,9 @@ nmap <leader>bs :CtrlPMRU<cr>
 let g:lt_location_list_toggle_map = '<leader>Tl'
 let g:lt_quickfix_list_toggle_map = '<leader>Tq'
 
+" Toggle auto-pairs
+let g:AutoPairsShortcutToggle = '<leader>Ta'
+
 " Ultisnips
 "let g:UltiSnipsUsePythonVersion = 2
 
@@ -556,4 +559,3 @@ let base16colorspace=256
 set background=dark
 colorscheme base16-ocean
 highlight Normal ctermbg=NONE
-execute "set colorcolumn=" . join(range(81,335), ',')
