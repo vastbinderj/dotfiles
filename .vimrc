@@ -263,7 +263,7 @@ if has ('nvim')
     tnoremap <Leader>e <C-\><C-n>
 
     " open a terminal below the current buffer
-    nnoremap <leader>o :below 10sp term://$SHELL<cr>i
+    nnoremap <leader>o :below 15sp term://$SHELL<cr>i
 
     " enter insert mode when cycling back to a terminal window
     autocmd WinEnter term://* startinsert
