@@ -68,6 +68,7 @@ brew install cmake
 brew install ctags
 brew install cscope
 brew install macvim
+brew install nodejs
 brew install --HEAD neovim/neovim/neovim
 
 
