@@ -7,7 +7,7 @@ This is my personal collection of dotfiles for golang/rails/node development.  I
         > git clone https://github.com/vastbinderj/dotfiles.git ~/code/dotfiles
         > cd $HOME/dotfiles
         > ./setupNewRig.sh                  # this sets up a mac or x64 linux server
-        > exec -l $SHELL                    # checkout the shiny new prompt
+        > exec -l $SHELL                    # reload your shell
         > ./installGolang.sh                # build golang from source
         > ./setupVim.sh                     # configure vim and install plugins
 
@@ -44,6 +44,7 @@ Open vim and run `:PluginUpdate` or `:PluginInstall!`
 
 * For golang development, I use [vim-go](https://github.com/fatih/vim-go) which does many things for me like auto-imports, gofmt upon save and provides easy jump mappings to quickly browse source code.  
 
+    To install the Golang binaries, run `:GoInstallBinaries`. You may need to do this with a new Golang release.
 
 * Mappings for Escape in Vim
   * j-k
@@ -64,7 +65,7 @@ Open vim and run `:PluginUpdate` or `:PluginInstall!`
         
         - Airline
         - Ctrl-P
-        - DelimitMate
+        - Auto-Pairs
         - Fugitive
         - Gundo
         - vim-go
