@@ -459,7 +459,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 " Ack
-nnoremap <,a> <Esc>:Ack!
+nnoremap <,a> <Esc>:Ag!
 
 " CTRL-P
 set wildignore+=*/.git/*,*/.idea/*,*/.DS_Store,*/node_modules/*,*/bower_components/*.so,*.swp,*.zip
@@ -559,3 +559,16 @@ let base16colorspace=256
 set background=dark
 colorscheme base16-ocean
 highlight Normal ctermbg=NONE
+
+" Deal with whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+" func to trim whitespace
+function! TrimWhiteSpace()
+    %s/\s\+$//e
+endfunction
+autocmd BufWritePre * :call TrimWhiteSpace()
