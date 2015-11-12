@@ -140,8 +140,8 @@
 [difftool]
     prompt = false
 [difftool "sourcetree"]
-    cmd = vimdiff \"$LOCAL\" \"$REMOTE\"
-    path = 
+	cmd = vimdiff  \\\"$LOCAL\\\" \\\"$REMOTE\\\"
+	path = 
 [mergetool "sourcetree"]
-    cmd = "vimdiff "
-    trustExitCode = true
+	cmd = "vimdiff "
+	trustExitCode = true
