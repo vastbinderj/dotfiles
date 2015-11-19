@@ -1,4 +1,4 @@
-" set 
+" set
 set nocompatible
 
 " Vundle Setup
@@ -17,7 +17,7 @@ Plugin 'flazz/vim-colorschemes'
 " CTRL P
 Plugin 'kien/ctrlp.vim'
 
-" Ag 
+" Ag
 Plugin 'rking/ag.vim'
 
 " AutoPairs
@@ -98,7 +98,7 @@ Plugin 'bling/vim-airline'
 " Coffescript
 Plugin 'kchmck/vim-coffee-script'
 
-" Django 
+" Django
 Plugin 'gerardo/vim-django-support'
 
 " EasyMotion
@@ -128,10 +128,10 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 " AngularJS Snippets
 Plugin 'matthewsimo/angular-vim-snippets'
 
-" Jasmine 
+" Jasmine
 Plugin 'claco/jasmine.vim'
 
-" Angular 
+" Angular
 Plugin 'burnettk/vim-angular'
 
 " jQuery
@@ -164,7 +164,7 @@ Plugin 'jceb/vim-orgmode'
 " Unviversal Text Linking
 Plugin 'vim-scripts/utl.vim'
 
-" Calendar 
+" Calendar
 Plugin 'mattn/calendar-vim'
 
 " SyntaxRange
@@ -236,6 +236,8 @@ set mat=2
 set splitright
 set foldmethod=indent           " Enable Code Folding
 set foldlevel=99
+set wrap
+set textwidth=120
 
 set laststatus=2
 set t_Co=256
@@ -279,7 +281,7 @@ map <c-h> <c-w>h
 " insert to normal mode save
 inoremap ;a <ESC>:w<CR>
 inoremap ;d <ESC>:update<CR>
-" insert to normal to insert  
+" insert to normal to insert
 inoremap ;f <C-O>:w<CR>
 " normal to nomal mode save
 nnoremap ;f :w<CR>
@@ -301,7 +303,7 @@ function! DoWindowSwap()
     "Switch to dest and shuffle source->dest
     exe curNum . "wincmd w"
     "Hide and open so that we aren't prompted and keep history
-    exe 'hide buf' markedBuf 
+    exe 'hide buf' markedBuf
 endfunction
 
 nnoremap <silent> <Leader>mw :call MarkWindowSwap()<CR>
@@ -382,8 +384,8 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 " generate go ctags upon save
-au BufWritePost *.go,*.js,*.rb,*.py silent! !ctags -R --exclude=*.html 2> /dev/null &    
-let g:godef_same_file_in_same_window=1                              " when in go, just move the cursor if in same file 
+au BufWritePost *.go,*.js,*.rb,*.py silent! !ctags -R --exclude=*.html 2> /dev/null &
+let g:godef_same_file_in_same_window=1                              " when in go, just move the cursor if in same file
 autocmd FileType go setlocal shiftwidth=8 tabstop=8 softtabstop=8   " set tabstop to 8 for go files
 autocmd FileType go setlocal noexpandtab                            " don't expand tabs to spaces for go files
 " Go keymaps
@@ -406,7 +408,7 @@ au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 map <leader>Tt <Plug>TaskList
 let g:tlWindowPosition = 1                                          " set the window postion below
 " mapping for tasks in project
-noremap <Leader>Tp :noautocmd vimgrep /TODO/j **/**<CR>:cw<CR>      
+noremap <Leader>Tp :noautocmd vimgrep /TODO/j **/**<CR>:cw<CR>
 
 " easymotion leader binding
 map <Leader><Leader> <Plug>(easymotion-prefix)
@@ -428,7 +430,7 @@ nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 " List Toggle
 let g:lt_height = 5
 
-" Gundo 
+" Gundo
 map <leader>g :GundoToggle<CR>
 
 "NerdTreeToggle
@@ -494,7 +496,7 @@ let g:AutoPairsShortcutToggle = '<leader>Ta'
 " NodeJS Completion Settings
 let g:nodejs_complete_config = {
             \ 'js_compl_fn': 'jscomplete#CompleteJS',
-            \ 'max_node_compl_len': 15 
+            \ 'max_node_compl_len': 15
             \ }
 
 " Syntastic settings
@@ -538,12 +540,12 @@ highlight   PmenuSel      ctermfg=0 ctermbg=7
 highlight   PmenuSbar     ctermfg=7 ctermbg=0
 highlight   PmenuThumb    ctermfg=0 ctermbg=7
 
-" JavaScript 
+" JavaScript
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
-" Node.js dictionary 
+" Node.js dictionary
 au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node/dict/node.dict
 
 " Recompile a Coffee file when saved
