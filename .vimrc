@@ -442,6 +442,9 @@ nnoremap <F4> :TagbarToggle<CR>
 " Bind F6 to CTAGS
 nnoremap <F6> :!ctags -R --exclude=.git --exclude=log *<CR>
 
+" Bind F10 to PastToggle
+map <F10> :set paste!<CR>
+
 "Fuzzy Finder
 nnoremap <C-f><C-f> :FufFile<CR>
 

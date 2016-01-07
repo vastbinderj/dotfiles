@@ -10,7 +10,6 @@
     smtpencryption = tls
     smtpserver = smtp.gmail.com
     smtpuser = james.vastbinder@gmail.com
-    smtppass = password
     smtpserverport = 587
     to = git@vger.kernel.org
 [web]
@@ -141,7 +140,7 @@
     prompt = false
 [difftool "sourcetree"]
 	cmd = vimdiff  \\\"$LOCAL\\\" \\\"$REMOTE\\\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = "vimdiff "
 	trustExitCode = true
