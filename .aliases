@@ -68,6 +68,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # use coreutils `ls` if possible…
     command -v gls >/dev/null 2>&1 || alias gls="ls"
 
+
+    # uuid generation alias
+    alias uuid="uuidgen | tr '[:upper:]' '[:lower:]'"
+
+
 fi
 
 # be nice
