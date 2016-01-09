@@ -9,7 +9,7 @@
 
 #
 # utils !!!
-# 
+#
 
 
 answer_is_yes() {
@@ -20,12 +20,12 @@ answer_is_yes() {
 
 ask() {
     print_question "$1"
-    read
+    read -r
 }
 
 ask_for_confirmation() {
     print_question "$1 (y/n) "
-    read -n 1
+    read -rn 1
     printf "\n"
 }
 
@@ -56,12 +56,13 @@ execute() {
 }
 
 get_answer() {
-    printf "$REPLY"
+    printf "%s" "$REPLY"
 }
 
 get_os() {
 
-    declare -r OS_NAME="$(uname -s)"
+    declare -r OS_NAME
+    OS_NAME="$(uname -s)"
     local os=""
 
     if [ "$OS_NAME" == "Darwin" ]; then
@@ -75,7 +76,7 @@ get_os() {
 }
 
 is_git_repository() {
-    [ "$(git rev-parse &>/dev/null; printf $?)" -eq 0 ] \
+    [ "$(git rev-parse &>/dev/null; printf "%s" "$?")" -eq 0 ] \
         && return 0 \
         || return 1
 }
@@ -96,31 +97,29 @@ mkd() {
 
 print_error() {
     # Print output in red
-    printf "\e[0;31m  [✖] $1 $2\e[0m\n"
+    printf "\e[0;31m  [✖] %s %s\e[0m\n" "$1" "$2"
 }
 
 print_info() {
     # Print output in purple
-    printf "\n\e[0;35m $1\e[0m\n\n"
+    printf "\n\e[0;35m %s\e[0m\n\n" "$1"
 }
 
 print_question() {
     # Print output in yellow
-    printf "\e[0;33m  [?] $1\e[0m"
+    printf "\e[0;33m  [?] %s\e[0m" "$1"
 }
 
 print_result() {
-    [ $1 -eq 0 ] \
-        && print_success "$2" \
-        || print_error "$2"
-
-    [ "$3" == "true" ] && [ $1 -ne 0 ] \
-        && exit
+    if [ "$1" -eq 0 ] && print_success "$2"; then
+        print_error "$2"
+    fi
+    [ "$3" == "true" ] && [ "$1" -ne 0 ] && exit
 }
 
 print_success() {
     # Print output in green
-    printf "\e[0;32m  [✔] $1\e[0m\n"
+    printf "\e[0;32m  [✔] %s\e[0m\n" "$1"
 }
 
 
@@ -130,9 +129,10 @@ print_success() {
 
 
 # finds all .dotfiles in this folder
-declare -a FILES_TO_SYMLINK=$(find . -maxdepth 1 -type f -name ".*" -not -name .DS_Store -not -name .git -not -name .osx | sed -e 's|//|/|' | sed -e 's|./.|.|')
-# add in bin dir
-FILES_TO_SYMLINK="$FILES_TO_SYMLINK bin" # add in vim and the binaries
+declare -a FILES_TO_SYMLINK
+FILES_TO_SYMLINK=$(find . -maxdepth 1 -type f -name ".*" -not -name .DS_Store -not -name .git -not -name .osx | sed -e 's|//|/|' | sed -e 's|./.|.|')
+# append the bin dir
+FILES_TO_SYMLINK+=("bin") # add in vim and the binaries
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 main() {
@@ -141,7 +141,7 @@ main() {
     local sourceFile=""
     local targetFile=""
 
-    for i in ${FILES_TO_SYMLINK[@]}; do
+    for i in "${FILES_TO_SYMLINK[@]}"; do
 
         sourceFile="$(pwd)/$i"
         targetFile="$HOME/$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
@@ -165,10 +165,6 @@ main() {
         fi
 
     done
-
-    # hack symlink for neovim
-    ln -fs ~/.vim ~/.nvim && ln -fs ~/.vimrc ~/.nvimrc
-
 }
 
 main

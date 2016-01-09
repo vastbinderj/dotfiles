@@ -1,19 +1,18 @@
 "*":
   "autocomplete-plus":
-    "useCoreMovementCommands": false
+    useCoreMovementCommands: false
   "exception-reporting":
     userId: "846a0524-31e6-563e-105e-d41e5d64b353"
   welcome:
     showOnStartup: false
     core:
-themes: [
-    "spacegray-dark-ui"
-    "atom-material-syntax"
-]
-disabledPackages: [
-    "symbols-view"
-
-]
+      themes: [
+        "spacegray-dark-ui"
+        "atom-material-syntax"
+      ]
+      disabledPackages: [
+        "symbols-view"
+      ]
   editor:
     invisibles: {}
     fontSize: 13
@@ -27,13 +26,6 @@ disabledPackages: [
     scrollPastEnd: true
     softWrapAtPreferredLineLength: true
     preferredLineLength: 130
-".gotemplate.source":
-  editor:
-    showIndentGuide: true
-    showInvisibles: true
-    softWrapAtPreferredLineLength: true
-    scrollPastEnd: true
-    preferredLineLength: 130
 ".go.source":
   editor:
     tabLength: 8
@@ -42,4 +34,10 @@ disabledPackages: [
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: false
-
+".gotemplate.source":
+  editor:
+    showIndentGuide: true
+    showInvisibles: true
+    softWrapAtPreferredLineLength: true
+    scrollPastEnd: true
+    preferredLineLength: 130
