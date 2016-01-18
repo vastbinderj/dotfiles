@@ -20,6 +20,9 @@ Plugin 'kien/ctrlp.vim'
 " Ag
 Plugin 'rking/ag.vim'
 
+" Gsearch
+Plugin 'skwp/greplace.vim'
+
 " AutoPairs
 Plugin 'jiangmiao/auto-pairs'
 
@@ -469,6 +472,10 @@ let g:UltiSnipsEditSplit="vertical"
 
 " Ack
 nnoremap <,a> <Esc>:Ag!
+
+" Gsearch
+set grepprg=ag
+let g:grep_cmd_opts = '--line-numbers --noheading'
 
 " CTRL-P
 set wildignore+=*/.git/*,*/.idea/*,*/.DS_Store,*/node_modules/*,*/bower_components/*.so,*.swp,*.zip
