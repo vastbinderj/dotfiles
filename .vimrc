@@ -289,10 +289,6 @@ inoremap ;f <C-O>:w<CR>
 " normal to nomal mode save
 nnoremap ;f :w<CR>
 
-
-" Mapping for Paste Mode Toggle
-set pastetoggle=<F10>
-
 " Functions to easily mark and swap windows
 function! MarkWindowSwap()
     let g:markedWinNum = winnr()
