@@ -13,15 +13,20 @@ brew upgrade
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew tap homebrew/dupes
 brew install coreutils
-brew install findutils
+brew install binutils
+brew install findutils --with-default-names
 brew install diffutils
 
 brew install moreutils
 brew install gnu-sed --with-default-names
+brew install gnu-tar --with-default-names
 brew install gawk
 brew install gnutls
 brew install grep --with-default-names
 brew install screen
+brew install watch
+brew install wdiff --with-gettext
+
 
 # Install Bash 4
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
@@ -67,7 +72,7 @@ brew install tmux
 brew install cmake
 brew install ctags
 brew install cscope
-brew install macvim
+brew install macvim --custom-system-icons
 brew install nodejs
 brew install --HEAD neovim/neovim/neovim
 
