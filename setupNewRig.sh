@@ -42,6 +42,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     echo $BASH_VERSION # should be 4.x not the old 3.2.X
     # Later, confirm iterm settings aren't conflicting.
 
+    # fix for iterm and terminal.app to use ctrl-h correctly for libterm and neovim
+    infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
+    tic $TERM.ti
+
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     # Found Linux
 
