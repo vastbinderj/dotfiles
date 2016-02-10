@@ -6,13 +6,13 @@
 *.exe
 *.o
 *.so
- 
+
 # Temporary files #
 ###################
 *.swp
 *.swo
 *~
- 
+
 # Packages #
 ############
 *.7z
@@ -23,13 +23,13 @@
 *.rar
 *.tar
 *.zip
- 
+
 # Logs and databases #
 ######################
 *.log
 *.sql
 *.sqlite
- 
+
 # OS generated files #
 ######################
 .DS_Store*
@@ -38,3 +38,7 @@ Icon?
 Thumbs.db
 .DS_Store
 Gemfile.lock
+
+# symlink files
+###############
+diff-highlight

@@ -96,7 +96,8 @@ Plugin 'edkolev/tmuxline.vim'
 Plugin 'SirVer/ultisnips'
 
 " Vim-Airline
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Coffescript
 Plugin 'kchmck/vim-coffee-script'
@@ -275,10 +276,10 @@ if has ('nvim')
 endif
 
 " move around windows with ctrl key
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <C-h> <C-w>h
 
 " Mappings for two-handed save
 " insert to normal mode save
@@ -383,6 +384,7 @@ let g:go_bin_path = expand("$HOME/code/go/bin")
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
@@ -446,7 +448,7 @@ nnoremap <F4> :TagbarToggle<CR>
 nnoremap <F6> :!ctags -R --exclude=.git --exclude=log *<CR>
 
 " Bind F10 to PastToggle
-map <F10> :set paste!<CR>
+set pastetoggle=<F10>
 
 "Fuzzy Finder
 nnoremap <C-f><C-f> :FufFile<CR>

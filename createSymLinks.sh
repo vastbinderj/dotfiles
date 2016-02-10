@@ -166,8 +166,9 @@ main() {
 
     done
 
-    # hack symlink for neovim
+    # hack symlinks for neovim diff-highlight
     ln -fs ~/.vim ~/.nvim && ln -fs ~/.vimrc ~/.nvimrc
+    ln -sf "$(brew --prefix)/share/git-core/contrib/diff-highlight/diff-highlight" ~/bin/diff-highlight
 
 }
 
