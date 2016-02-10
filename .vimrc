@@ -15,7 +15,7 @@ Plugin 'vim-scripts/L9'
 Plugin 'flazz/vim-colorschemes'
 
 " CTRL P
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Ag
 Plugin 'rking/ag.vim'
