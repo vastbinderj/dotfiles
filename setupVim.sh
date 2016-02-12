@@ -32,3 +32,10 @@ if [ -f $HOME/.vim/bundle/YouCompleteMe/install.sh  ]; then
     $HOME/.vim/bundle/YouCompleteMe/install.py --clang-completer
 fi
 
+# build Vimproc
+if [ -f $HOME/.vim/bundle/vimproc/Makefile  ]; then
+    cd $HOME/.vim/bundle/vimproc
+    make
+    cd $WORKDIR
+fi
+
