@@ -202,9 +202,6 @@ endif
 filetype plugin indent on
 syntax on
 
-" Set the Map Leader
-let mapleader=","
-
 " when vimrc is edited, reload it
 autocmd! BufWritePost vimrc source ~/.vimrc
 
@@ -257,6 +254,65 @@ let g:airline_left_sep = ' '
 let g:airline_right_sep = ' '
 let g:airline_theme = "badwolf"
 
+"======================================
+" Function Key Maps
+"======================================
+
+" <F1>: Help
+nmap <F1> [unite]h
+
+" <F2>: Gundo
+nnoremap <F2> :<C-u>GundoToggle<cr>
+
+" <F3>: Save Session
+nnoremap <F3> :<C-u>UniteSessionSave
+
+" <F5>: Toggle Indent Guides
+nnoremap <F5> :<C-u>IndentGuidesToggle<cr>
+
+" <F6>: Generate CTAGS
+nnoremap <F6> :!ctags -R --exclude=.git --exclude=log *<CR>
+
+"======================================
+" Leader Key Maps
+"======================================
+
+" Set the Map Leader
+let mapleader =","
+let g:mapleader =","
+let maplocalleader=","
+let g:maplocalleader=","
+
+" Toggle Paste mode
+nnoremap <silent> <Leader>1 :set paste!<cr>
+
+" Toggle Tagbar
+nnoremap <silent> <Leader>2  :TagbarToggle<CR>
+
+" Quit all
+nnoremap <Leader>q :qa<cr>
+
+" Close Current Buffer
+nnoremap <Leader>w :NERDTreeClose<cr>:bdelete<cr>
+
+"NerdTreeToggle
+map <leader>nt <plug>NERDTreeTabsToggle<CR>
+
+"==================================
+" Fugitive Maps
+"==================================
+
+nnoremap <Leader>fb :Gblame<cr>
+nnoremap <Leader>fc :Gcommit<cr>
+nnoremap <Leader>fd :Gdiff<cr>
+nnoremap <Leader>fp :Git push<cr>
+nnoremap <Leader>fr :Gremove<cr>
+nnoremap <Leader>fs :Gstatus<cr>
+nnoremap <Leader>fw :Gwrite<cr>
+
+"===================================
+" Neovim Maps
+"==================================
 
 " to move from neovim terminal window to another window
 if has ('nvim')
@@ -269,7 +325,7 @@ if has ('nvim')
     tnoremap <Leader>e <C-\><C-n>
 
     " open a terminal below the current buffer
-    nnoremap <leader>o :below 15sp term://$SHELL<cr>i
+    nnoremap <leader>t :below 15sp term://$SHELL<cr>i
 
     " enter insert mode when cycling back to a terminal window
     autocmd WinEnter term://* startinsert
@@ -327,6 +383,10 @@ endfunc
 
 nnoremap <C-n> :call NumberToggle()<cr>
 
+"============================
+" Tagbar config
+"============================
+
 "Scala Tagbar configuration
 let g:tagbar_type_scala = {
     \ 'ctagstype' : 'Scala',
@@ -376,6 +436,10 @@ let g:tagbar_type_go = {
 " Tag path
 set tags=./tags,tags;$HOME
 
+"=====================================
+" Golang vim-go config
+"=====================================
+
 " Golang customizations
 let g:go_fmt_command = "goimports"
 let g:go_bin_path = expand("$HOME/code/go/bin")
@@ -405,15 +469,19 @@ au FileType go nmap <Leader>b <Plug>(go-build)
 au FileType go nmap <Leader>t <Plug>(go-test)
 " GoDef
 au FileType go nmap gd <Plug>(go-def)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>gs <Plug>(go-def-split)
+au FileType go nmap <Leader>gv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>gt <Plug>(go-def-tab)
 
 " mapping for tasks in current file
 map <leader>Tt <Plug>TaskList
 let g:tlWindowPosition = 1                                          " set the window postion below
 " mapping for tasks in project
 noremap <Leader>Tp :noautocmd vimgrep /TODO/j **/**<CR>:cw<CR>
+
+"===========================================
+" Easy Motion Maps
+"===========================================
 
 " easymotion leader binding
 map <Leader><Leader> <Plug>(easymotion-prefix)
@@ -434,21 +502,6 @@ nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
 " List Toggle
 let g:lt_height = 5
-
-" Gundo
-map <leader>g :GundoToggle<CR>
-
-"NerdTreeToggle
-map <leader>nt <plug>NERDTreeTabsToggle<CR>
-
-" Bind F4 to :TagbarToggle
-nnoremap <F4> :TagbarToggle<CR>
-
-" Bind F6 to CTAGS
-nnoremap <F6> :!ctags -R --exclude=.git --exclude=log *<CR>
-
-" Bind F10 to PastToggle
-set pastetoggle=<F10>
 
 "Fuzzy Finder
 nnoremap <C-f><C-f> :FufFile<CR>
