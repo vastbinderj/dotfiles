@@ -221,7 +221,7 @@ set incsearch
 set showmatch
 set matchtime=5
 set number
-set relativenumber
+"set relativenumber
 set title
 set nobackup
 set noswapfile
@@ -487,10 +487,13 @@ let g:ctrlp_custom_ignore = {
             \ 'file': '\v\.(exe|so|dll)$',
             \ 'link': 'some_bad_symbolic_links',
             \ }
+let g:ctrlp_buftag_ctags_bin='ctags'
+let g:ctrlp_buftag_types={'go': '--language-force=go --golang-types=ftv', 'javascript': '--langauge-force=js'}
 " Easy bindings for its various modes
 nmap <leader>bb :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bs :CtrlPMRU<cr>
+nmap <leader>b. :CtrlPBufTag<cr>
 
 " Pep8 Mapping
 " let g:pep8_map=',p8'
