@@ -413,7 +413,16 @@ nnoremap <C-n> :call NumberToggle()<cr>
 " Tagbar config
 "============================
 
-"Scala Tagbar configuration
+" open on the left
+let g:tagbar_left = 1
+
+" autoclose tagbar on selection
+let g:tagbar_autoclose = 1
+
+" give tagbar focus when opened
+let g:tagbar_autofocus = 1
+
+" Scala Tagbar configuration
 let g:tagbar_type_scala = {
     \ 'ctagstype' : 'Scala',
     \ 'kinds'     : [
