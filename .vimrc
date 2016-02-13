@@ -1,4 +1,4 @@
-" set
+"wset
 set nocompatible
 
 " Vundle Setup
@@ -95,6 +95,9 @@ Plugin 'edkolev/tmuxline.vim'
 " Unite
 Plugin 'shougo/unite.vim'
 
+" Vimproc
+Plugin 'shougo/vimproc'
+
 " Ultisnips
 Plugin 'SirVer/ultisnips'
 
@@ -186,6 +189,9 @@ Plugin 'christoomey/vim-tmux-navigator'
 " Unimpaired
 Plugin 'tpope/vim-unimpaired'
 
+" neoyank
+Plugin 'shougo/neoyank.vim'
+
 " YCM
 Plugin 'Valloric/YouCompleteMe'
 
@@ -221,7 +227,6 @@ set incsearch
 set showmatch
 set matchtime=5
 set number
-"set relativenumber
 set title
 set nobackup
 set noswapfile
@@ -296,7 +301,7 @@ nnoremap <silent> <Leader>2  :TagbarToggle<CR>
 nnoremap <Leader>q :qa<cr>
 
 " Close Current Buffer
-nnoremap <Leader>w :NERDTreeClose<cr>:bdelete<cr>
+nnoremap <Leader>wc :NERDTreeClose<cr>:bdelete<cr>
 
 "NerdTreeToggle
 map <leader>nt <plug>NERDTreeTabsToggle<CR>
@@ -305,14 +310,16 @@ map <leader>nt <plug>NERDTreeTabsToggle<CR>
 " Unite Maps and Config
 "==================================
 
+" enable yank history
 let g:unite_source_history_yank_enable = 1
+
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
-nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
-nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
-nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
-nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
-nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
+nnoremap <space>p :<C-u>Unite -buffer-name=files   -start-insert file_rec/async<cr>
+nnoremap <space>/ :<C-u>Unite -buffer-name=grep    -start-insert grep:.<cr>
+nnoremap <space>r :<C-u>Unite -buffer-name=mru     -start-insert file_mru<cr>
+nnoremap <space>o :<C-u>Unite -buffer-name=outline -start-insert  outline<cr>
+nnoremap <space>y :<C-u>Unite -buffer-name=yank     history/yank<cr>
+nnoremap <space>b :<C-u>Unite -buffer-name=buffer   -quick-match buffer<cr>
 
 " Custom mappings for the unite buffer
 autocmd FileType unite call s:unite_settings()
@@ -357,6 +364,18 @@ if has ('nvim')
     autocmd WinEnter term://* startinsert
 endif
 
+"===================================
+" MacVim stuff
+"===================================
+
+if has("gui_macvim")
+    set macmeta
+endif
+
+"==================================
+" Window Movement
+"==================================
+
 " move around windows with ctrl key
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -392,8 +411,8 @@ function! DoWindowSwap()
     exe 'hide buf' markedBuf
 endfunction
 
-nnoremap <silent> <Leader>mw :call MarkWindowSwap()<CR>
-nnoremap <silent> <Leader>pw :call DoWindowSwap()<CR>
+nnoremap <silent> <Leader>wm :call MarkWindowSwap()<CR>
+nnoremap <silent> <Leader>ws :call DoWindowSwap()<CR>
 
 " map escape to jk
 :imap jk <Esc>
