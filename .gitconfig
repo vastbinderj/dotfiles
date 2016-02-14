@@ -148,5 +148,3 @@
 [mergetool "sourcetree"]
 	cmd = "vimdiff "
 	trustExitCode = true
-[pulley]
-	token = 064fa39f42f954eaec21812ebf2bbd5e4b995695
