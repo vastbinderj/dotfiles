@@ -1,4 +1,4 @@
-"wset
+" set
 set nocompatible
 
 " Vundle Setup
@@ -98,6 +98,12 @@ Plugin 'shougo/unite.vim'
 " Vimproc
 Plugin 'shougo/vimproc'
 
+" neomru
+Plugin 'shougo/neomru.vim'
+
+" neoyank
+Plugin 'shougo/neoyank.vim'
+
 " Ultisnips
 Plugin 'SirVer/ultisnips'
 
@@ -188,9 +194,6 @@ Plugin 'christoomey/vim-tmux-navigator'
 
 " Unimpaired
 Plugin 'tpope/vim-unimpaired'
-
-" neoyank
-Plugin 'shougo/neoyank.vim'
 
 " YCM
 Plugin 'Valloric/YouCompleteMe'
@@ -366,7 +369,7 @@ if has ('nvim')
     tnoremap <Leader>e <C-\><C-n>
 
     " open a terminal below the current buffer
-    nnoremap <leader>t :below 15sp term://$SHELL<cr>i
+    nnoremap <leader>t :below 15sp term://$SHELL
 
     " enter insert mode when cycling back to a terminal window
     autocmd WinEnter term://* startinsert
