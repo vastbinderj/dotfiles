@@ -321,7 +321,7 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 nnoremap <space>p :<C-u>Unite -buffer-name=files   -start-insert file_rec/async<cr>
 nnoremap <space>/ :<C-u>Unite -buffer-name=grep    -start-insert grep:.<cr>
 nnoremap <space>r :<C-u>Unite -buffer-name=mru     -start-insert file_mru<cr>
-nnoremap <space>o :<C-u>Unite -buffer-name=outline -start-insert  outline<cr>
+"nnoremap <space>o :<C-u>Unite -buffer-name=outline -start-insert  outline<cr>
 nnoremap <space>y :<C-u>Unite -buffer-name=yank     history/yank<cr>
 nnoremap <space>b :<C-u>Unite -buffer-name=buffer   -quick-match buffer<cr>
 
@@ -370,7 +370,7 @@ if has ('nvim')
     tnoremap <Leader>e <C-\><C-n>
 
     " open a terminal below the current buffer
-    nnoremap <leader>t :below 15sp term://$SHELL<cr>
+    nnoremap <space>o :below 15sp term://$SHELL<cr>
 
     " enter insert mode when cycling back to a terminal window
     autocmd WinEnter term://* startinsert
