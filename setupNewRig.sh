@@ -59,6 +59,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             curl -sL https://deb.nodesource.com/setup_0.12 | bash -
         else
             sudo add-apt-repository ppa:neovim-ppa/unstable -y
+            sudo apt-get update
             curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
         fi
 
@@ -87,8 +88,10 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             python-software-properties \
             python-dev \
             python-setuptools \
+            python-pip \
             python3-dev \
             python3-setuptools \
+            python3-pip \
             rbenv \
             ruby-build \
             silversearcher-ag \
@@ -99,7 +102,10 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         # Found Debian
         . /etc/os-release
 
-        # add add-apt-repository
+        # add add apt-repositories
+        echo "deb http://ppa.launchpad.net/neovim-ppa/unstable/ubuntu vivid main" | sudo tee -a /etc/apt/sources.list > /dev/null
+        sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 55F96FCF8231B6DD
+        sudo apt-get update
         eval $INSTALLCMD software-properties-common -y
 
         # add PPAs
@@ -131,17 +137,25 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
             libssl-dev \
             mercurial \
             nodejs \
+            neovim \
             python-software-properties \
             python-dev \
             python-setuptools \
+            python-pip \
             python3-dev \
             python3-setuptools \
+            python3-pip \
             vim-nox \
             rbenv \
             ruby-build \
             silversearcher-ag \
             -y --reinstall
+
     fi
+
+    # install neovim python support for 2/3
+    sudo pip install neovim
+    sudo pip3 install neovim
 
 fi
 
