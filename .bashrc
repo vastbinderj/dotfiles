@@ -1,5 +1,5 @@
 # Support for both Mac and Ubuntu Linux
-# 
+#
 #
 
 # OS specific stuff
@@ -12,11 +12,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # Set architecture flags
     export ARCHFLAGS="-arch x86_64"
 
-    # Golang 
+    # Golang
     export GOPATH=$HOME/code/go
-    
+
     # Update the Path
-    export PATH=$GOPATH/bin:$HOME/bin:$HOME/.node/bin:/usr/local/bin:/usr/local/sbin:$PATH
+    export PATH=$GOPATH/bin:$HOME/go/bin:$HOME/bin:$HOME/.node/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     # add bash completion
@@ -24,7 +24,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         . /usr/share/bash-completion/bash_completion
     fi
 
-    # Golang 
+    # Golang
     export GOROOT=$HOME/go
     export GOPATH=$HOME/code/go
 
@@ -102,7 +102,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     eval "$(gdircolors -b ~/.dircolors)"
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     eval "$(dircolors -b ~/.dircolors)"
-fi    
+fi
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
@@ -113,9 +113,6 @@ for file in ~/.{bash_prompt,aliases,functions}; do
     [ -r "$file" ] && source "$file"
 done
 unset file
-
-# Support the use of GVM for golang versions
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 # The next line updates PATH for the Google Cloud SDK.
 [ -f "$HOME/code/google-cloud-sdk/path.bash.inc"  ] && source "$HOME/code/google-cloud-sdk/path.bash.inc"
