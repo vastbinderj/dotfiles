@@ -6,9 +6,12 @@
 
 WORKDIR=$(pwd)
 
-# first clean up soure dir if exists already
+# first clean up soure dirs if they exists already
 if [ -d  "$HOME/go" ]; then
     rm -rf "$HOME/go"
+fi
+if [ -d  "$HOME/code/go" ]; then
+    rm -rf "$HOME/code/go"
 fi
 
 # install Go1.4.2 binaries
