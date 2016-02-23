@@ -331,8 +331,10 @@ function! s:unite_settings()
   " Play nice with supertab
   let b:SuperTabDisabled=1
   " Enable navigation with control-j and control-k in insert mode
-  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+  imap <buffer> <C-j>                       <Plug>(unite_select_next_line)
+  imap <buffer> <C-k>                       <Plug>(unite_select_previous_line)
+  inoremap <silent><buffer><expr> <C-s>     unite#do_action('split')
+  inoremap <silent><buffer><expr> <C-v>     unite#do_action('vsplit')
 endfunction
 
 "==================================
