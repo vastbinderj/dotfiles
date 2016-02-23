@@ -28,7 +28,7 @@ fi
 # create GOPATH dirt
 if [ ! -d "$HOME/code/go" ]; then
     mkdir -p "$HOME/code/go"
-    mkdir -p "$HOME/code/go/{src,pkg,bin}"
+    mkdir -p $HOME/code/go/{src,pkg,bin}
 fi
 
 
