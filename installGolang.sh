@@ -10,8 +10,10 @@ WORKDIR=$(pwd)
 if [ -d  "$HOME/go" ]; then
     rm -rf "$HOME/go"
 fi
-if [ -d  "$HOME/code/go" ]; then
-    rm -rf "$HOME/code/go"
+
+# clean up go 1.4 - just in case
+if [ -d  "$HOME/go1.4" ]; then
+    rm -rf "$HOME/go1.4"
 fi
 
 # install Go1.4.2 binaries
@@ -19,7 +21,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     cd "$HOME" || exit
     wget -qO- https://storage.googleapis.com/golang/go1.4.2.darwin-amd64-osx10.8.tar.gz | tar --transform 's/^go/go1.4/' -xvz
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-    if [ $(uname -m) == 'x86_64' ]; then
+    if [ "$(uname -m)" == 'x86_64' ]; then
         cd "$HOME" || exit
         wget -qO- https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz | tar --transform 's/^go/go1.4/' -xvz
     else
@@ -31,7 +33,7 @@ fi
 # create GOPATH dirt
 if [ ! -d "$HOME/code/go" ]; then
     mkdir -p "$HOME/code/go"
-    mkdir -p $HOME/code/go/{src,pkg,bin}
+    mkdir -p "$HOME/code/go/"{src,pkg,bin}
 fi
 
 
