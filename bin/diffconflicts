@@ -1,4 +1,6 @@
- better vimdiff mergetool for Git
+#!/usr/bin/env bash
+
+ # A better vimdiff mergetool for Git
  #
  # Git does a great job resolving merge conflicts automatically but there are
  # times when human intervention is still needed. Git resolves all the conflicts
