@@ -1,0 +1,29 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = LF
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[.go]
+indent_style = tab
+indent_size = 8
+
+[{.travis.yml,package.json}]
+indent_style=space
+indent_size=2
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{html,js,rb,css,scss,xml}]
+indent_size=2
+
+[Gemfile*]
+indent_size = 2
+
+[Rakefile]
+indent_size = 2
