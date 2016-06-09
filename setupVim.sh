@@ -41,6 +41,7 @@ fi
 
 # set up material theme
 if [ -f $HOME/code/vim-hybrid-material  ]; then
+    mkdir -p $HOME/.vim/colors
     cp $HOME/code/vim-hybrid-material/base16-material/base16-material-dark.vim $HOME/.vim/colors/
 fi
 

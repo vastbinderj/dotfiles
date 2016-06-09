@@ -695,8 +695,8 @@ let g:solarized_termtrans=1
 let g:solarized_contrast='high'
 let base16colorspace=256
 set background=dark
-colorscheme base16-ocean
-highlight Normal ctermbg=NONE
+colorscheme base16-material-dark
+highlight CursorLine cterm=BOLD ctermbg=235 ctermfg=NONE
 
 " Deal with whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
