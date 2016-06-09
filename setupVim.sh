@@ -27,18 +27,6 @@ vim +PluginInstall +qall
 # install golang binaries
 vim +GoInstallBinaries +qall
 
-# build YouCompleteMe
-if [ -f $HOME/.vim/bundle/YouCompleteMe/install.sh  ]; then
-    $HOME/.vim/bundle/YouCompleteMe/install.py --clang-completer
-fi
-
-# build Vimproc
-if [ -f $HOME/.vim/bundle/vimproc/Makefile  ]; then
-    cd $HOME/.vim/bundle/vimproc
-    make
-    cd $WORKDIR
-fi
-
 # set up material theme
 if [ -f $HOME/code/vim-hybrid-material  ]; then
     mkdir -p $HOME/.vim/colors
