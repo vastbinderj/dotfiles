@@ -175,6 +175,9 @@ chmod +x ~/code/z/z.sh
 # Base16 Shell
 git clone https://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
 
+# Base Material Theme
+git clone https://github.com/kristijanhusak/vim-hybrid-material $HOME/code/vim-hybrid-material
+cp $HOME/code/vim-hybrid-material/base16-material/base16-material.dark.sh $HOME/.config/base16-shell
 
 # for the c alias (syntax highlighted cat)
 sudo easy_install Pygments

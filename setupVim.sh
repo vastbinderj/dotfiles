@@ -39,3 +39,8 @@ if [ -f $HOME/.vim/bundle/vimproc/Makefile  ]; then
     cd $WORKDIR
 fi
 
+# set up material theme
+if [ -f $HOME/code/vim-hybrid-material  ]; then
+    cp $HOME/code/vim-hybrid-material/base16-material/base16-material-dark.vim $HOME/.vim/colors/
+fi
+
