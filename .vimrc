@@ -44,9 +44,6 @@ Plugin 'sjl/gundo.vim'
 " HAML
 Plugin 'tpope/vim-haml'
 
-" Headlights
-Plugin 'mbadran/headlights'
-
 " JSHint
 Plugin 'wookiehangover/jshint.vim'
 
@@ -91,21 +88,6 @@ Plugin 'vim-scripts/TaskList.vim'
 
 " TmuxLine
 Plugin 'edkolev/tmuxline.vim'
-
-" Unite
-Plugin 'shougo/unite.vim'
-
-" Vimproc
-Plugin 'shougo/vimproc'
-
-" neomru
-Plugin 'shougo/neomru.vim'
-
-" neoyank
-Plugin 'shougo/neoyank.vim'
-
-" Ultisnips
-Plugin 'SirVer/ultisnips'
 
 " Vim-Airline
 Plugin 'vim-airline/vim-airline'
@@ -195,8 +177,13 @@ Plugin 'christoomey/vim-tmux-navigator'
 " Unimpaired
 Plugin 'tpope/vim-unimpaired'
 
-" YCM
-Plugin 'Valloric/YouCompleteMe'
+" NeoComplete
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/deoplete.nvim'
+
+" NeoSnippet
+Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/neosnippet-snippets'
 
 " End Vundle Installed Plugins
 call vundle#end()
@@ -310,32 +297,6 @@ nnoremap <Leader>wc :NERDTreeClose<cr>:bdelete<cr>
 "NerdTreeToggle
 map <leader>nt <plug>NERDTreeTabsToggle<CR>
 
-"==================================
-" Unite Maps and Config
-"==================================
-
-" enable yank history
-let g:unite_source_history_yank_enable = 1
-
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <space>p :<C-u>Unite -buffer-name=files   -start-insert file_rec/async<cr>
-nnoremap <space>/ :<C-u>Unite -buffer-name=grep    -start-insert grep:.<cr>
-nnoremap <space>r :<C-u>Unite -buffer-name=mru     -start-insert file_mru<cr>
-"nnoremap <space>o :<C-u>Unite -buffer-name=outline -start-insert  outline<cr>
-nnoremap <space>y :<C-u>Unite -buffer-name=yank     history/yank<cr>
-nnoremap <space>b :<C-u>Unite -buffer-name=buffer   -quick-match buffer<cr>
-
-" Custom mappings for the unite buffer
-autocmd FileType unite call s:unite_settings()
-function! s:unite_settings()
-  " Play nice with supertab
-  let b:SuperTabDisabled=1
-  " Enable navigation with control-j and control-k in insert mode
-  imap <buffer> <C-j>                       <Plug>(unite_select_next_line)
-  imap <buffer> <C-k>                       <Plug>(unite_select_previous_line)
-  inoremap <silent><buffer><expr> <C-s>     unite#do_action('split')
-  inoremap <silent><buffer><expr> <C-v>     unite#do_action('vsplit')
-endfunction
 
 "==================================
 " Fugitive Maps
@@ -626,9 +587,6 @@ let g:lt_quickfix_list_toggle_map = '<leader>Tq'
 " Toggle auto-pairs
 let g:AutoPairsShortcutToggle = '<leader>Ta'
 
-" Ultisnips
-"let g:UltiSnipsUsePythonVersion = 2
-
 " NodeJS Completion Settings
 let g:nodejs_complete_config = {
             \ 'js_compl_fn': 'jscomplete#CompleteJS',
@@ -645,6 +603,47 @@ let g:syntastic_loc_list_height = 5                                 " set error 
 let g:syntastic_always_populate_loc_list = 1                        " stick errors into a location-list
 let g:syntastic_html_tidy_exec = 'tidy5'
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute " ,"trimming empty <", "unescaped &" , "lacks \"action", "is not recognized!", "discarding unexpected"]
+
+" Omnicomlete
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : ''
+    \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplete#close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
 
 " Enable Omni complete
 if has("autocmd")
