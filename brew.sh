@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ##
 # Install command-line tools using Homebrew
@@ -91,7 +91,7 @@ fonts=(
 	font-source-code-pro
 	font-roboto
 )
-brew cask install ${fonts[@]}
+brew cask install "${fonts[@]}"
 
 
 # Remove outdated versions from the cellar

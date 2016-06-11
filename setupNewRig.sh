@@ -1,11 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ##
 # new rig setup and configuration
 ##
 
-WORKDIR=`pwd`
-if ! [ $(id -u) = 0  ]; then
+if ! [ "$(id -u)" = 0  ]; then
     INSTALLCMD="sudo apt-get install"
 else
     INSTALLCMD="apt-get install"
@@ -13,10 +12,8 @@ fi
 
 # create code dir if it doesn't exist
 if [ ! -d "$HOME/code" ]; then
-    mkdir -p $HOME/code
+    mkdir -p "$HOME/code"
 fi
-CODEDIR="$HOME/code"
-
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Found Mac OSX
@@ -37,24 +34,24 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     # change to bash 4 (installed by homebrew)
     BASHPATH=$(brew --prefix)/bin/bash
-    sudo echo $BASHPATH >> /etc/shells
-    chsh -s $BASHPATH # will set for current user only.
-    echo $BASH_VERSION # should be 4.x not the old 3.2.X
+    echo "$BASHPATH" >> /etc/shells
+    chsh -s "$BASHPATH" # will set for current user only.
+    echo "$BASH_VERSION" # should be 4.x not the old 3.2.X
     # Later, confirm iterm settings aren't conflicting.
 
     # fix for iterm and terminal.app to use ctrl-h correctly for libterm and neovim
-    infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
-    tic $TERM.ti
+    infocmp "$TERM" | sed 's/kbs=^[hH]/kbs=\\177/' > "$TERM.ti"
+    tic "$TERM.ti"
 
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     # Found Linux
 
     if [ -f /etc/lsb-release  ]; then
         # Found Ubuntu
-        . /etc/lsb-release
+        #. /etc/lsb-release
 
         # Add PPAs
-        if [ $(id -u) = 0  ]; then
+        if [ "$(id -u)" = 0  ]; then
             add-apt-repository ppa:neovim-ppa/unstable -y
             curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
         else
@@ -64,7 +61,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         fi
 
         # Install stuff
-        eval $INSTALLCMD \
+        eval "$INSTALLCMD" \
             bash-completion \
             build-essential \
             bzr \
@@ -100,16 +97,16 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     elif [ -f /etc/os-release  ]; then
         # Found Debian
-        . /etc/os-release
+        #. /etc/os-release
 
         # add add apt-repositories
         echo "deb http://ppa.launchpad.net/neovim-ppa/unstable/ubuntu vivid main" | sudo tee -a /etc/apt/sources.list > /dev/null
         sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 55F96FCF8231B6DD
         sudo apt-get update
-        eval $INSTALLCMD software-properties-common -y
+        eval "$INSTALLCMD" software-properties-common -y
 
         # add PPAs
-        if [ $(id -u) = 0  ]; then
+        if [ "$(id -u)" = 0  ]; then
             curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
         else
             curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
@@ -166,18 +163,18 @@ bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
 
 
 # github.com/rupa/z   - oh how i love you
-git clone https://github.com/rupa/z.git $HOME/code/z
+git clone https://github.com/rupa/z.git "$HOME/code/z"
 chmod +x ~/code/z/z.sh
 # consider reusing your current .z file if possible. it's painful to rebuild :)
 # z hooked up in .bash_profile
 
 
 # Base16 Shell
-git clone https://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
+git clone https://github.com/chriskempson/base16-shell.git "$HOME/.config/base16-shell"
 
 # Base Material Theme
-git clone https://github.com/kristijanhusak/vim-hybrid-material $HOME/code/vim-hybrid-material
-cp $HOME/code/vim-hybrid-material/base16-material/base16-material.dark.sh $HOME/.config/base16-shell
+git clone https://github.com/kristijanhusak/vim-hybrid-material "$HOME/code/vim-hybrid-material"
+cp "$HOME/code/vim-hybrid-material/base16-material/base16-material.dark.sh" "$HOME/.config/base16-shell"
 
 # for the c alias (syntax highlighted cat)
 sudo easy_install Pygments

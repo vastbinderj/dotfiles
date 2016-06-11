@@ -105,7 +105,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 fi
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-material.dark.sh"
+BASE16_SHELL="$HOME/code/vim-hybrid-material/base16-material/base16-material.dark.sh"
 [[ -s $BASE16_SHELL  ]] && source $BASE16_SHELL
 
 # source dotfiles
