@@ -562,6 +562,7 @@ set wildignore+=*/.git/*,*/.idea/*,*/.DS_Store,*/node_modules/*,*/bower_componen
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_files = 0
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
 let g:ctrlp_working_path_mode = '0'         " Current Working Directory
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_custom_ignore = {
