@@ -43,7 +43,7 @@ cd "$HOME/go" || exit
 
 
 # checkout go 1.5
-git checkout release-branch.go1.6.2
+git checkout release-branch.go1.6
 cd "$HOME/go/src" || exit
 
 
