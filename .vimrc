@@ -178,8 +178,11 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-unimpaired'
 
 " NeoComplete
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/deoplete.nvim'
+if has("nvim")
+    Plugin 'Shougo/deoplete.nvim'
+else
+    Plugin 'Shougo/neocomplete.vim'
+endif
 
 " NeoSnippet
 Plugin 'Shougo/neosnippet.vim'
@@ -472,6 +475,7 @@ set tags=./tags,tags;$HOME
 " Golang customizations
 let g:go_fmt_command = "goimports"
 let g:go_bin_path = expand("$HOME/code/go/bin")
+let g:go_auto_type_info = 1
 
 " Syntax Highlighting for Golang
 let g:go_highlight_functions = 1
