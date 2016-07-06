@@ -131,8 +131,6 @@ print_success() {
 
 # finds all .dotfiles in this folder
 declare -a FILES_TO_SYMLINK=$(find . -maxdepth 1 -type f -name ".*" -not -name .DS_Store -not -name .git -not -name .osx | sed -e 's|//|/|' | sed -e 's|./.|.|')
-# add in bin dir
-FILES_TO_SYMLINK+=" bin" # add in vim and the binaries
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 main() {
@@ -141,9 +139,9 @@ main() {
     local sourceFile=""
     local targetFile=""
 
-    for i in "${FILES_TO_SYMLINK[@]}"; do
+    for i in ${FILES_TO_SYMLINK[@]}; do
 
-        sourceFile="$(pwd)/$i"
+        sourceFile=$(pwd)/$i
         targetFile="$HOME/$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
 
         if [ -e "$targetFile" ]; then
@@ -166,8 +164,11 @@ main() {
 
     done
 
-    # hack symlinks for neovim diff-highlight
+    # hack symlinks for neovim and bin dir
     ln -fs ~/.vim ~/.nvim && ln -fs ~/.vimrc ~/.nvimrc
+    if [ ! -d "$HOME/bin" ]; then
+        ln -fs ~/code/dotfiles/bin ~/bin
+    fi
 
 }
 
