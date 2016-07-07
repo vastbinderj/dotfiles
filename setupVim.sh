@@ -26,12 +26,15 @@ git clone https://github.com/gmarik/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim
 # set up compatibility with neovim
 if [ ! -d "$HOME/.config" ]; then
     mkdir -p "${XDG_CONFIG_HOME:=$HOME/.config}"
-    ln -s ~/.vim "$XDG_CONFIG_HOME/nvim"
-    ln -s ~/.vimrc "$XDG_CONFIG_HOME/nvim/init.vim"
+fi
+if [ ! -e "$HOME/.config/nvim" ]; then
+    ln -s ~/.vim "$HOME/.config/nvim"
+    ln -s ~/.vimrc "$HOME/.config/nvim/init.vim"
 fi
 
 # install vundle packages in vim
 vim +PluginInstall +qall
+nvim +PluginInstall +qall
 
 # install golang binaries
 vim +GoInstallBinaries +qall
