@@ -19,14 +19,14 @@ fi
 # install Go1.4.2 binaries
 if [[ "$OSTYPE" == "darwin"* ]]; then
     cd "$HOME" || exit
-    wget -qO- https://storage.googleapis.com/golang/go1.4.2.darwin-amd64-osx10.8.tar.gz | tar --transform 's/^go/go1.4/' -xvz
+    wget -qO- https://storage.googleapis.com/golang/go1.4.3.darwin-amd64.tar.gz | tar --transform 's/^go/go1.4/' -xvz
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     if [ "$(uname -m)" == 'x86_64' ]; then
         cd "$HOME" || exit
-        wget -qO- https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz | tar --transform 's/^go/go1.4/' -xvz
+        wget -qO- https://storage.googleapis.com/golang/go1.4.3.linux-amd64.tar.gz | tar --transform 's/^go/go1.4/' -xvz
     else
         cd "$HOME" || exit
-        wget -qO- https://storage.googleapis.com/golang/go1.4.2.linux-386.tar.gz | tar --transform 's/^go/go1.4/' -xvz
+        wget -qO- https://storage.googleapis.com/golang/go1.4.3.linux-386.tar.gz | tar --transform 's/^go/go1.4/' -xvz
     fi
 fi
 
