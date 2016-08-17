@@ -26,7 +26,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         wget -qO- https://storage.googleapis.com/golang/go1.4.3.linux-amd64.tar.gz | tar --transform 's/^go/go1.4/' -xvz
     else
         cd "$HOME" || exit
-        wget -qO- https://storage.googleapis.com/golang/go1.4.3.Linux-386.tar.gz | tar --transform 's/^go/go1.4/' -xvz
+        wget -qO- https://storage.googleapis.com/golang/go1.4.3.linux-386.tar.gz | tar --transform 's/^go/go1.4/' -xvz
     fi
 fi
 
