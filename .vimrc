@@ -554,8 +554,13 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+"==========================
+" The Silver Searcher
+"==========================
 " Ack
-nnoremap <,a> <Esc>:Ag!
+" bind \ (backward slash) to grep shortcut
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ag<SPACE>
 
 " Gsearch
 set grepprg=ag\ --nogroup\ --nocolor
@@ -564,7 +569,9 @@ let g:grep_cmd_opts = '--line-numbers --noheading'
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>k
 
+"===============
 " CTRL-P
+"===============
 set wildignore+=*/.git/*,*/.idea/*,*/.DS_Store,*/node_modules/*,*/bower_components/*.so,*.swp,*.zip
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
