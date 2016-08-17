@@ -57,6 +57,8 @@ eval "$(rbenv init -)"
 # Set my preferred editor
 export EDITOR='vim'
 
+# fix for tmux 2.2
+export EVENT_NOKQUEUE=1
 
 # Python setup stuff
 export PIP_REQUIRE_VIRTUALENV=false
