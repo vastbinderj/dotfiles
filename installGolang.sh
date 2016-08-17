@@ -38,7 +38,7 @@ fi
 
 
 # install golang from the source repository
-GIT clone https://github.com/golang/go "$HOME/go"
+git clone https://github.com/golang/go "$HOME/go"
 cd "$HOME/go" || exit
 
 
