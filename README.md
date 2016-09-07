@@ -1,6 +1,6 @@
 This is my personal collection of dotfiles for golang/rails/node development.  I use Vundle for plugin management and I use [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for code completion and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to ones which suite me best. This configuration works well vim 7.4 or neovim installed with hombrew on my macs, but these work well with vim 7.2+ on Cent OS and Ubuntu, which are my primary development environments at work.
 
-## Installation for a Mac and Ubuntu Linux 
+## Installation for a Mac and Ubuntu Linux
 (redhat/centos coming soon)
 
         > mkdir -p $HOME/code
@@ -10,6 +10,9 @@ This is my personal collection of dotfiles for golang/rails/node development.  I
         > exec -l $SHELL                    # reload your shell
         > ./installGolang.sh                # build golang from source
         > ./setupVim.sh                     # configure vim and install plugins
+
+
+Be sure to change the `$HOME/.gitconfig` to your git settings and email address or I'll get credit for your git commits.
 
 ## Manual steps for just setting up vim
 
@@ -23,26 +26,27 @@ This is my personal collection of dotfiles for golang/rails/node development.  I
 ###    Finish install of YouCompleteMe
 
         > cd ~/.vim/bundle/YouCompleteMe
-        > ./install.py --clang-completer 
+        > ./install.py --clang-completer
 
 ### To upgrade all bundled plugins at any time:
 
-Open vim and run `:PluginUpdate` or `:PluginInstall!` 
+Open vim and run `:PluginUpdate` or `:PluginInstall!`
 
 ## dotfiles included
 
         - bash_profile (for mac)
         - bashrc       (for linux & mac)
-        - vimrc
+        - gitconfig    (remember to swap my email address for yours)
         - gemrc
         - jshintrc
-        - npmrc 
+        - npmrc
         - tmux.conf    (prefix set to ctrl-a and vim key-mappings)
-        
+        - vimrc
+
 
 * To enable mouse scrolling on a mac in terminal, install [easySIMBL](https://github.com/norio-nomura/EasySIMBL) and [mouseterm](https://bitheap.org/mouseterm/) or use iTerm.  I use iTerm and have installed [patched fonts](https://github.com/Lokaltog/powerline-fonts) for airline and my tmuxline.
 
-* For golang development, I use [vim-go](https://github.com/fatih/vim-go) which does many things for me like auto-imports, gofmt upon save and provides easy jump mappings to quickly browse source code.  
+* For golang development, I use [vim-go](https://github.com/fatih/vim-go) which does many things for me like auto-imports, gofmt upon save and provides easy jump mappings to quickly browse source code.
 
     To install the Golang binaries, run `:GoInstallBinaries`. You may need to do this with a new Golang release.
 
@@ -62,14 +66,14 @@ Open vim and run `:PluginUpdate` or `:PluginInstall!`
   * Shift-rightarrow to move to the right window
 
 ## Installed Vim modules of note
-        
+
         - Airline
         - Ctrl-P
         - Auto-Pairs
         - Fugitive
         - Gundo
         - vim-go
-        - NERDTree 
+        - NERDTree
         - headlights
         - tmuxline
         - JSHint
