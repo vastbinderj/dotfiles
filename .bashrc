@@ -16,7 +16,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export GOPATH=$HOME/code/go
 
     # Update the Path
-    export PATH=$GOPATH/bin:$HOME/go/bin:$HOME/bin:$HOME/.node/bin:/usr/local/bin:/usr/local/sbin:$PATH
+    export PATH=$GOPATH/bin:$HOME/bin:$HOME/.node/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     # add bash completion
@@ -29,7 +29,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     export GOPATH=$HOME/code/go
 
     # Update the Path
-    export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/bin:$HOME/.node/bin:/usr/local/bin:/usr/local/sbin:$PATH
+    export PATH=$GOPATH/bin:$HOME/bin:$HOME/.node/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 fi
 

@@ -6,7 +6,7 @@
 
 WORKDIR=$(pwd)
 
-# first clean up soure dirs if they exists already
+# first clean up soure dirs if they exist already
 if [ -d  "$HOME/go" ]; then
     rm -rf "$HOME/go"
 fi
@@ -16,11 +16,11 @@ if [ -d  "$HOME/go1.4" ]; then
     rm -rf "$HOME/go1.4"
 fi
 
-# install Go1.4.2 binaries
 if [[ "$OSTYPE" == "darwin"* ]]; then
     cd "$HOME" || exit
-    wget -qO- https://storage.googleapis.com/golang/go1.4.3.darwin-amd64.tar.gz | tar --transform 's/^go/go1.4/' -xvz
+    brew install go
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
+    # install Go1.4.2 binaries
     if [ "$(uname -m)" == 'x86_64' ]; then
         cd "$HOME" || exit
         wget -qO- https://storage.googleapis.com/golang/go1.4.3.linux-amd64.tar.gz | tar --transform 's/^go/go1.4/' -xvz
@@ -38,18 +38,20 @@ fi
 
 
 # install golang from the source repository
-git clone https://github.com/golang/go "$HOME/go"
-cd "$HOME/go" || exit
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    git clone https://github.com/golang/go "$HOME/go"
+    cd "$HOME/go" || exit
 
 
-# checkout go 1.5
-git checkout go1.7
-cd "$HOME/go/src" || exit
+    # checkout go 1.5
+    git checkout go1.7.1
+    cd "$HOME/go/src" || exit
 
 
-# build from source
-CMD="./all.bash"
-eval $CMD
+    # build from source
+    CMD="./all.bash"
+    eval $CMD
+fi
 
 
 # back to working dir
