@@ -23,6 +23,9 @@ Plugin 'rking/ag.vim'
 " Gsearch
 Plugin 'skwp/greplace.vim'
 
+" Bracketed Paste
+Plugin 'ConradIrwin/vim-bracketed-paste'
+
 " AutoPairs
 Plugin 'jiangmiao/auto-pairs'
 
@@ -209,7 +212,8 @@ autocmd! BufWritePost vimrc source ~/.vimrc
 
 set encoding=utf-8
 
-set clipboard=unnamed
+set clipboard^=unnamed
+set clipboard^=unnamedplus
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -348,6 +352,22 @@ endif
 
 if has("gui_macvim")
     set macmeta
+    set guifont=Source\ Code\ Pro:h13
+    set clipboard+=unnamed
+    set vb t_vb=
+
+    " Open goto symbol on current buffer
+    nmap <D-r> :MyCtrlPTag<cr>
+    imap <D-r> <esc>:MyCtrlPTag<cr>
+
+    " Open goto symbol on all buffers
+    nmap <D-R> :CtrlPBufTagAll<cr>
+    imap <D-R> <esc>:CtrlPBufTagAll<cr>
+
+    " Open goto file
+    nmap <D-t> :CtrlP<cr>
+    imap <D-t> <esc>:CtrlP<cr>
+
 endif
 
 "==================================
@@ -617,42 +637,37 @@ let g:syntastic_always_populate_loc_list = 1                        " stick erro
 let g:syntastic_html_tidy_exec = 'tidy5'
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute " ,"trimming empty <", "unescaped &" , "lacks \"action", "is not recognized!", "discarding unexpected"]
 
-"======================
-" NeoComplete Settings
-"======================
+"========================
+" DeoComplete for Neovim and Settings
+"========================
 " turn of omnifunc
 let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-
-"" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-    return neocomplete#close_popup() . "\<CR>"
-endfunction
-"" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-"" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
-
-"========================
-" DeoComplete Settings
-"========================
-if has("nvim")
+" neovim
+if has('nvim')
     let g:deoplete#enable_at_startup = 1
-    " Let <Tab> also do completion
-    inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<TAB>"
+    let g:deoplete#ignore_sources = {}
+    let g:deoplete#ignore_sources._ = ['buffer', 'member', 'tag', 'file', 'neosnippet']
+    let g:deoplete#sources#go#sort_class = ['func', 'type', 'var', 'const']
+    let g:deoplete#sources#go#align_class = 1
+
+
+    " Use partial fuzzy matches like YouCompleteMe
+    call deoplete#custom#set('_', 'matchers', ['matcher_fuzzy'])
+    call deoplete#custom#set('_', 'converters', ['converter_remove_paren'])
+    call deoplete#custom#set('_', 'disabled_syntaxes', ['Comment', 'String'])
+else
+    let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#enable_smart_case = 1
+    let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+    if !exists('g:neocomplete#sources')
+        let g:neocomplete#sources = {}
+    endif
+    let g:neocomplete#sources._ = ['buffer', 'member', 'tag', 'file', 'dictionary']
+    let g:neocomplete#sources.go = ['omni']
+
+    " disable sorting
+    call neocomplete#custom#source('_', 'sorters', [])
 endif
 
 " Enable Omni complete
