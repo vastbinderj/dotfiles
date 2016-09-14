@@ -53,6 +53,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     eval $CMD
 fi
 
+# install additional tools
+go get golang.org/x/tools/cmd/...
 
 # back to working dir
 cd "$WORKDIR" || exit
