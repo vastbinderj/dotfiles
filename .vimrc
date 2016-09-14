@@ -44,9 +44,6 @@ Plugin 'tpope/vim-git'
 " Gundo
 Plugin 'sjl/gundo.vim'
 
-" HAML
-Plugin 'tpope/vim-haml'
-
 " JSHint
 Plugin 'wookiehangover/jshint.vim'
 
@@ -62,17 +59,8 @@ Plugin 'juvenn/mustache.vim'
 " Nerdtree
 Plugin 'vim-scripts/The-NERD-tree'
 
-" Nerdtree Ack
-Plugin 'tyok/nerdtree-ack'
-
-" Rails
-Plugin 'tpope/vim-rails'
-
 " Repeat
 Plugin 'tpope/vim-repeat'
-
-" Ruby
-Plugin 'vim-ruby/vim-ruby'
 
 " Surround
 Plugin 'tpope/vim-surround'
@@ -99,9 +87,6 @@ Plugin 'vim-airline/vim-airline-themes'
 " Coffescript
 Plugin 'kchmck/vim-coffee-script'
 
-" Django
-Plugin 'gerardo/vim-django-support'
-
 " EasyMotion
 Plugin 'Lokaltog/vim-easymotion'
 
@@ -117,26 +102,14 @@ Plugin 'othree/html5.vim'
 " Indent Guides
 Plugin 'nathanaelkane/vim-indent-guides'
 
-" Jade
-Plugin 'digitaltoad/vim-jade'
-
-" Javascript
-Plugin 'pangloss/vim-javascript'
-
 " Syntax for JavaScript
 Plugin 'othree/javascript-libraries-syntax.vim'
 
 " AngularJS Snippets
 Plugin 'matthewsimo/angular-vim-snippets'
 
-" Jasmine
-Plugin 'claco/jasmine.vim'
-
 " Angular
 Plugin 'burnettk/vim-angular'
-
-" jQuery
-Plugin 'nono/jquery.vim'
 
 " JSON
 Plugin 'elzr/vim-json'
@@ -153,20 +126,11 @@ Plugin 'guileen/vim-node'
 " Node Completion
 Plugin 'myhere/vim-nodejs-complete'
 
-" Scala
-Plugin 'ornicar/vim-scala'
-
 " Snippets
 Plugin 'honza/vim-snippets'
 
-" Vim OrgMode
-Plugin 'jceb/vim-orgmode'
-
 " Unviversal Text Linking
 Plugin 'vim-scripts/utl.vim'
-
-" Calendar
-Plugin 'mattn/calendar-vim'
 
 " SyntaxRange
 Plugin 'vim-scripts/SyntaxRange'
