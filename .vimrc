@@ -316,7 +316,7 @@ endif
 
 if has("gui_macvim")
     set macmeta
-    set guifont=Source\ Code\ Pro:h13
+    set guifont=Source\ Code\ Pro\ for\ Powerline:h13
     set clipboard+=unnamed
     set vb t_vb=
 
@@ -327,10 +327,14 @@ if has("gui_macvim")
     " Open goto symbol on all buffers
     nmap <D-R> :CtrlPBufTagAll<cr>
     imap <D-R> <esc>:CtrlPBufTagAll<cr>
+else
+    " open goto symbols
+    nmap <Leader>r :MyCtrlPTag<cr>
+    imap <Leader>r <esc>:MyCtrlPTag<cr>
 
-    " Open goto file
-    nmap <D-t> :CtrlP<cr>
-    imap <D-t> <esc>:CtrlP<cr>
+    " Open goto symbol on all buffers
+    nmap <Leader>R :CtrlPBufTagAll<cr>
+    imap <Leader>R <esc>:CtrlPBufTagAll<cr>
 
 endif
 
@@ -569,13 +573,21 @@ let g:ctrlp_custom_ignore = {
             \ 'file': '\v\.(exe|so|dll)$',
             \ 'link': 'some_bad_symbolic_links',
             \ }
-let g:ctrlp_buftag_ctags_bin='ctags'
 let g:ctrlp_buftag_types={'go': '--language-force=go --golang-types=ftv', 'javascript': '--langauge-force=js'}
 " Easy bindings for its various modes
 nmap <leader>bb :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bs :CtrlPMRU<cr>
 nmap <leader>b. :CtrlPBufTag<cr>
+
+func! MyCtrlPTag()
+  let g:ctrlp_prompt_mappings = {
+        \ 'AcceptSelection("e")': ['<cr>', '<2-LeftMouse>'],
+        \ 'AcceptSelection("t")': ['<c-t>'],
+        \ }
+  CtrlPBufTag
+endfunc
+command! MyCtrlPTag call MyCtrlPTag()
 
 " List Toggle Settings
 let g:lt_location_list_toggle_map = '<leader>Tl'

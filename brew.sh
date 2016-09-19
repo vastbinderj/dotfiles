@@ -77,7 +77,10 @@ brew install macvim --custom-system-icons --with-lua --with-luajit --with-python
 brew install nodejs
 brew install --HEAD neovim/neovim/neovim
 
-
+# java
+brew install caskroom/cask/brew-cask
+brew cask install java
+brew install jenv
 
 # fun
 brew cask install vlc

@@ -15,6 +15,12 @@ if [ ! -d "$HOME/code" ]; then
     mkdir -p "$HOME/code"
 fi
 
+# create jenv dir if it doesn't exist
+if [ ! -d "$HOME/.jenv" ]; then
+    mkdir -p "$HOME/.jenv"
+    mkdir -p "$HOME/.jenv/versions"
+fi
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Found Mac OSX
 

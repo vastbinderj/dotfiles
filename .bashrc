@@ -28,8 +28,11 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     export GOROOT=$HOME/go
     export GOPATH=$HOME/code/go
 
+    # JavaEnv
+    export JENVROOT=$HOME/.jenv
+
     # Update the Path
-    export PATH=$GOPATH/bin:$HOME/bin:$HOME/.node/bin:/usr/local/bin:/usr/local/sbin:$PATH
+    export PATH=$GOPATH/bin:$HOME/bin:$HOME/.node/bin:$JENVROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 fi
 
@@ -52,6 +55,9 @@ ssh-add -l | grep "The agent has no identities" && ssh-add
 
 # Initialize rbenv
 eval "$(rbenv init -)"
+
+# Initialize jenv
+eval "$(jenv init -)"
 
 
 # Set my preferred editor
