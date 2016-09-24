@@ -78,11 +78,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # be nice
-alias please=sudo
 alias hosts='sudo $EDITOR /etc/hosts'
+alias c='curl -s -w "CODE: %{http_code}\nSIZE: %{size_download}\nTIME: %{time_total} (DNS: %{time_namelookup}, connect: %{time_connect}, pretransfer: %{time_pretransfer}, redirect: %{time_redirect}, starttransfer: %{time_starttransfer})\n" -D - -o /dev/null'
 
 # `cat` with beautiful colors. requires Pygments installed.
-alias c='pygmentize -O style=monokai -f console256 -g'
+alias ca='pygmentize -O style=monokai -f console256 -g'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
