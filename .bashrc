@@ -32,7 +32,7 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     export JENVROOT=$HOME/.jenv
 
     # Update the Path
-    export PATH=$GOPATH/bin:$HOME/bin:$HOME/.node/bin:$JENVROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH
+    export PATH=$GOROOT/bin:$GOPATH/bin:$HOME/bin:$HOME/.node/bin:$JENVROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 fi
 
