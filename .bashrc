@@ -54,10 +54,14 @@ ssh-add -l | grep "The agent has no identities" && ssh-add
 . $HOME/code/z/z.sh
 
 # Initialize rbenv
-eval "$(rbenv init -)"
+if [ -x /usr/local/bin/rbenv ]; then
+    eval "$(rbenv init -)"
+fi
 
 # Initialize jenv
-eval "$(jenv init -)"
+if [ -x /usr/local/bin/jenv ]; then
+    eval "$(jenv init -)"
+fi
 
 
 # Set my preferred editor
