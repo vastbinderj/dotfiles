@@ -49,7 +49,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
 
     # build from source
-    CMD="./all.bash"
+    CMD="./make.bash"
     eval $CMD
 fi
 
