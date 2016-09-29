@@ -1,4 +1,4 @@
-This is my personal collection of dotfiles for golang/rails/node development.  I use Vundle for plugin management and I use [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) for code completion and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to ones which suite me best. This configuration works well vim 7.4 or neovim installed with hombrew on my macs, but these work well with vim 7.2+ on Cent OS and Ubuntu, which are my primary development environments at work.
+This is my personal collection of dotfiles for golang/rails/node development.  I use Vundle for plugin management and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to ones which suite me best. This configuration works well vim 7.4 or neovim installed with hombrew on my macs, but these work well with vim 7.2+ on Cent OS and Ubuntu, which are my primary development environments at work.
 
 ## Installation for a Mac and Ubuntu Linux
 (redhat/centos coming soon)
@@ -30,19 +30,6 @@ Be sure to change the `$HOME/.gitconfig-credentials` to your git settings and em
 
 
 
-## Manual steps for just setting up vim
-
-### Clone Vundle into bundle/ and install all Plugins
-
-        > ln -s $HOME/code/dotfiles/.vimrc $HOME/.vimrc
-        > cd ~/.vim
-        > git clone https://github.com/gmarik/Vundle.vim.git bundle/Vundle.vim
-        > vim +PluginInstall +qall
-
-###    Finish install of YouCompleteMe
-
-        > cd ~/.vim/bundle/YouCompleteMe
-        > ./install.py --clang-completer
 
 ### To upgrade all bundled plugins at any time:
 
