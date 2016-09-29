@@ -12,7 +12,7 @@ This is my personal collection of dotfiles for golang/rails/node development.  I
         > ./setupVim.sh                     # configure vim and install plugins
 
 
-Be sure to change the `$HOME/.gitconfig-credentials` to your git settings and email address, replacing everything in `{ALL_CAPS}`. Here is a quick view of what I have in mine:
+Be sure to create a file called `$HOME/.gitconfig-credentials` for your local credentials you do not want the rest of the world to see, replacing everything in `{ALL_CAPS}`. Here is a quick view of what I have in mine:
 
 
         [user]
