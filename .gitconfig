@@ -1,17 +1,10 @@
-[user]
-    name = James Vastbinder
-    email = james.vastbinder@gmail.com
+[include]
+    path = .gitconfig-credentials
 [core]
     editor = vim
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     autocrlf = input
-    excludesfile = /Users/james/.gitignore
-[sendemail]
-    smtpencryption = tls
-    smtpserver = smtp.gmail.com
-    smtpuser = james.vastbinder@gmail.com
-    smtpserverport = 587
-    to = git@vger.kernel.org
+    excludesfile = .gitignore
 [web]
     browser = google-chrome
 [rerere]
@@ -104,7 +97,7 @@
   #############
     w = show
   #############
-    meldon = config diff.external /Users/james/.meld.py
+    meldon = config diff.external .meld.py
     meldof = config --remove-section diff
   #############
     human = name-rev --name-only --refs=refs/heads/*
@@ -127,9 +120,6 @@
     untracked = blue reverse
     branch = white bold red
     nobranch = red white bold
-[github]
-    user = vastbinderj
-    token = token
 [push]
     default = simple
 [pager]
