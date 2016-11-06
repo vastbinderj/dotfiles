@@ -59,11 +59,11 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         # Add PPAs
         if [ "$(id -u)" = 0  ]; then
             add-apt-repository ppa:neovim-ppa/unstable -y
-            curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+            curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
         else
             sudo add-apt-repository ppa:neovim-ppa/unstable -y
             sudo apt-get update
-            curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+            curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
         fi
 
         # Install stuff
