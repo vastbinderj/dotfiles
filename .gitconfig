@@ -131,8 +131,6 @@
 [difftool]
     prompt = false
 	cmd = vimdiff  \\\"$LOCAL\\\" \\\"$REMOTE\\\"
-[pulley]
-	token = 064fa39f42f954eaec21812ebf2bbd5e4b995695
 [merge]
 	tool = diffconflicts
 [mergetool "diffconflicts"]
