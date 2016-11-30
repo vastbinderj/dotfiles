@@ -140,9 +140,5 @@
 	trustExitCode = true
 [mergetool]
 	keepBackup = false
-[url "https://${GITHUB_TOKEN}:x-oauth-basic@github.com/"]
-    insteadOf = "https://github.com"
 [user]
 	useConfigOnly = true
-	name = James Vastbinder
-	email = jamesvastbinder@level11.com
