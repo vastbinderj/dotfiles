@@ -1,7 +1,10 @@
-This is my personal collection of dotfiles for golang/rails/node development.  I use Vundle for plugin management and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to ones which suite me best. This configuration works well vim 7.4 or neovim installed with hombrew on my macs, but these work well with vim 7.2+ on Cent OS and Ubuntu, which are my primary development environments at work.
+This is my personal collection of dotfiles and setup scripts for vanilla machines.  It turns them into lean man developer rigs in a short amount of time.
 
-## Installation for a Mac and Ubuntu Linux
-(redhat/centos coming soon)
+I use Vundle for plugin management and my mapleader is a ','.  Be sure to read through the .vimrc file for key mappings, as they are set to ones which suite me best. This configuration works well vim 7.4 or neovim installed with hombrew on my macs, but these work well with vim 7.2+ on Cent OS and Ubuntu, which are my primary development environments at work.
+
+I have this configued to work with vim and neovim.
+
+## Set up a new Mac and Ubuntu/Debian Linux rig
 
         > mkdir -p $HOME/code
         > git clone https://github.com/vastbinderj/dotfiles.git ~/code/dotfiles
