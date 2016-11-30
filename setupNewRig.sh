@@ -173,7 +173,6 @@ git clone https://github.com/rupa/z.git "$HOME/code/z"
 chmod +x ~/code/z/z.sh
 # consider reusing your current .z file if possible. it's painful to rebuild :)
 # z hooked up in .bash_profile
-cat "set ServerIntervalTimeout 180" >> "HOME/.ssh/config"
 
 # Base16 Shell
 git clone https://github.com/chriskempson/base16-shell.git "$HOME/.config/base16-shell"
