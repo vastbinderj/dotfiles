@@ -126,6 +126,9 @@ for file in ~/.{bash_prompt,aliases,functions}; do
 done
 unset file
 
+# add github token to env
+export GITHUB_TOKEN=$(git config --get github.token)
+
 # The next line updates PATH for the Google Cloud SDK.
 [ -f "$HOME/code/google-cloud-sdk/path.bash.inc"  ] && source "$HOME/code/google-cloud-sdk/path.bash.inc"
 
