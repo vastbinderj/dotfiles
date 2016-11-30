@@ -173,7 +173,7 @@ git clone https://github.com/rupa/z.git "$HOME/code/z"
 chmod +x ~/code/z/z.sh
 # consider reusing your current .z file if possible. it's painful to rebuild :)
 # z hooked up in .bash_profile
-
+cat "set ServerIntervalTimeout 180" >> "HOME/.ssh/config"
 
 # Base16 Shell
 git clone https://github.com/chriskempson/base16-shell.git "$HOME/.config/base16-shell"
@@ -181,6 +181,19 @@ git clone https://github.com/chriskempson/base16-shell.git "$HOME/.config/base16
 # Base Material Theme
 git clone https://github.com/kristijanhusak/vim-hybrid-material "$HOME/code/vim-hybrid-material"
 cp "$HOME/code/vim-hybrid-material/base16-material/base16-material.dark.sh" "$HOME/.config/base16-shell"
+
+
+# don't let ssh timeout locally
+if [ -d "$HOME/.ssh" ]; then
+    echo "ServerAliveInterval 120" >> "$HOME/.ssh/config"
+    chmod 644 "$HOME/.ssh/config"
+else
+    mkdir -p "$HOME/.ssh"
+    chmod 700 "$HOME/.ssh"
+    echo "ServerAliveInterval 120" >> "$HOME/.ssh/config"
+    chmod 644 "$HOME/.ssh/config"
+fi
+
 
 # for the c alias (syntax highlighted cat)
 sudo easy_install Pygments
