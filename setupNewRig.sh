@@ -194,6 +194,10 @@ else
 fi
 
 
+# install patched fonts for vim statusline
+git clone https://github.com/powerline/fonts "$HOME/code/fonts"
+$HOME/code/fonts/install.sh
+
 # for the c alias (syntax highlighted cat)
 sudo easy_install Pygments
 
