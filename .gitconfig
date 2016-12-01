@@ -1,4 +1,5 @@
 [include]
+    # be sure to set your custom credentials and tokens here
     path = .gitconfig-credentials
 [core]
     editor = vim
