@@ -8,10 +8,10 @@ OIFS=$IFS;
 IFS=",";
 
 # fill in your details here
-dbname=richkids-dev
-user=ottemo
-pass=richkids
-host=candidate.42.mongolayer.com:10243
+dbname=<DB-NAME>
+user=<USER>
+pass=<PASSWORD>
+host=<SERVER>:<PORT>
 
 # first get all collections in the database
 collections=`mongo "$host/$dbname" --username $user --password $pass --eval "rs.slaveOk();db.getCollectionNames();" --quiet`;
