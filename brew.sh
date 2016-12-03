@@ -58,9 +58,7 @@ brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
 # daily
-brew cask install divvy
 brew cask install dropbox
-brew cask install rescuetime
 brew cask install flux
 
 # dev
@@ -78,13 +76,11 @@ brew install nodejs
 brew install --HEAD neovim/neovim/neovim
 
 # java
-brew install caskroom/cask/brew-cask
 brew cask install java
 brew install jenv
 
 # fun
 brew cask install vlc
-brew cask install kindle
 brew cask install skype
 brew cask install spotify
 
