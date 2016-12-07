@@ -44,6 +44,9 @@ Plugin 'tpope/vim-git'
 " Gundo
 Plugin 'sjl/gundo.vim'
 
+" Java Completion
+Plugin 'artur-shaik/vim-javacomplete2'
+
 " JSHint
 Plugin 'wookiehangover/jshint.vim'
 
@@ -620,12 +623,17 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute " ,"trimming em
 let g:acp_enableAtStartup = 0
 " neovim
 if has('nvim')
+    set omnifunc=syntaxcomplete#Complete
     let g:deoplete#enable_at_startup = 1
     let g:deoplete#ignore_sources = {}
     let g:deoplete#ignore_sources._ = ['buffer', 'member', 'tag', 'file', 'neosnippet']
+    let g:deoplete#omni_patterns = {}
+    let g:deoplete#omni_patterns.java = '[^. *\t]\.\w*'
+    let g:deoplete#sources = {}
+    let g:deoplete#sources._ = []
+    let g:deoplete#file#enable_bugger_path = 1
     let g:deoplete#sources#go#sort_class = ['func', 'type', 'var', 'const']
     let g:deoplete#sources#go#align_class = 1
-
 
     " Use partial fuzzy matches like YouCompleteMe
     call deoplete#custom#set('_', 'matchers', ['matcher_fuzzy'])
@@ -679,6 +687,23 @@ highlight   PmenuThumb    ctermfg=0 ctermbg=7
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
+
+"============================
+" Java lang maps
+"============================
+" enable smart class imports
+nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+" enable insertion of class imports
+nmap <F5> <Plug>(JavaComplete-Imports-Add)
+imap <F5> <Plug>(JavaComplete-Imports-Add)
+" add all missing imports
+nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+" remove all missing imports
+nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+
 
 " Node.js dictionary
 au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node/dict/node.dict
