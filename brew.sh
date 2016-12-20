@@ -52,6 +52,7 @@ brew install zopfli
 brew install ffmpeg --with-libvpx
 brew install git-tracker
 brew install ssh-copy-id
+brew install reattach-to-user-namespace --with-wrap-pbcopy-and-pbpaste
 
 # Install native apps
 brew install caskroom/cask/brew-cask
@@ -84,6 +85,13 @@ brew cask install vlc
 brew cask install skype
 brew cask install spotify
 
+# ssl and mongodb
+brew install openssl
+brew link openssl
+brew install mongodb --with-openssl
+
+# add services command for easy stop/start of daemons
+brew tap homebrew/services
 
 # Fonts
 brew tap caskroom/fonts
