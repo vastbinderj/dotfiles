@@ -37,7 +37,7 @@ brew install grc
 brew install wget --with-iri
 
 # Install more recent versions of some OS X tools
-brew install vim --override-system-vi --with-lua --with-luajit --with-python3 --with-cscope
+brew install vim --override-system-vi --with-lua --with-luajit --with-python3
 
 # Install other useful binaries
 brew install the_silver_searcher
@@ -72,7 +72,7 @@ brew install cmake
 brew install ctags
 brew install cscope
 brew install go
-brew install macvim --custom-system-icons --with-lua --with-luajit --with-python3 --with-cscope
+brew install macvim --with-lua --with-luajit --with-python3
 brew install nodejs
 brew install --HEAD neovim/neovim/neovim
 

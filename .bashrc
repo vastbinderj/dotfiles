@@ -47,7 +47,8 @@ if [ ! -S ~/.ssh/ssh_auth_sock  ]; then
     ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-ssh-add -l | grep "The agent has no identities" && ssh-add
+#ssh-add -l | grep "The agent has no identities" && ssh-add
+ssh-add -l
 
 
 # add z
@@ -134,3 +135,6 @@ export GITHUB_TOKEN=$(git config --get github.token)
 
 # The next line enables shell command completion for gcloud.
 [ -f "$HOME/code/google-cloud-sdk/completion.bash.inc" ] && source "$HOME/code/google-cloud-sdk/completion.bash.inc"
+
+# run ucp for devv on trident
+eval $(<$HOME/code/dotfiles/ucp/devv/env.sh)

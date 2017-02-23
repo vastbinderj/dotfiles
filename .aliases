@@ -97,3 +97,12 @@ alias fs="stat -f \"%z bytes\""
 
 # tmux alias
 alias tmux='tmux -2'
+
+# Docker ps aliases
+alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}"'
+alias dpsa='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}"'
+alias dports='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Ports}}"'
+
+# Maven aliases
+alias mci='mvn clean install -DskipTests'
+alias mcp='mvn clean package'
