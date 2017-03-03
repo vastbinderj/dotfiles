@@ -166,6 +166,7 @@ main() {
 
     # hack symlinks for neovim and bin dir
     ln -fs ~/.vim ~/.nvim && ln -fs ~/.vimrc ~/.nvimrc
+    ln -fs ~/code/dotfiles/.tmux ~/.tmux
     if [ ! -d "$HOME/bin" ]; then
         ln -fs ~/code/dotfiles/bin ~/bin
     fi
