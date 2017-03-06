@@ -692,17 +692,17 @@ let g:html_indent_style1 = "inc"
 " Java lang maps
 "============================
 " enable smart class imports
-nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+nmap <space><F4> <Plug>(JavaComplete-Imports-AddSmart)
+imap <space><F4> <Plug>(JavaComplete-Imports-AddSmart)
 " enable insertion of class imports
-nmap <F5> <Plug>(JavaComplete-Imports-Add)
-imap <F5> <Plug>(JavaComplete-Imports-Add)
+nmap <space><F5> <Plug>(JavaComplete-Imports-Add)
+imap <space><F5> <Plug>(JavaComplete-Imports-Add)
 " add all missing imports
-nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+nmap <space><F6> <Plug>(JavaComplete-Imports-AddMissing)
+imap <space><F6> <Plug>(JavaComplete-Imports-AddMissing)
 " remove all missing imports
-nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+nmap <space><F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+imap <space><F7> <Plug>(JavaComplete-Imports-RemoveUnused)
 
 
 " Node.js dictionary
