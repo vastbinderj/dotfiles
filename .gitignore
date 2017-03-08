@@ -41,3 +41,7 @@ Gemfile.lock
 
 # symlink files
 ###############
+
+# Folders
+#########
+**/ucp
