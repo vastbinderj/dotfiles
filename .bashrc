@@ -137,4 +137,4 @@ export GITHUB_TOKEN=$(git config --get github.token)
 [ -f "$HOME/code/google-cloud-sdk/completion.bash.inc" ] && source "$HOME/code/google-cloud-sdk/completion.bash.inc"
 
 # run ucp for devv on trident
-eval $(<$HOME/code/dotfiles/ucp/devv/env.sh)
+#eval $(<$HOME/code/dotfiles/ucp/devv/env.sh)

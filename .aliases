@@ -103,6 +103,11 @@ alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}"'
 alias dpsa='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}"'
 alias dports='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Ports}}"'
 
+# Docker UCP aliases
+alias devv='eval $(<$HOME/code/dotfiles/ucp/devv/env.sh)'
+alias devint='eval $(<$HOME/code/dotfiles/ucp/devint/env.sh)'
+
+
 # Maven aliases
 alias mci='mvn clean install -DskipTests'
 alias mcp='mvn clean package'
