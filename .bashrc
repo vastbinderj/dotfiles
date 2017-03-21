@@ -136,5 +136,28 @@ export GITHUB_TOKEN=$(git config --get github.token)
 # The next line enables shell command completion for gcloud.
 [ -f "$HOME/code/google-cloud-sdk/completion.bash.inc" ] && source "$HOME/code/google-cloud-sdk/completion.bash.inc"
 
-# run ucp for devv on trident
-#eval $(<$HOME/code/dotfiles/ucp/devv/env.sh)
+# Usage: ddc <environment>
+#        ddc devv
+#
+function ddc() {
+    export DDC_ENV=$1
+    CWD=$(pwd)
+    cd $HOME/.docker/gxi-ddc-$DDC_ENV
+    eval $(<env.sh)
+    cd $CWD
+    unset CWD
+}
+
+# usage: dslog <container_id>
+#        dslog 79a89584712c
+#
+function dslog() {
+    docker logs $(docker ps -a | grep $1 | head -n1 | awk '{print $1}');
+}
+
+# usage: dslogf <container_id>
+#         dslogf 79a89584712c
+#
+function dslogf() {
+    docker logs -f $(docker ps -a | grep $1 | head -n1 | awk '{print $1}');
+}
