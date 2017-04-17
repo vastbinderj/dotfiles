@@ -164,11 +164,17 @@ main() {
 
     done
 
-    # hack symlinks for neovim and bin dir
+    # symlinks dirs
     ln -fs ~/.vim ~/.nvim && ln -fs ~/.vimrc ~/.nvimrc
+    # tmux
     ln -fs ~/code/dotfiles/.tmux ~/.tmux
+    # local bin dir
     if [ ! -d "$HOME/bin" ]; then
         ln -fs ~/code/dotfiles/bin ~/bin
+    fi
+    # google cloud sdk
+    if [ ! -d "$HOME/.google-cloud-sdk" ]; then
+        ln -fs ~/code/dotfiles/.google-cloud-sdk ~/.google-cloud-sdk
     fi
 
 }

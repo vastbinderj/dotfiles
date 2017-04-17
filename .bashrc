@@ -131,10 +131,24 @@ unset file
 export GITHUB_TOKEN=$(git config --get github.token)
 
 # The next line updates PATH for the Google Cloud SDK.
-[ -f "$HOME/code/google-cloud-sdk/path.bash.inc"  ] && source "$HOME/code/google-cloud-sdk/path.bash.inc"
+if [ -f '/Users/james/.google-cloud-sdk/path.bash.inc' ]; then source '/Users/james/.google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-[ -f "$HOME/code/google-cloud-sdk/completion.bash.inc" ] && source "$HOME/code/google-cloud-sdk/completion.bash.inc"
+if [ -f '/Users/james/.google-cloud-sdk/completion.bash.inc' ]; then source '/Users/james/.google-cloud-sdk/completion.bash.inc'; fi
+
+# Usage: gpl
+#
+#
+function gpl()  {
+    for d in ./*
+    do
+        cd "$d"
+        echo "Updating $d"
+        git fetch --prune
+        git pull
+        cd ..
+    done
+}
 
 # Usage: ddc <environment>
 #        ddc devv
@@ -156,8 +170,16 @@ function dslog() {
 }
 
 # usage: dslogf <container_id>
-#         dslogf 79a89584712c
+#        dslogf 79a89584712c
 #
 function dslogf() {
     docker logs -f $(docker ps -a | grep $1 | head -n1 | awk '{print $1}');
 }
+
+# usage: dsl
+#        dsl
+#
+function dsl() {
+    docker service ls;
+}
+
