@@ -11,7 +11,6 @@ I have this configured to work with both vim and neovim.
         > cd $HOME/dotfiles
         > ./setupNewRig.sh                  # this sets up a mac or x64 linux server
         > exec -l $SHELL                    # reload your shell
-        > ./installGolang.sh                # build golang from source
         > ./setupVim.sh                     # configure vim and install plugins
 
 
