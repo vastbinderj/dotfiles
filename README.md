@@ -8,7 +8,7 @@ I have this configured to work with both vim and neovim.
 
         > mkdir -p $HOME/code
         > git clone https://github.com/vastbinderj/dotfiles.git ~/code/dotfiles
-        > cd $HOME/dotfiles
+        > cd $HOME/code/dotfiles
         > ./setupNewRig.sh                  # this sets up a mac or x64 linux server
         > exec -l $SHELL                    # reload your shell
         > ./setupVim.sh                     # configure vim and install plugins
