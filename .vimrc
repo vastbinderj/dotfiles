@@ -220,11 +220,11 @@ set t_Co=256
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_left_sep = ' '
-let g:airline_right_sep = ' '
-let g:airline_theme = "badwolf"
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:airline_left_sep = ' '
+"let g:airline_right_sep = ' '
+let g:airline_theme = "base16_ocean"
 "nmap <Plug>AirlineTablineRefresh :set mod!<CR>
 
 "======================================
@@ -249,6 +249,7 @@ nnoremap <F6> :!ctags -R --exclude=.git --exclude=log *<CR>
 "======================================
 " Leader Key Maps
 "======================================
+
 
 " Set the Map Leader
 let mapleader =","
@@ -714,14 +715,6 @@ au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 " jQuery Syntax
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
-" Solarized stuff
-let g:solarized_termtrans=1
-let g:solarized_contrast='high'
-let base16colorspace=256
-set background=dark
-colorscheme base16-material-dark
-highlight CursorLine cterm=BOLD ctermbg=235 ctermfg=NONE
-
 " Deal with whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -734,3 +727,15 @@ function! TrimWhiteSpace()
     %s/\s\+$//e
 endfunction
 autocmd BufWritePre * :call TrimWhiteSpace()
+
+" Solarized stuff
+"let g:solarized_termtrans=1
+"let g:solarized_contrast='high'
+let g:enable_bold_font = 1
+let g:enable_italic_font = 1
+let g:hybrid_custom_term_colors = 1
+let base16colorspace=256
+set background=dark
+colorscheme hybrid
+highlight CursorLine cterm=BOLD ctermbg=235 ctermfg=NONE
+
