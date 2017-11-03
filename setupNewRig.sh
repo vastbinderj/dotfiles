@@ -52,7 +52,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # dl google sdk
     wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-151.0.1-darwin-x86_64.tar.gz
     tar -zxvf google-cloud-sdk-151.0.1-darwin-x86_64.tar.gz
-    mv google-cloud-sdk .google-cloud-sdk
+    mv google-cloud-sdk ../google-cloud-sdk
     rm -f google-cloud-sdk-151.0.1-darwin-x86_64.tar.gz
 
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
