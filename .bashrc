@@ -131,13 +131,13 @@ unset file
 export GITHUB_TOKEN=$(git config --get github.token)
 
 # The next line updates PATH for the Google Cloud SDK.
-#if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc' ]
-    #then source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc'
+if [ -f '$HOME/code/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc' ]
+    then source '$HOME/code/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc'
 #fi
 
 # Enables shell command completion for gcloud if it exists
-if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc' ]
-   then source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc'
+if [ -f '$HOME/code/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc' ]
+   then source '$HOME/code/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc'
 fi
 
 # Usage: gpl
