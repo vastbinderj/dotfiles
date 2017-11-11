@@ -132,7 +132,7 @@ export GITHUB_TOKEN=$(git config --get github.token)
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/code/google-cloud-sdk/path.bash.inc" ]
-    then source "$HOME/code/google-cloud-sdk/path.bash.inc"; echo "found path.bash";
+    then source "$HOME/code/google-cloud-sdk/path.bash.inc"
 fi
 
 # Enables shell command completion for gcloud if it exists
