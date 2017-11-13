@@ -164,6 +164,18 @@ function ddc() {
     eval $(<env.sh)
     cd $CWD
     unset CWD
+    unset DDC_ENV
+}
+
+# Usage: ddm <docker-machine>
+#        ddm default
+#
+function ddm() {
+    CWD=$(pwd)
+    cd $HOME/.docker/machine/machines/$1
+    eval $(docker-machine env $1)
+    cd $CWD
+    unset CWD
 }
 
 # usage: dslog <container_id>
@@ -185,5 +197,21 @@ function dslogf() {
 #
 function dsl() {
     docker service ls;
+}
+
+# usage: ddns
+#        ddns
+#
+# will update local /etc/host file with current docker-machine ip
+# to resolve to local.dev hostname
+function ddns() {
+    # clear existing local.dev entry from /etc/hosts
+    sudo grep -q '^local.dev .*' /etc/hosts && sudo sed -i '/[[:space:]]local\.dev$/d' /etc/hosts
+
+    # get ip of running machine
+    export DOCKER_IP="$(docker-machine ip)"
+
+    # update /etc/hosts with docker machine ip
+    [[ -n $DOCKER_IP ]] && sudo /bin/bash -c "echo \"${DOCKER_IP}   local.dev\" >> /etc/hosts"
 }
 
