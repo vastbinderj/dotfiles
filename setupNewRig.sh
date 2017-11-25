@@ -169,6 +169,10 @@ fi
 
 
 # add node
+if [ -d "$HOME/.nvm" ]; then
+    # clean up .bashrc if node has been installed before
+    sed '/NVM_DIR/d' $HOME/.bashrc
+fi
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
 source $HOME/.nvm/nvm.sh
 nvm install node
