@@ -140,50 +140,5 @@ if [ -f '$HOME/code/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc
    then source '$HOME/code/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc'
 fi
 
-# Usage: gpl
-#
-#
-function gpl()  {
-    for d in ./*
-    do
-        cd "$d"
-        echo "Updating $d"
-        git fetch --prune
-        git pull
-        cd ..
-    done
-}
-
-# Usage: ddc <environment>
-#        ddc devv
-#
-function ddc() {
-    export DDC_ENV=$1
-    CWD=$(pwd)
-    cd $HOME/.docker/gxi-ddc-$DDC_ENV
-    eval $(<env.sh)
-    cd $CWD
-    unset CWD
-}
-
-# usage: dslog <container_id>
-#        dslog 79a89584712c
-#
-function dslog() {
-    docker logs $(docker ps -a | grep $1 | head -n1 | awk '{print $1}');
-}
-
-# usage: dslogf <container_id>
-#        dslogf 79a89584712c
-#
-function dslogf() {
-    docker logs -f $(docker ps -a | grep $1 | head -n1 | awk '{print $1}');
-}
-
-# usage: dsl
-#        dsl
-#
-function dsl() {
-    docker service ls;
-}
-
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -65,12 +65,11 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         # Add PPAs
         if [ "$(id -u)" = 0  ]; then
             add-apt-repository ppa:neovim-ppa/unstable -y
-            curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
         else
             sudo add-apt-repository ppa:neovim-ppa/unstable -y
             sudo apt-get update
-            curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
         fi
+
 
         # Install stuff
         eval "$INSTALLCMD" \
@@ -169,6 +168,13 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 fi
 
 
+# add node
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+source $HOME/.nvm/nvm.sh
+nvm install node
+nvm use node
+
+
 # github.com/jamiew/git-friendly
 # the `push` command which copies the github compare URL to my clipboard is heaven
 bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
@@ -190,13 +196,13 @@ cp "$HOME/code/vim-hybrid-material/base16-material/base16-material.dark.sh" "$HO
 
 # don't let ssh timeout locally
 if [ -d "$HOME/.ssh" ]; then
-    echo "ServerAliveInterval 120" >> "$HOME/.ssh/config"
-    chmod 644 "$HOME/.ssh/config"
+echo "ServerAliveInterval 120" >> "$HOME/.ssh/config"
+chmod 644 "$HOME/.ssh/config"
 else
-    mkdir -p "$HOME/.ssh"
-    chmod 700 "$HOME/.ssh"
-    echo "ServerAliveInterval 120" >> "$HOME/.ssh/config"
-    chmod 644 "$HOME/.ssh/config"
+mkdir -p "$HOME/.ssh"
+chmod 700 "$HOME/.ssh"
+echo "ServerAliveInterval 120" >> "$HOME/.ssh/config"
+chmod 644 "$HOME/.ssh/config"
 fi
 
 

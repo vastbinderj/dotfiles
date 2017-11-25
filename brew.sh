@@ -69,7 +69,6 @@ brew install ctags
 brew install cscope
 brew install go
 brew install macvim --with-luajit --with-python3
-brew install nodejs
 brew install --HEAD neovim/neovim/neovim
 brew install jq
 
