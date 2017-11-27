@@ -68,8 +68,8 @@ Plugin 'tpope/vim-repeat'
 " Surround
 Plugin 'tpope/vim-surround'
 
-" Syntastic
-Plugin 'scrooloose/syntastic'
+" Ale
+Plugin 'w0rp/ale'
 
 " Tabular
 Plugin 'godlygeek/tabular'
@@ -107,12 +107,6 @@ Plugin 'nathanaelkane/vim-indent-guides'
 
 " Syntax for JavaScript
 Plugin 'othree/javascript-libraries-syntax.vim'
-
-" AngularJS Snippets
-Plugin 'matthewsimo/angular-vim-snippets'
-
-" Angular
-Plugin 'burnettk/vim-angular'
 
 " JSON
 Plugin 'elzr/vim-json'
@@ -466,6 +460,7 @@ set tags=./tags,tags;$HOME
 
 " Golang customizations
 let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
 let g:go_bin_path = expand("$HOME/code/go/bin")
 let g:go_auto_type_info = 1
 
@@ -607,19 +602,35 @@ let g:nodejs_complete_config = {
             \ }
 
 " Syntastic settings
-let g:syntastic_error_symbol = '✘'
-let g:syntastic_warning_symbol = '✘'
-let g:syntastic_style_error_symbol = '≋'
-let g:syntastic_style_warning_symbol = '≈'
-let g:syntastic_go_checkers = ['golint']                       " use golint for syntax checking in Go
-let g:syntastic_loc_list_height = 5                                 " set error window height to 5
-let g:syntastic_always_populate_loc_list = 1                        " stick errors into a location-list
-let g:syntastic_html_tidy_exec = 'tidy5'
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute " ,"trimming empty <", "unescaped &" , "lacks \"action", "is not recognized!", "discarding unexpected"]
+"let g:syntastic_error_symbol = '✘'
+"let g:syntastic_warning_symbol = '✘'
+"let g:syntastic_style_error_symbol = '≋'
+"let g:syntastic_style_warning_symbol = '≈'
+"let g:syntastic_go_checkers = ['golint']                       " use golint for syntax checking in Go
+"let g:syntastic_loc_list_height = 5                            " set error window height to 5
+"let g:syntastic_always_populate_loc_list = 1                   " stick errors into a location-list
+"let g:syntastic_html_tidy_exec = 'tidy5'
+"let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute " ,"trimming empty <", "unescaped &" , "lacks \"action", "is not recognized!", "discarding unexpected"]
 
-"========================
+"=======================
+" Ale for linting
+"======================
+let g:ale_sign_column_always = 1                                " keep the sign gutter open
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:ale_open_list = 1                                         " open loc list
+nmap <silent> '<leader>k' <Plug>(ale_previous_wrap)             " navigate errors
+nmap <silent> '<leader>j' <Plug>(ale_next_wrap)
+
+" Do not lint or fix minified files.
+let g:ale_pattern_options = {
+\ '\.min\.js$': {'ale_linters': [], 'ale_fixers': []},
+\ '\.min\.css$': {'ale_linters': [], 'ale_fixers': []},
+\}
+
+"====================================
 " DeoComplete for Neovim and Settings
-"========================
+"====================================
 " turn of omnifunc
 let g:acp_enableAtStartup = 0
 " neovim
