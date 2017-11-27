@@ -601,17 +601,6 @@ let g:nodejs_complete_config = {
             \ 'max_node_compl_len': 15
             \ }
 
-" Syntastic settings
-"let g:syntastic_error_symbol = '✘'
-"let g:syntastic_warning_symbol = '✘'
-"let g:syntastic_style_error_symbol = '≋'
-"let g:syntastic_style_warning_symbol = '≈'
-"let g:syntastic_go_checkers = ['golint']                       " use golint for syntax checking in Go
-"let g:syntastic_loc_list_height = 5                            " set error window height to 5
-"let g:syntastic_always_populate_loc_list = 1                   " stick errors into a location-list
-"let g:syntastic_html_tidy_exec = 'tidy5'
-"let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute " ,"trimming empty <", "unescaped &" , "lacks \"action", "is not recognized!", "discarding unexpected"]
-
 "=======================
 " Ale for linting
 "======================
