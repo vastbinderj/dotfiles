@@ -203,8 +203,8 @@ function dsl() {
     docker service ls;
 }
 
-# usage: ddns
-#        ddns
+# usage: ddns <machine>
+#        ddns dev
 #
 # will update local /etc/host file with current docker-machine ip
 # to resolve to local.dev hostname
@@ -213,7 +213,7 @@ function ddns() {
     sudo grep -q '^local.dev .*' /etc/hosts && sudo sed -i '/[[:space:]]local\.dev$/d' /etc/hosts
 
     # get ip of running machine
-    export DOCKER_IP="$(docker-machine ip)"
+    export DOCKER_IP="$(docker-machine ip $1)"
 
     # update /etc/hosts with docker machine ip
     [[ -n $DOCKER_IP ]] && sudo /bin/bash -c "echo \"${DOCKER_IP}   local.dev\" >> /etc/hosts"

@@ -3,6 +3,8 @@
 ##
 # new rig setup and configuration
 ##
+CWD=$(pwd)
+
 
 if ! [ "$(id -u)" = 0  ]; then
     INSTALLCMD="sudo apt-get install"
@@ -49,11 +51,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     infocmp "$TERM" | sed 's/kbs=^[hH]/kbs=\\177/' > "$TERM.ti"
     tic "$TERM.ti"
 
-    # dl google sdk
-    wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-151.0.1-darwin-x86_64.tar.gz
-    tar -zxvf google-cloud-sdk-151.0.1-darwin-x86_64.tar.gz
-    mv google-cloud-sdk ../google-cloud-sdk
-    rm -f google-cloud-sdk-151.0.1-darwin-x86_64.tar.gz
 
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     # Found Linux
@@ -167,6 +164,13 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
 fi
 
+
+# install google sdk
+cd "$HOME/code"
+curl https://sdk.cloud.google.com | bash
+# install kubectl
+$HOME/code/google-cloud-sdk/bin/gcloud components install kubectl
+cd $CWD
 
 # add node
 if [ -d "$HOME/.nvm" ]; then
