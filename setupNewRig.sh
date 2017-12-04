@@ -4,6 +4,7 @@
 # new rig setup and configuration
 ##
 CWD=$(pwd)
+CODE_DIR="$HOME/code"
 
 
 if ! [ "$(id -u)" = 0  ]; then
@@ -13,8 +14,8 @@ else
 fi
 
 # create code dir if it doesn't exist
-if [ ! -d "$HOME/code" ]; then
-    mkdir -p "$HOME/code"
+if [ ! -d "$CODE_DIR" ]; then
+    mkdir -p "$CODE_DIR"
 fi
 
 # create jenv dir if it doesn't exist
@@ -37,7 +38,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     # github.com/thebitguru/play-button-itunes-patch
     # disable itunes opening on media keys
-    git clone https://github.com/thebitguru/play-button-itunes-patch ~/code/play-button-itunes-patch
+    git clone https://github.com/thebitguru/play-button-itunes-patch "$CODE_DIR"/play-button-itunes-patch
 
 
     # change to bash 4 (installed by homebrew)
@@ -166,10 +167,10 @@ fi
 
 
 # install google sdk
-cd "$HOME/code"
+cd "$CODE_DIR"
 curl https://sdk.cloud.google.com | bash
 # install kubectl
-$HOME/code/google-cloud-sdk/bin/gcloud components install kubectl
+$CODE_DIR/google-cloud-sdk/bin/gcloud components install kubectl
 cd $CWD
 
 # add node
@@ -189,8 +190,8 @@ bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
 
 
 # github.com/rupa/z   - oh how i love you
-git clone https://github.com/rupa/z.git "$HOME/code/z"
-chmod +x ~/code/z/z.sh
+git clone https://github.com/rupa/z.git "$CODE_DIR/z"
+chmod +x "$CODE_DIR/z/z.sh"
 # consider reusing your current .z file if possible. it's painful to rebuild :)
 # z hooked up in .bash_profile
 
@@ -198,8 +199,8 @@ chmod +x ~/code/z/z.sh
 git clone https://github.com/chriskempson/base16-shell.git "$HOME/.config/base16-shell"
 
 # Base Material Theme
-git clone https://github.com/kristijanhusak/vim-hybrid-material "$HOME/code/vim-hybrid-material"
-cp "$HOME/code/vim-hybrid-material/base16-material/base16-material.dark.sh" "$HOME/.config/base16-shell"
+git clone https://github.com/kristijanhusak/vim-hybrid-material "$CODE_DIR/vim-hybrid-material"
+cp "$CODE_DIR/vim-hybrid-material/base16-material/base16-material.dark.sh" "$HOME/.config/base16-shell"
 
 
 # don't let ssh timeout locally
@@ -215,8 +216,8 @@ fi
 
 
 # install patched fonts for vim statusline
-git clone https://github.com/powerline/fonts "$HOME/code/fonts"
-$HOME/code/fonts/install.sh
+git clone https://github.com/powerline/fonts "$CODE_DIR/fonts"
+$CODE_DIR/fonts/install.sh
 
 # for the c alias (syntax highlighted cat)
 sudo easy_install Pygments
