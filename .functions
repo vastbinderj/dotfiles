@@ -219,3 +219,18 @@ function ddns() {
     [[ -n $DOCKER_IP ]] && sudo /bin/bash -c "echo \"${DOCKER_IP}   local.dev\" >> /etc/hosts"
 }
 
+# usage: drm
+#
+# stop and remove all running containers
+#
+function drm() {
+    docker rm -f $(docker ps -a -q)
+}
+
+# usage drmi
+#
+# remove all local docker images
+#
+function drmi() {
+    docker rmi $(docker images -q)
+}
