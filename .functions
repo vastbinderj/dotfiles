@@ -222,9 +222,10 @@ function ddns() {
 # usage: drm
 #
 # stop and remove all running containers
+# including volumes
 #
 function drm() {
-    docker rm -f $(docker ps -a -q)
+    docker rm -f -v $(docker ps -a -q)
 }
 
 # usage drmi
