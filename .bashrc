@@ -1,8 +1,31 @@
-# Support for both Mac and Linux
 #
 #
 
 # OS specific stuff
+if [ -f /etc/os-release ]; then
+    # freedesktop.org and systemd
+    . /etc/os-release
+    OS=$NAME
+    VER=$VERSION_ID
+elif type lsb_release >/dev/null 2>&1; then
+    # linuxbase.org
+    OS=$(lsb_release -si)
+    VER=$(lsb_release -sr)
+elif [ -f /etc/lsb-release ]; then
+    # For some versions of Debian/Ubuntu without lsb_release command
+    . /etc/lsb-release
+    OS=$DISTRIB_ID
+    VER=$DISTRIB_RELEASE
+elif [ -f /etc/debian_version ]; then
+    # Older Debian/Ubuntu/etc.
+    OS=Debian
+    VER=$(cat /etc/debian_version)
+else
+    # Fall back to uname, e.g. "Linux <version>", also works for BSD, etc.
+    OS=$(uname -s)
+    VER=$(uname -r)
+fi
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Add bash completion
     if [ -f `brew --prefix`/etc/bash_completion ]; then
@@ -23,6 +46,16 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     if [ -f /usr/share/bash-completion/bash_completion ]; then
         . /usr/share/bash-completion/bash_completion
     fi
+
+    if [ "$OS" == "Gentoo" ]; then
+        # fix our modifiers in gentoo
+        setxkbmap -option 'caps:ctrl_modifier'
+        xcape -e 'Caps_Lock=Escape;Control_L=Escape'
+    else
+        # make less more friendly for non-text input files, see lesspipe(1)
+        [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+    fi
+
 
     # Golang
     export GOROOT=$HOME/go
@@ -96,8 +129,6 @@ HISTFILESIZE=2000
 shopt -s checkwinsize
 
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # add colors to apps
 GRC=`which grc`
