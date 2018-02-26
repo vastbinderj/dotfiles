@@ -51,6 +51,9 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         # fix our modifiers in gentoo
         setxkbmap -option 'caps:ctrl_modifier'
         xcape -e 'Caps_Lock=Escape;Control_L=Escape'
+
+        # set an alias for skype to use apulse
+        alias  skype='apulse skype'
     else
         # make less more friendly for non-text input files, see lesspipe(1)
         [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -64,8 +67,11 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
     # JavaEnv
     export JENVROOT=$HOME/.jenv
 
+    # IDEA
+    export IDEAROOT=/opt/idea-IU-173.4548.28
+
     # Update the Path
-    export PATH=$GOROOT/bin:$GOPATH/bin:$HOME/bin:$HOME/.node/bin:$JENVROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH
+    export PATH=$GOROOT/bin:$GOPATH/bin:$HOME/bin:$HOME/.node/bin:$JENVROOT/bin:$IDEAROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 fi
 
