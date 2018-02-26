@@ -640,6 +640,9 @@ if has('nvim')
     call deoplete#custom#set('_', 'matchers', ['matcher_fuzzy'])
     call deoplete#custom#set('_', 'converters', ['converter_remove_paren'])
     call deoplete#custom#set('_', 'disabled_syntaxes', ['Comment', 'String'])
+
+    " disable deoplete for pandoc and markdown
+    autocmd FileType markdown,pandoc  let b:deoplete_disable_auto_complete = 1
 else
     let g:neocomplete#enable_at_startup = 1
     let g:neocomplete#enable_smart_case = 1
@@ -653,6 +656,9 @@ else
 
     " disable sorting
     call neocomplete#custom#source('_', 'sorters', [])
+
+    " turn off complete on markdown and pandoc
+    autocmd FileType pandoc,markdown nested NeoComplCacheLock
 endif
 
 " Enable Omni complete
