@@ -58,7 +58,6 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 
 
     # Golang
-    export GOROOT=$HOME/go
     export GOPATH=$HOME/code/go
 
     # JavaEnv
