@@ -47,17 +47,14 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         . /usr/share/bash-completion/bash_completion
     fi
 
-    if [ "$OS" == "Gentoo" ]; then
-        # fix our modifiers in gentoo
-        setxkbmap -option 'caps:ctrl_modifier'
-        xcape -e 'Caps_Lock=Escape;Control_L=Escape'
+    # fix our modifiers in gentoo and arch
+    setxkbmap -option 'caps:ctrl_modifier'
+    xcape -e 'Caps_Lock=Escape;Control_L=Escape'
 
-        # set an alias for skype to use apulse
-        alias  skype='apulse skype'
-    else
-        # make less more friendly for non-text input files, see lesspipe(1)
-        [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-    fi
+    # set an alias for skype to use apulse
+    alias  skype='apulse skype'
+    # make less more friendly for non-text input files, see lesspipe(1)
+    [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 
     # Golang
@@ -99,7 +96,7 @@ if [ -x /usr/local/bin/rbenv ]; then
 fi
 
 # Initialize jenv
-if [ -x /usr/local/bin/jenv ]; then
+if [ -x $HOME/.jenv/bin/jenv ]; then
     eval "$(jenv init -)"
 fi
 
