@@ -170,6 +170,14 @@ function gpl()  {
     done
 }
 
+# Usage: kuse <kubernetes context>
+#        kuse  metaverse
+#
+function kuse() {
+    export KUBE_ENV=$1
+    kubectl config use-context $1
+}
+
 # Usage: ddc <environment>
 #        ddc devv
 #
@@ -208,6 +216,7 @@ function dsl() {
 #
 # will update local /etc/host file with current docker-machine ip
 # to resolve to local.dev hostname
+#
 function ddns() {
     # clear existing local.dev entry from /etc/hosts
     sudo grep -q '^local.dev .*' /etc/hosts && sudo sed -i '/[[:space:]]local\.dev$/d' /etc/hosts
@@ -219,7 +228,7 @@ function ddns() {
     [[ -n $DOCKER_IP ]] && sudo /bin/bash -c "echo \"${DOCKER_IP}   local.dev\" >> /etc/hosts"
 }
 
-# usage: drm
+# usage: `drm`
 #
 # stop and remove all running containers
 # including volumes
@@ -228,10 +237,27 @@ function drm() {
     docker rm -f -v $(docker ps -a -q)
 }
 
-# usage drmi
+# usage: drmi
 #
 # remove all local docker images
 #
 function drmi() {
     docker rmi $(docker images -q)
+}
+
+
+# usage: undock
+#
+# unset docker-machine env vars
+#
+undock() {
+  eval $(docker-machine env -u)
+}
+
+# usage: dock <machine>
+#
+# set the docker-machine
+#
+dock() {
+  eval $(docker-machine env $1)
 }
