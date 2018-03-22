@@ -1,8 +1,31 @@
-# Support for both Mac and Ubuntu Linux
 #
 #
 
 # OS specific stuff
+if [ -f /etc/os-release ]; then
+    # freedesktop.org and systemd
+    . /etc/os-release
+    OS=$NAME
+    VER=$VERSION_ID
+elif type lsb_release >/dev/null 2>&1; then
+    # linuxbase.org
+    OS=$(lsb_release -si)
+    VER=$(lsb_release -sr)
+elif [ -f /etc/lsb-release ]; then
+    # For some versions of Debian/Ubuntu without lsb_release command
+    . /etc/lsb-release
+    OS=$DISTRIB_ID
+    VER=$DISTRIB_RELEASE
+elif [ -f /etc/debian_version ]; then
+    # Older Debian/Ubuntu/etc.
+    OS=Debian
+    VER=$(cat /etc/debian_version)
+else
+    # Fall back to uname, e.g. "Linux <version>", also works for BSD, etc.
+    OS=$(uname -s)
+    VER=$(uname -r)
+fi
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Add bash completion
     if [ -f `brew --prefix`/etc/bash_completion ]; then
@@ -24,15 +47,27 @@ elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         . /usr/share/bash-completion/bash_completion
     fi
 
+    # fix our modifiers in gentoo and arch
+    setxkbmap -option 'caps:ctrl_modifier'
+    xcape -e 'Caps_Lock=Escape;Control_L=Escape'
+
+    # set an alias for skype to use apulse
+    alias  skype='apulse skype'
+    # make less more friendly for non-text input files, see lesspipe(1)
+    [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+
     # Golang
-    export GOROOT=$HOME/go
     export GOPATH=$HOME/code/go
 
     # JavaEnv
     export JENVROOT=$HOME/.jenv
 
+    # IDEA
+    export IDEAROOT=/opt/idea-IU-173.4548.28
+
     # Update the Path
-    export PATH=$GOROOT/bin:$GOPATH/bin:$HOME/bin:$HOME/.node/bin:$JENVROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH
+    export PATH=$GOROOT/bin:$GOPATH/bin:$HOME/bin:$HOME/.node/bin:$JENVROOT/bin:$IDEAROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 fi
 
@@ -48,7 +83,7 @@ if [ ! -S ~/.ssh/ssh_auth_sock  ]; then
 fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 #ssh-add -l | grep "The agent has no identities" && ssh-add
-ssh-add -l
+ssh-add -l >/dev/null 2>&1
 
 
 # add z
@@ -60,7 +95,7 @@ if [ -x /usr/local/bin/rbenv ]; then
 fi
 
 # Initialize jenv
-if [ -x /usr/local/bin/jenv ]; then
+if [ -x $HOME/.jenv/bin/jenv ]; then
     eval "$(jenv init -)"
 fi
 
@@ -96,8 +131,6 @@ HISTFILESIZE=2000
 shopt -s checkwinsize
 
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # add colors to apps
 GRC=`which grc`

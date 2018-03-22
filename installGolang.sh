@@ -43,8 +43,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     cd "$HOME/go" || exit
 
 
-    # checkout go 1.5
-    git checkout go1.7.1
+    # checkout latest go
+    git checkout go1.9.4
     cd "$HOME/go/src" || exit
 
 

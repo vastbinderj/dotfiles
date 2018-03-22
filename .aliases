@@ -106,3 +106,6 @@ alias dports='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Ports}}"'
 # Maven aliases
 alias mci='mvn clean install -DskipTests'
 alias mcp='mvn clean package'
+
+# arch: update mirror list
+alias update-mirrors='sudo reflector --verbose --age 12 -c "United States" --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
