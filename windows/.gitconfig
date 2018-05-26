@@ -1,0 +1,148 @@
+[include]
+    # be sure to set your custom credentials and tokens here
+    path = .gitconfig-credentials
+[core]
+    editor = vim
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    autocrlf = input
+    excludesfile = .gitignore
+[web]
+    browser = google-chrome
+[rerere]
+    enabled = 1
+    autoupdate = 1
+[alias]
+    s = status
+    sb = status -s -b
+  #############
+    sa = stash apply
+    sc = stash clear
+    sd = stash drop
+    sl = stash list
+    sp = stash pop
+    ss = stash save
+  #############
+    d = diff
+    dc = diff --cached
+    dk = diff --check
+    dck = diff --cached --check
+    dt = difftool
+  #############
+    c = commit
+    ca = commit -a
+    cm = commit -m
+    cam = commit -am
+    cd = commit --amend
+    cad = commit -a --amend
+  #############
+    a = add .
+  #############
+    ap = apply
+    as = apply --stat
+    ac = apply --check
+  #############
+    l = log --oneline
+    lg = log --oneline --graph --decorate
+  #############
+    o = checkout
+    ob = checkout -b
+  #############
+    b = branch
+    ba = branch -a
+    bd = branch -d
+    br = branch -r
+  #############
+    f = fetch
+    fo = fetch origin
+  #############
+    fp = format-patch
+  #############
+    fk = fsck
+  #############
+    m = merge
+  #############
+    pr = prune -v
+  #############
+    ps = push
+    pl = pull
+    pb = pull --rebase
+    psf = push -f
+    psu = push -u
+    plu = pull -u
+    pso = push origin
+    plo = pull origin
+    pbo = pull --rebase origin
+    psfo = push -f origin
+    psuo = push -u origin
+    pluo = pull -u origin
+  #############
+    rb = rebase
+  #############
+    re = reset
+    rh = reset HEAD
+    reh = reset --hard
+    rem = reset --mixed
+    res = reset --soft
+    rehh = reset --hard HEAD
+    remh = reset --mixed HEAD
+    resh = reset --soft HEAD
+  #############
+    r = remote
+    ra = remote add
+    rm = remote rm
+    rv = remote -v
+    rp = remote prune
+    rs = remote show
+    rso = remote show origin
+    rpo = remote prune origin
+  #############
+    w = show
+  #############
+    meldon = config diff.external .meld.py
+    meldof = config --remove-section diff
+  #############
+    human = name-rev --name-only --refs=refs/heads/*
+[color]
+    ui = true
+[color "branch"]
+    current = yellow black
+    local = yellow
+    remote = magenta bold
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red reverse
+    new = green reverse
+    whitespace = white reverse
+[color "status"]
+    added = magenta yellow
+    updated =  green bold
+    changed = red bold
+    untracked = blue reverse
+    branch = white bold red
+    nobranch = red white bold
+[push]
+    default = simple
+[pager]
+    log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+	cmd = vimdiff  \\\"$LOCAL\\\" \\\"$REMOTE\\\"
+[merge]
+	tool = diffconflicts
+[mergetool "diffconflicts"]
+	cmd = diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
+	trustExitCode = true
+[mergetool]
+	keepBackup = false
+[user]
+	useConfigOnly = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
