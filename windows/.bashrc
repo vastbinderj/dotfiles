@@ -51,13 +51,9 @@ set -o vi
 
 
 # add ssh agent on login
-if [ ! -S ~/.ssh/ssh_auth_sock  ]; then
-    eval `ssh-agent` >/dev/null 2>&1
-    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-fi
+eval $(ssh-agent -s) >/dev/null 2>&1
+ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-#ssh-add -l | grep "The agent has no identities" && ssh-add
-ssh-add -l >/dev/null 2>&1
 
 
 # add z
