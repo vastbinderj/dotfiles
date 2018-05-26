@@ -40,6 +40,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     # IDEA
     export IDEAROOT=/opt/idea-IU-173.4548.28
 
+    # Docker
+    export DOCKER_HOST=tcp://127.0.0.1:2375
+
     # Update the Path
     export PATH=$GOPATH/bin:$HOME/bin:$HOME/.node/bin:$JENVROOT/bin:$IDEAROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
