@@ -119,5 +119,5 @@ sudo easy_install Pygments
 # symlinks!
 #   put/move git credentials into ~/.gitconfig.local
 #   http://stackoverflow.com/a/13615531/89484
-./createSymLinks.sh
+./createWSLSymLinks.sh
 
