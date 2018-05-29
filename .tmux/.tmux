@@ -1,1 +1,1 @@
-/home/james/code/dotfiles/.tmux
+/mnt/c/Users/JamesVastbinder/code/dotfiles/windows/.tmux

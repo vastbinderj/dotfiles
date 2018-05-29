@@ -1,6 +1,3 @@
-#
-#
-
 # OS specific stuff
 if type lsb_release >/dev/null 2>&1; then
     # linuxbase.org
@@ -118,6 +115,10 @@ HISTFILESIZE=4000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# Base16 Shell
+BASE16_SHELL="$HOME/code/vim-hybrid-material/base16-material/base16-material.dark.sh"
+[[ -s $BASE16_SHELL  ]] && source $BASE16_SHELL
+
 # add colors to apps
 GRC=`which grc`
 if [ "$TERM" != dumb ] && [ -n "$GRC" ]
@@ -130,11 +131,7 @@ if [ "$TERM" != dumb ] && [ -n "$GRC" ]
 fi
 
 # LS_COLORS
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    eval "$(gdircolors -b ~/.dircolors)"
-elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-    eval "$(dircolors -b ~/.dircolors)"
-fi
+eval "$(dircolors -b ~/.dircolors)"
 
 # source dotfiles
 for file in ~/.{bash_prompt,aliases,functions}; do

@@ -160,19 +160,6 @@ for file in ~/.{bash_prompt,aliases,functions}; do
 done
 unset file
 
-# add github token to env
-export GITHUB_TOKEN=$(git config --get github.token)
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/code/google-cloud-sdk/path.bash.inc" ]
-    then source "$HOME/code/google-cloud-sdk/path.bash.inc"
-fi
-
-# Enables shell command completion for gcloud if it exists
-if [ -f "$HOME/code/google-cloud-sdk/completion.bash.inc" ]
-   then source "$HOME/code/google-cloud-sdk/completion.bash.inc"
-fi
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

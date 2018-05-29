@@ -741,6 +741,7 @@ let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 let g:hybrid_custom_term_colors = 1
 let base16colorspace=256
+set termguicolors
 set background=dark
 colorscheme hybrid
 highlight CursorLine cterm=BOLD ctermbg=235 ctermfg=NONE
